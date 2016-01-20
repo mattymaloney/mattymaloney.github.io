@@ -1,7 +1,8 @@
 ---
-published: false
+published: true
 title: Jekyll Choices
 ---
+
 
 # Jekyll Blog Setup
 
@@ -129,4 +130,3 @@ Another forkable starting state.
 
 Try or Do
 Shall I try? Or shall I do? Or something in between the two?
-
