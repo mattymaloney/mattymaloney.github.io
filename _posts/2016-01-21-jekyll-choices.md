@@ -1,6 +1,7 @@
 ---
 published: true
 title: Jekyll Choices
+layout: post
 ---
 
 
