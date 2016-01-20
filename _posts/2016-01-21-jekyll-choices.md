@@ -60,6 +60,7 @@ Cons:
 * Limited to supporting user- and organization-level blogs. Does not appear to support project- or repo-level blogs.
 * Despite claims that it does, I can not see any way to edit front matter. This is a deal breaker. As much as I like it, I have to push it to the end of the list.
 
+I did go with tinypress's implementation of the Pixyll theme, but am not using their editor.
 
 
 ### [LightPaper](http://lightpaper.42squares.in/)
