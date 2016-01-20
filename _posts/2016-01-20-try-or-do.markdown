@@ -1,6 +1,0 @@
----
-published: true
-title: Try or Do
-layout: post
----
-Shall I try? Or shall I do? Or something in between the two?
