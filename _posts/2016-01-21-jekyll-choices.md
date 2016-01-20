@@ -24,12 +24,13 @@ Of course, you can edit directly from the repo on the github website.
 
 Website doesn't work very well on android browser. But the desktop website is pretty solid.
 
+The diff previews before saving are a great feature.
+
 Unfortunately, prose stumbles when it comes to front matter. Much better than tinypress, but still failing.
 
 * Front matter with empty values are not shown in the editor.
 * Post titles have to be created in front matter, at which point the post filename is hidden. Prior to creating the title, the filename is shown at the top of the editor. Lots of clicking just to enter the title and then make sure the filename still says what you want.
-
-The diff previews before saving are a great feature.
+* I type the same 3 front matter elements for every post: title, layout, and published.
 
 
 ### MrHyde
