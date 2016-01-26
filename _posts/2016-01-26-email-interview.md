@@ -12,7 +12,7 @@ Job listing: https://www.ksl.com/jobs/listing/643071
 
 Hi, this is Matt, one of the founders, and one of the 3 owners of Costume Craze.
 
-My realm of responsibility is all technology, including all hardware, purchased software, development of proprietary software, integration, and networks. Some of that responsiblity is for desktop, server, network, user, and application administration, all of which could be delegated to you.
+My realm of responsibility is all technology, including all hardware, purchased software, development of proprietary software, integration, and networks. Some of that responsibility is for desktop, server, network, user, and application administration, all of which could be delegated to you.
 
 Regarding desktops, we usually have a desktop/appliance/printer/handheld/terminal-centric help technician, but right now we do not, and we'd need your help to hire another, guiding them to success.
 
