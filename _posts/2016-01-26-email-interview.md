@@ -20,11 +20,11 @@ In summary, the job is the head of a small department -- you and one other, who 
 
 ## Questions
 
-The first questions in this interview do not need to be answered in real-time. I do not need to put you on the spot, so I'm asking them via email. I hope to hear back from you at your earliest convenience. I've received several interesting candidates over the last 2 weeks, and I'm expecting to choose our new sysadmin by the end of the week.
+The first questions in this interview do not need to be answered in real-time. I do not need to put you on the spot, yet, so I'm asking them via email. I hope to hear back from you at your earliest convenience. I've received several interesting candidates over the last 2 weeks, and I'm expecting to choose our new sysadmin by the end of the week.
 
 What do you know, or what can you find out, about Costume Craze?
 
-Given what I've told you above and what you've just learned, what's interesting to you about Costume Craze? Why do you want to work here?
+Given what I've told you above and what you've just learned answering the previous question, what's interesting to you about Costume Craze? Why do you want to work here?
 
 What's your current employment status? If you're currently employed, what's your exit/transition strategy?
 
