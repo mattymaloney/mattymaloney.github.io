@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Systems Administrator Interview Questions 2016
 ---
