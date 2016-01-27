@@ -34,28 +34,28 @@ body {
 }
 
 h1, .h1, .f1 {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
 }
 
 h2, .h2, .f2 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
 }
 
 h3, .h3, .f3 {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
 }
 
 p, .p, .f4, h4, h5, h6, dl, ol, ul {
-  font-size: 1.125rem;
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
 }
 
 small, .small, .f5 {
   font-size: .875rem;
-  line-height: 1.5rem;
+  line-height: 1rem;
 }
 
 @media screen and (min-width: 48em) {
