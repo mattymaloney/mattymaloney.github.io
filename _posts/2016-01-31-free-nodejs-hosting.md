@@ -4,6 +4,9 @@ layout: post
 title: Free NodeJS Hosting
 ---
 
+
+### OpenShift
+
 I found one reasonable option for free hosting of nodejs apps.
 [OpenShift by Red Hat](https://www.openshift.com/)
 
@@ -15,3 +18,9 @@ Here's a tutorial for getting a harp app running in nodejs on openshift.
 
 They actually support other app types as well, e.g. even WordPress.
 
+
+### Netlify
+
+Yeah. This is probably a better option. Offers site rebuilds on github or bitbucket push events. I'm not sure what the free tier includes, but it definitely includes at least one static app/site.
+
+[netlify](https://app.netlify.com/)
