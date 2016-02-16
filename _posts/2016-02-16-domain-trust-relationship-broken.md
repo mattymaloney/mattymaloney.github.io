@@ -13,5 +13,9 @@ Next issue is that we can't log onto the computer at all. I may not have the cor
 I'll have to have someone disconnect the PC from the network and with physical presence, log onto the machine again to remove it from the domain.
 
 See also:
-[DON’T REJOIN TO FIX: The trust relationship between this workstation and the primary domain failed](http://implbits.com/active-directory/2012/04/13/dont-rejoin-to-fix.html)
+
 A good resource for recreating the domain account, at least in cases where I have physical or remote access to the machine.
+[DON’T REJOIN TO FIX: The trust relationship between this workstation and the primary domain failed](http://implbits.com/active-directory/2012/04/13/dont-rejoin-to-fix.html)
+
+An innovative way to reset the Administrator password. I can't do this remotely, but I can walk someone through it on the other side.
+[How to Reset Your Forgotten Windows Password the Easy Way](http://www.howtogeek.com/96630/how-to-reset-your-forgotten-windows-password-the-easy-way/)
