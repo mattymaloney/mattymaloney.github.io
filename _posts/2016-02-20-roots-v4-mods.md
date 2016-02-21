@@ -5,20 +5,23 @@ title: Modifications to Roots v4.x
 ---
 
 
+
 ## Add Support for SLM
 
 Roots supports Jade, by default. We can make it support Slm as well, at least for the most part.
 
 ### Install Slm for Accord
 
-From /usr/local/lib/node_modules/roots/node_modules/accord/, install slm as a dev dependency with `sudo npm install --save-dev slm`. I need sudo here because this global installation is owned by root.
+<s>From /usr/local/lib/node_modules/roots/node_modules/accord/, install slm as a dev dependency with `sudo npm install --save-dev slm`. I need sudo here because this global installation is owned by root.</s>
 
 
 ### Create and Edit the accord Adapter for Slm
 
 Copy /usr/local/lib/node_modules/roots/node_modules/accord/lib/adapters/jade to /usr/local/lib/node_modules/roots/node_modules/accord/lib/adapters/slm.
 
-In /usr/local/lib/node_modules/roots/node_modules/accord/lib/adapters/slm/1.x.js, replace all instances of "Jade" with "Slm" and all instances of "jade" with "slm". Also, remove the string 'yade' from the array on line 32.
+In /usr/local/lib/node_modules/roots/node_modules/accord/lib/adapters/slm/, rename 1.x.js to 0.5.x.js. The number before `.js` should satisfy (via a call to `semver.satisfies` the slm version number specified in slm's package.json.
+
+In the file you've just renamed, replace all instances of "Jade" with "Slm" and all instances of "jade" with "slm". Also, remove the string 'yade' from the array on line 32.
 
 Resulting source should look something like this:
 
