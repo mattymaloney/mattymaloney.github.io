@@ -6,6 +6,7 @@ title: Modifications to Roots v4.x
 
 
 
+
 ## Add Support for SLM
 
 Roots supports Jade, by default. We can make it support Slm as well, at least for the most part.
@@ -21,7 +22,11 @@ Copy /usr/local/lib/node_modules/roots/node_modules/accord/lib/adapters/jade to 
 
 In /usr/local/lib/node_modules/roots/node_modules/accord/lib/adapters/slm/, rename 1.x.js to 0.5.x.js. The number before `.js` should satisfy (via a call to `semver.satisfies` the slm version number specified in slm's package.json.
 
-In the file you've just renamed, replace all instances of "Jade" with "Slm" and all instances of "jade" with "slm". Also, remove the string 'yade' from the array on line 32.
+In the file you've just renamed:
+
+* replace all instances of "Jade" with "Slm" and all instances of "jade" with "slm".
+* remove the string 'yade' from the array on line 32.
+* insert `null` as second argument of `render` call on line 37.
 
 Resulting source should look something like this:
 
@@ -62,7 +67,7 @@ Resulting source should look something like this:
     Slm.prototype._render = function(str, options) {
       return compile((function(_this) {
         return function() {
-          return _this.engine.render(str, options);
+          return _this.engine.render(str, null, options);
         };
       })(this));
     };
