@@ -33,11 +33,13 @@ Consider [WinSCP - Free SFTP and FTP client for Windows](https://winscp.net/eng/
 
 Also, try [PuTTY's pscp](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) utility.
 
-A couple more hints here ([windows server 2008 - Compressed network file copy - Server Fault](http://serverfault.com/questions/400538/compressed-network-file-copy)) including a tip on using 7-zip to do the compression. Also, consider having mssql do the compression during the backup.
+A couple more hints here ([windows server 2008 - Compressed network file copy - Server Fault](http://serverfault.com/questions/400538/compressed-network-file-copy)) including a tip on using 7-zip to do the compression.
 
----
+Also, consider having mssql do the compression during the backup. But, this is not supported until SQL Server 2008.
 
 A bunch more insight, but only a little bit for Windows, see [How to transfer large amounts of data via network](http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html).
+
+Consider using Syncrify or DeltaCopy (probably DeltaCopy, because it's "open-source" (is it?) and free) [Difference between Syncrify and DeltaCopy](http://web.synametrics.com/SyncrifyVsDeltaCopy.htm).
 
 ---
 
