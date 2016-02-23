@@ -27,3 +27,18 @@ For a discussion leading to the suggestion to disable “Large Send Offload (LSO
 
 None of these file-copy utilities offer over-the-wire compression. We need something with a listener on the other end of the copy.
 
+Consider [WinSCP - Free SFTP and FTP client for Windows](https://winscp.net/eng/index.php). Does this offer the same abilty as scp+tar offers in Linux?
+
+[Using SSH/SCP on Windows](http://ged.msu.edu/angus/tutorials/using-putty-on-windows.html) may help with using winscp with compression on Windows.
+
+Also, try [PuTTY's pscp](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) utility.
+
+A couple more hints here ([windows server 2008 - Compressed network file copy - Server Fault](http://serverfault.com/questions/400538/compressed-network-file-copy)) including a tip on using 7-zip to do the compression. Also, consider having mssql do the compression during the backup.
+
+---
+
+A bunch more insight: [How to transfer large amounts of data via network](http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html).
+
+---
+
+
