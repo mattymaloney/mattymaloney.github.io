@@ -37,7 +37,7 @@ A couple more hints here ([windows server 2008 - Compressed network file copy - 
 
 ---
 
-A bunch more insight: [How to transfer large amounts of data via network](http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html).
+A bunch more insight, but only a little bit for Windows, see [How to transfer large amounts of data via network](http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html).
 
 ---
 
