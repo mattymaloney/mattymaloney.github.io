@@ -21,5 +21,9 @@ Robocopy for Windows Server 2003 can be downloaded from [Windows Server 2003 Res
 
 ---
 
+For a discussion leading to the suggestion to disable “Large Send Offload (LSO)” on the source side of the copy, see [Local Area Network : How to fix slow LAN transfer speed of files in Windows](http://www.howtosolutions.net/2013/06/fixing-slow-sending-or-receiving-of-files-through-lan-network-using-windows/)
+
+---
+
 None of these file-copy utilities offer over-the-wire compression. We need something with a listener on the other end of the copy.
 
