@@ -39,7 +39,7 @@ Also, consider having mssql do the compression during the backup. But, this is n
 
 A bunch more insight, but only a little bit for Windows, see [How to transfer large amounts of data via network](http://moo.nac.uci.edu/~hjm/HOWTO_move_data.html).
 
-Consider using Syncrify or DeltaCopy (probably DeltaCopy, because it's "open-source" (is it?) and free) [Difference between Syncrify and DeltaCopy](http://web.synametrics.com/SyncrifyVsDeltaCopy.htm).
+Consider using Syncrify or DeltaCopy (probably DeltaCopy, because it's open-source and free) [Difference between Syncrify and DeltaCopy](http://web.synametrics.com/SyncrifyVsDeltaCopy.htm). For DeltaCopy, see [DeltaCopy - Rsync for Windows](http://www.aboutmyip.com/AboutMyXApp/DeltaCopy.jsp).
 
 ---
 
