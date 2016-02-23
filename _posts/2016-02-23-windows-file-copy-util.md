@@ -41,6 +41,8 @@ A bunch more insight, but only a little bit for Windows, see [How to transfer la
 
 Consider using Syncrify or DeltaCopy (probably DeltaCopy, because it's open-source and free) [Difference between Syncrify and DeltaCopy](http://web.synametrics.com/SyncrifyVsDeltaCopy.htm). For DeltaCopy, see [DeltaCopy - Rsync for Windows](http://www.aboutmyip.com/AboutMyXApp/DeltaCopy.jsp). As expected, it does run a service on the listening end of the connection. Actually, I think it's running the service on both ends of the connection.
 
+ZipPipe and unZipPipe are 2 perfect utilities for this. Definitely have to look at source code before trusting these though. [ON THE FLY COMPRESSION/UNCOMPRESSION IS EASY ON UNIX, BUT ALSO ON WINDOWS | Bienvenido/Welcome](https://jcarlossaez1.wordpress.com/2005/10/21/on-the-fly-compressionuncompression-is-easy-on-unix-but-also-on-windows/)
+
 ---
 
 
