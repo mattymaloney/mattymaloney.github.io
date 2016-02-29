@@ -4,6 +4,7 @@ layout: post
 title: Options for Migrating Google Apps Data
 ---
 
+
 In a cleanup effort, I'm experimenting with options for migrating Google Apps data from former employees to various archive accounts. 
 
 ---
@@ -13,6 +14,10 @@ In a cleanup effort, I'm experimenting with options for migrating Google Apps da
 Google Takeout produces a .zip or .tgz archive that can be stored in Drive, Dropbox, OneDrive, or downloaded directly via an emailed link.
 
 I don't know anything yet about how to access the information in the archive.
+
+---
+
+One of the old ways to migrate data from one account to another is Dashboard's Migration tool. [Moving data between Google accounts](https://www.google.com/dashboard/migration/?srcAccount=camille@costumecraze.com&dstAccount=backupemail@costumecraze.com). The tool is no longer supported, but I may create a test account and try it. Dunno. We'll see how the other transfer options pan out.
 
 ---
 
@@ -40,7 +45,7 @@ So far, I think this is the easiest and most reliable transfer method for Drive 
 
 ### Keep
 
-Don't know, haven't done this yet.
+Tranferring Keep data was weak. Have to select and share each note individually, then in the archive account, the note needs to be copied, then labelled to indicate the account from which it migrated.
 
 ### Gmail
 
