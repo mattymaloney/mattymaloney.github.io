@@ -52,3 +52,8 @@ Tranferring Keep data was weak. Have to select and share each note individually,
 I'm using Thunderbird to download/sync all of the migration-ready user's email. Then, I will move all of those messages into a newly created folder, named for this migrating user, in the archive account's gmail.
 
 At this time, I haven't completed the process, so I don't have detailed notes.
+
+### Calendar
+
+After getting takeout archive, log in to the achive master account's calendar, go to Settings -> Calendars, and look between the "My Calendar" and "Other Calendars". Click "Create new calendar" to create a calendar for each ics you want to import from the old user's takeout archive. For each calendar, import into the appropriate calendar you just created.
+
