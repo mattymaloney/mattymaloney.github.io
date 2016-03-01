@@ -63,6 +63,7 @@ Well, that really didn't work well at all. Not for a large mailbox anyway. I can
 Google Mail Fetcher is integrated directly into the gmail web app. Just use it to connect to the old user's POP3 service and import the mail into a specified label of the archive account. I think this is sufficient for our needs, because we want the emails for searchability. I don't think we need the original user's label structure.
 
 * [Check email from other accounts with Gmail - Gmail Help](https://support.google.com/mail/answer/21289?hl=en)
+* [A Gmail Miscellany: Housekeeping your Google Accounts](http://gmail-miscellany.blogspot.jp/2013/05/housekeeping-your-google-accounts.html)
 
 ##### Got Your Back
 
