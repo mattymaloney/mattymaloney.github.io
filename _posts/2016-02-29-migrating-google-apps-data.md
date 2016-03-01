@@ -72,6 +72,10 @@ Google Mail Fetcher is integrated directly into the gmail web app. Just use it t
 
 * [GitHub - jay0lee/got-your-back: Got Your Back (GYB) is a command line tool for backing up your Gmail messages to your local computer. It uses Gmail's API over HTTPS. For help with GYB, see the Getting Started Guide at https://github.com/jay0lee/got-your-back/wiki](https://github.com/jay0lee/got-your-back)
 
+The [Got Your Back Getting Started Guide](https://github.com/jay0lee/got-your-back/wiki) is rather nice.
+
+
+
 Looking into that now...
 
 
