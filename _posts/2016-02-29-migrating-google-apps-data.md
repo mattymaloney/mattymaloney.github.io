@@ -6,6 +6,7 @@ title: Options for Migrating Google Apps Data
 
 
 
+
 In a cleanup effort, I'm experimenting with options for migrating Google Apps data from former employees to various archive accounts. 
 
 ---
@@ -74,9 +75,7 @@ Google Mail Fetcher is integrated directly into the gmail web app. Just use it t
 
 The [Got Your Back Getting Started Guide](https://github.com/jay0lee/got-your-back/wiki) is rather nice.
 
-
-
-Looking into that now...
+I'm very impressed with this so far. I'm running it on a 0.05gb mailbox as first test...
 
 
 ### Calendar
