@@ -21,7 +21,18 @@ touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 ```
 
-One the client:
+On the client:
+
+Decide the filename of your private key. If you are making a general-use private key that you will use to connect to multiple ssh servers, then you can accept the default name (`~/.ssh/id_rsa`). However, if you need (or due lack of experience, wonder if you should use) different key pairs for different ssh servers, then choose a more specific name to prefix the key pair files. e.g. `~/.ssh/[server-name]_rsa`. When prompted later for the name of the private key file, accept the default (`id_rsa`) or enter another.
 
 ```
+ssh-keygen -t rsa
 ```
+
+I don't think the `-t rsa` portion of that command is necessary, as it seems to default to rsa anyway.
+
+---
+
+See also:
+
+[How To Set Up SSH Keys | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
