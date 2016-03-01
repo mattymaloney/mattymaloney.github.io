@@ -85,6 +85,10 @@ Google Mail Fetcher is integrated directly into the gmail web app. Just use it t
 
 The [Got Your Back Getting Started Guide](https://github.com/jay0lee/got-your-back/wiki) is rather nice.
 
+Looks like it's ok to interrupt GYB, as it picks up where it left off. It doesn't do double-restores or double-backups when being asked to resume.
+
+When it restores to our archive account, it restores with a specified label, keeping all other labels already specified in the retired account's gmail, and joins shared messages with already existing messages in the archive folder (e.g. company wide emails).
+
 I'm very impressed with this so far. I'm running it on a 0.05gb mailbox as first test...
 
 
