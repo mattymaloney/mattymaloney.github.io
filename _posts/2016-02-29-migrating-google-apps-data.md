@@ -4,10 +4,20 @@ layout: post
 title: Options for Migrating Google Apps Data
 ---
 
-
-
-
 In a cleanup effort, I'm experimenting with options for migrating Google Apps data from former employees to various archive accounts. 
+
+The data we want to preserve from each retiring gapps account:
+
+* Gmail
+* Drive
+* Calendar
+* Contacts
+
+Additionally, Gmail, Drive and Calendar should be usable/searchable.
+
+...
+
+
 
 ---
 
