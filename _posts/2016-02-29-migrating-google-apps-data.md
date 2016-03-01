@@ -56,10 +56,17 @@ At this time, I haven't completed the process, so I don't have detailed notes.
 
 Well, that really didn't work well at all. Not for a large mailbox anyway. I can see how it might be ok for smaller mailboxes. But, for a large mailbox, because "move" in Thunderbird means it copies all the messages and then deletes the originals, it really needs to complete the entire copy and then the entire delete, but it's not done as an atomic operation. And holy pants Batman, it takes a long time.
 
-A better option may be one of these:
+#### A better option may be one of these:
+
+##### Google Mail Fetcher
+
+Google Mail Fetcher is integrated directly into the gmail web app. Just use it to connect to the old user's POP3 service and import the mail into a specified label of the archive account. I think this is sufficient for our needs, because we want the emails for searchability. I don't think we need the original user's label structure.
+
+* [Check email from other accounts with Gmail - Gmail Help](https://support.google.com/mail/answer/21289?hl=en)
+
+##### Got Your Back
 
 * [GitHub - jay0lee/got-your-back: Got Your Back (GYB) is a command line tool for backing up your Gmail messages to your local computer. It uses Gmail's API over HTTPS. For help with GYB, see the Getting Started Guide at https://github.com/jay0lee/got-your-back/wiki](https://github.com/jay0lee/got-your-back)
-* [Check email from other accounts with Gmail - Gmail Help](https://support.google.com/mail/answer/21289?hl=en)
 
 Looking into that now...
 
