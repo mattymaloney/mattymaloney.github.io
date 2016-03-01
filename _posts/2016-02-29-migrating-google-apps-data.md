@@ -4,6 +4,7 @@ layout: post
 title: Options for Migrating Google Apps Data
 ---
 
+
 In a cleanup effort, I'm experimenting with options for migrating Google Apps data from former employees to various archive accounts. 
 
 The data we want to preserve from each retiring gapps account:
@@ -91,6 +92,15 @@ When it restores to our archive account, it restores with a specified label, kee
 
 I'm very impressed with this so far. I'm running it on a 0.05gb mailbox as first test...
 
+Example commands:
+
+To backup: `python3 gyb.py --email [username]@example.com`
+
+To restore: `python3 gyp.py --email [archive-account]@example.com --action restore --local-folder ./GYB-GMail-Backup-[username]\@example.com/ --label-restored "[username]"`
+
+After the restore, archive all items in the inbox. As far as I can tell, there is no way to archive the messages as they're imported, so they will show up in the inbox.
+
+It does take a while. The 0.05gb test took at least 30 minutes, maybe an hour.
 
 ### Calendar
 
