@@ -1,0 +1,16 @@
+---
+published: true
+layout: post
+title: Disable SSH Login for Root and Other Users
+---
+
+To disable direct ssh logins for a user, especially root, here's a basic run-down.
+
+[How do I disable SSH login for the root user? - Media Temple](https://mediatemple.net/community/products/dv/204643810/how-do-i-disable-ssh-login-for-the-root-user)
+
+---
+
+Also, since this action can disable the root user's ssh access, you'll need to use `sudo` to become root. This post cleared up some of my own confusion about the differences between alternative ways to become root via `sudo`. It expecially cleared up for me which password is expected for each type of invocation for `sudo` or `su` and what the new shell environment will contain.
+
+[su VS sudo su VS sudo -u -i - blog by @johnkpaul](http://johnkpaul.tumblr.com/post/19841381351/su-vs-sudo-su-vs-sudo-u-i)
+
