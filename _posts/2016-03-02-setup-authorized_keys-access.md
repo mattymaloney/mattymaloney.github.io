@@ -31,6 +31,10 @@ ssh-keygen -t rsa
 
 I don't think the `-t rsa` portion of that command is necessary, as it seems to default to rsa anyway.
 
+You'll be prompted for the filename in which to save the private key. Accept the default or change it as described above.
+
+You'll also be prompted for a passphrase. We're not using a passphrase because we're mostly doing this for automation purposes rather than personal logins.
+
 ---
 
 See also:
