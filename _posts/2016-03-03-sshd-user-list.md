@@ -18,6 +18,8 @@ I think we also need to look at the `UsePAM` and `ChallengeResponseAuthenticatio
 
 Ideally, password authentication is disabled in favor or authentication by key pairs.
 
+See also: [linux - SSH public key auth fails when UsePAM is set to "no" - Server Fault](http://serverfault.com/questions/475880/ssh-public-key-auth-fails-when-usepam-is-set-to-no)
+
 
 ## Which users have authorized_keys?
 
@@ -27,4 +29,32 @@ After determining where `sshd` is looking for the public keys, look in that loca
 
 
 ## Which users are allowed or disallowed by sshd_config
+
+If `/etc/ssh/sshd_config` does not have an `AllowUsers` directive, then all users are allowed. Similarly, if it does not have a `DenyUsers` directive, then no users are disallowed.
+
+
+## Look for `Match` Directives at the end of sshd_config
+
+`Match User` and `Match Group` directives can override other directives for specific users and groups.
+
+See also:
+
+* [key management - Creating user specific authentication methods in SSH - Information Security Stack Exchange](http://security.stackexchange.com/questions/18036/creating-user-specific-authentication-methods-in-ssh)
+* [linux - how to disable SSH login with password for some users? - Server Fault](http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users)
+
+---
+
+For more insight into trying to list all the ssh users, see also:
+
+* [linux - Which users are allowed to log in via SSH by default? - Unix & Linux Stack Exchange](http://unix.stackexchange.com/questions/36804/which-users-are-allowed-to-log-in-via-ssh-by-default)
+* [linux - List of all users that can connect via SSH - Stack Overflow](http://stackoverflow.com/questions/15802179/list-of-all-users-that-can-connect-via-ssh)
+
+But neither of these references are actually a complete answer.
+
+Seems that sshd could use a utility command that will explicitly determine exactly which users can access the box via ssh and by which authentication method.
+
+---
+
+For DigitalOcean's explanations of the `sshd_config` directives, see also: [How To Tune your SSH Daemon Configuration on a Linux VPS | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-tune-your-ssh-daemon-configuration-on-a-linux-vps)
+
 
