@@ -37,9 +37,12 @@ You'll also be prompted for a passphrase. We're not using a passphrase because w
 
 Now, we need to copy the public key to the server. This can be done via copy/paste (my usual method), with the `ssh-copy-id` command (which I haven't tried), or with a `cat` piped via `ssh` to the server's `cat`, redirecting output to your `authorized_keys` file.
 
+The `[public-key-filename]` in the command below is the same as the private key filename, but appended with `.pub`, e.g. `~/.ssh/[server-name]_rsa.pub`.
+
 ```
-ssh [username]@[host-or-ip-address] "cat >> ~/.ssh/authorized_keys"
+cat [public-key-filename] | ssh [username]@[host-or-ip-address] "cat >> ~/.ssh/authorized_keys"
 ```
+
 ---
 
 See also:
