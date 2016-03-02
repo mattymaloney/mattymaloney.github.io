@@ -5,6 +5,7 @@ title: Disable SSH Login for Root and Other Users
 ---
 
 
+
 To disable direct ssh logins for a user, especially root, here's a basic run-down.
 
 [How do I disable SSH login for the root user? - Media Temple](https://mediatemple.net/community/products/dv/204643810/how-do-i-disable-ssh-login-for-the-root-user)
@@ -22,3 +23,11 @@ To better understand which users on the box are allowed to connect via ssh, try 
 More/better insights here (at least for debian): [linux - Which users are allowed to log in via SSH by default? - Unix & Linux Stack Exchange](http://unix.stackexchange.com/questions/36804/which-users-are-allowed-to-log-in-via-ssh-by-default). I think the centos configuration is much the same.
 
 The /etc/shadow file has been confusing to me in the past. I understand it better now, after reading [Understanding /etc/shadow file](http://www.cyberciti.biz/faq/understanding-etcshadow-file/).
+
+---
+
+Some more tidbits with a useful variation on explanation of their purpose:
+
+[AWS EC2: Steps to enable root access with your local key - Inspired by: https://forums.aws.amazon.com/thread.jspa?threadID=86876 · GitHub](https://gist.github.com/tracend/4016872)
+
+
