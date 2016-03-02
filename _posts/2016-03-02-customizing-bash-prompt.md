@@ -18,6 +18,20 @@ export PS1="\n\[$(tput sgr0)\]\[\033[38;5;3m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\
 
 ---
 
+For more details on customizing the prompt, which I didn't have to use all that much this time, see also:
+
+* [Bash/Prompt customization - ArchWiki](https://wiki.archlinux.org/index.php/Bash/Prompt_customization)
+* [How to Customize your Bash Prompt on a Linux VPS | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-customize-your-bash-prompt-on-a-linux-vps)
+* [How to: Change / Setup bash custom prompt (PS1)](http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html)
+
+---
+
+And, for more details about the `tput` command, which was new to me this time, see also:
+
+* [Hack 40. Change the prompt color using tput](http://linux.101hacks.com/ps1-examples/prompt-color-using-tput/)
+
+---
+
 Someday, also consider the [fish shell](https://fishshell.com/).
 
 
