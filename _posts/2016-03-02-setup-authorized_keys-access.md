@@ -35,6 +35,11 @@ You'll be prompted for the filename in which to save the private key. Accept the
 
 You'll also be prompted for a passphrase. We're not using a passphrase because we're mostly doing this for automation purposes rather than personal logins.
 
+Now, we need to copy the public key to the server. This can be done via copy/paste (my usual method), with the `ssh-copy-id` command (which I haven't tried), or with a `cat` piped via `ssh` to the server's `cat`, redirecting output to your `authorized_keys` file.
+
+```
+ssh [username]@[host-or-ip-address] "cat >> ~/.ssh/authorized_keys"
+```
 ---
 
 See also:
