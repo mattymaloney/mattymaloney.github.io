@@ -4,6 +4,7 @@ layout: post
 title: Determine Which Users Can Login Via SSH
 ---
 
+
 Determine which users can login via SSH and with which method(s), password or authorized_keys, those users are permitted to connect.
 
 ## Which users have passwords?
@@ -26,6 +27,8 @@ See also: [linux - SSH public key auth fails when UsePAM is set to "no" - Server
 Check `/etc/ssh/sshd_config` for the `AuthorizedKeysFile` directive. This will tell you where `sshd` expects to find users' `authorized_keys` file(s). Apparently, the default is to look in `~/.ssh/authorized_keys` as well as `~/.ssh/authorized_keys2`.
 
 After determining where `sshd` is looking for the public keys, look in that location in each users' `/home` directory to see which users have public keys stored on the server.
+
+Don't forget to check `/root/.ssh` as well.
 
 
 ## Which users are allowed or disallowed by sshd_config
@@ -56,5 +59,3 @@ Seems that sshd could use a utility command that will explicitly determine exact
 ---
 
 For DigitalOcean's explanations of the `sshd_config` directives, see also: [How To Tune your SSH Daemon Configuration on a Linux VPS | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-tune-your-ssh-daemon-configuration-on-a-linux-vps)
-
-
