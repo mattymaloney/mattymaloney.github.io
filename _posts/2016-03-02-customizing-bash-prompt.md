@@ -30,6 +30,14 @@ And, for more details about the `tput` command, which was new to me this time, s
 
 * [Hack 40. Change the prompt color using tput](http://linux.101hacks.com/ps1-examples/prompt-color-using-tput/)
 
+Also about `tput`, when I `|` to an ssh session, I get one of these errors for each `tput` call in my `PS1` prompt:
+
+```
+tput: No value for $TERM and no -T specified
+```
+
+I'm not sure what that means yet.
+
 ---
 
 Someday, also consider the [fish shell](https://fishshell.com/).
