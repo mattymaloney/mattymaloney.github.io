@@ -40,3 +40,11 @@ If the password hash begins with one or more `!` characters but is followed by a
 
 I gathered these details mostly from [\[all variants\] exclamation mark vs asterisk in /etc/shadow](http://ubuntuforums.org/showthread.php?t=2026413).
 
+---
+
+To see all the non-comment and non-blank lines of `/etc/ssh/sshd_config` and other files:
+
+```
+grep -v -e ^# -e ^$ /etc/ssh/sshd_config
+```
+
