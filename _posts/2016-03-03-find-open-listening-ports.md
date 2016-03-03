@@ -6,6 +6,11 @@ title: Show All Port Open for Listening Right Now
 
 To find out what ports are open for listening, we have a few options.
 
+Simple answers are available here: [Find Out What Ports Are Listening / Open On My Linux & FreeBSD Server](http://www.cyberciti.biz/faq/how-do-i-find-out-what-ports-are-listeningopen-on-my-linuxfreebsd-server/)
+
+And here: [Get a list of Open Ports in Linux - Super User](http://superuser.com/questions/529830/get-a-list-of-open-ports-in-linux)
+
+
 ## nmap
 
 ```
@@ -16,4 +21,17 @@ However, nmap isn't always installed. I'm rather sure I've never seen is in a de
 
 
 ## netstat
+
+```
+netstat -lnptu
+```
+
+`netstat` seems to be installed on all of our boxes, and I almost assume it's a default component of new installations.
+
+
+## lsof
+
+I don't like the `lsof` commands much because they return too many results on a busy box. In this case, I'm interested in seeing open/listening ports. I don't need to see every open port and every connection to every open port.
+
+
 
