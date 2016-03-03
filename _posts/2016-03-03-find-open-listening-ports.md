@@ -31,7 +31,7 @@ netstat -lnptu
 `netstat` seems to be installed on all of our boxes, and I almost assume it's a default component of new installations.
 
 ```
-netstat -tuwanp | grep LISTEN | awk '{print $4}' | grep ':' | cut -d ":" -f 2 | sort -n | uniq
+netstat -tuwanp | grep LISTEN | awk '{print $4}' | grep ':' | cut -d ":" -f 2 | sort -n | uniq | grep -v ^$
 ```
 
 This is a tweaked version from a comment on superuser. It does work to produce a sorted list of listening port numbers.
