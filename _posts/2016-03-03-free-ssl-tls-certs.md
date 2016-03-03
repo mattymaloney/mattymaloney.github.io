@@ -26,5 +26,10 @@ LetsEncrypt has significant public backing right now, and I think that goes a lo
 
 LetsEncrypt apparently allows up to 100 domain names on each certificate. This makes it especially attractive for our internal app and all the alternate and subdomains that 3rd parties use to communicate with the app. See [Rate Limits for Let's Encrypt](https://community.letsencrypt.org/t/rate-limits-for-lets-encrypt/6769).
 
+A guide, some client scripts (because the official client may not be ideal), and a more comprehensive list of available clients:
 
-
+* [Getting Started - Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/getting-started/)
+* [Let’s Encrypt Clients – Simon Josefsson's blog](https://blog.josefsson.org/2015/12/17/lets-encrypt-clients/)
+* [diafygi/letsencrypt-nosudo: Free HTTPS certificates without having to trust the letsencrypt cli with sudo/root](https://github.com/diafygi/letsencrypt-nosudo)
+* [diafygi/acme-tiny: A tiny script to issue and renew TLS certs from Let's Encrypt](https://github.com/diafygi/acme-tiny/)
+* [List of Client Implementations - Documentation - Let's Encrypt Community Support](https://community.letsencrypt.org/t/list-of-client-implementations/2103)
