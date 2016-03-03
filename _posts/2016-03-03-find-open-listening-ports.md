@@ -10,6 +10,8 @@ Simple answers are available here: [Find Out What Ports Are Listening / Open On 
 
 And here: [Get a list of Open Ports in Linux - Super User](http://superuser.com/questions/529830/get-a-list-of-open-ports-in-linux)
 
+From RedHat, including a mention of nmap for this purpose: https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/Security_Guide/s1-server-ports.html
+
 
 ## nmap
 
@@ -29,7 +31,7 @@ netstat -lnptu
 `netstat` seems to be installed on all of our boxes, and I almost assume it's a default component of new installations.
 
 ```
-netstat -tuwanp | awk '{print $4}' | grep ':' | cut -d ":" -f 2 | sort -n | uniq
+netstat -tuwanp | grep LISTEN | awk '{print $4}' | grep ':' | cut -d ":" -f 2 | sort -n | uniq
 ```
 
 This is a tweaked version from a comment on superuser. It does work to produce a sorted list of listening port numbers.
