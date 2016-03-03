@@ -31,7 +31,7 @@ Add `| paste -sd ',' -` on the end to get a comma-separated list.
 To see which users have a valid password:
 
 ```
-
+cat /etc/shadow | grep -Ev -e '^\w+:[\*!]'
 ```
 
 If the password hash contains only `!` and/or `*` characters, then that user can not log in, and that user has likely never had a password.
