@@ -22,3 +22,9 @@ I haven't looked very closely, as I'm more interested in LetsEncrypt right now.
 
 ## [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
 
+LetsEncrypt has significant public backing right now, and I think that goes a long way to ensuring its near-future reliability.
+
+LetsEncrypt apparently allows up to 100 domain names on each certificate. This makes it especially attractive for our internal app and all the alternate and subdomains that 3rd parties use to communicate with the app. See [Rate Limits for Let's Encrypt](https://community.letsencrypt.org/t/rate-limits-for-lets-encrypt/6769).
+
+
+
