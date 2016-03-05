@@ -54,6 +54,6 @@ sudo grep -v -e ^# -e ^$ /etc/ssh/sshd_config
 To find all `authorized_keys` and `authorized_keys2` files:
 
 ```
-sudo find /home -regex '.*/authorized_keys2?'
+sudo find / -regex '.*/authorized_keys2?'
 ```
 
