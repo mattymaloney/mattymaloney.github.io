@@ -48,3 +48,12 @@ To see all the non-comment and non-blank lines of `/etc/ssh/sshd_config` and oth
 ```
 sudo grep -v -e ^# -e ^$ /etc/ssh/sshd_config
 ```
+
+---
+
+To find all `authorized_keys` and `authorized_keys2` files:
+
+```
+sudo find /home -regex '.*/authorized_keys2?'
+```
+
