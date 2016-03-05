@@ -4,6 +4,7 @@ layout: post
 title: "Linux Quick-Audit Commands Collections"
 ---
 
+
 I'm just trying to collect some commands I'm using for some manual auditing/assessing for our linux boxes.
 
 ---
@@ -21,7 +22,7 @@ I should further awk or cut this to show only the username, maybe along with wha
 To see which ports are open for listening:
 
 ```
-netstat -tuwanp | grep LISTEN | awk '{print $4}' | grep ':' | cut -d ':' -f 2,4 | cut -d ':' -f 2 | uniq | sort -n
+sudo netstat -tuwanp | grep LISTEN | awk '{print $4}' | grep ':' | cut -d ':' -f 2,4 | cut -d ':' -f 2 | sort -n | uniq
 ```
 
 Add `| paste -sd ',' -` on the end to get a comma-separated list.
@@ -31,7 +32,7 @@ Add `| paste -sd ',' -` on the end to get a comma-separated list.
 To see which users have a valid password:
 
 ```
-cat /etc/shadow | grep -Ev -e '^\w+:[\*!]'
+sudo cat /etc/shadow | grep -Ev -e '^\w+:[\*!]'
 ```
 
 If the password hash contains only `!` and/or `*` characters, then that user can not log in, and that user has likely never had a password.
@@ -45,6 +46,5 @@ I gathered these details mostly from [\[all variants\] exclamation mark vs aster
 To see all the non-comment and non-blank lines of `/etc/ssh/sshd_config` and other files:
 
 ```
-grep -v -e ^# -e ^$ /etc/ssh/sshd_config
+sudo grep -v -e ^# -e ^$ /etc/ssh/sshd_config
 ```
-
