@@ -4,12 +4,6 @@ layout: post
 title: Apache SSL/HTTPS Setup
 ---
 
-
-
-
-
-
-
 I always need a refresher when it's time to create a CSR and/or a self-signed certificate. I also always need to look up the basic httpd.conf directives for enabling SSL. This centos article is a very concise articulation of the process.
 
 [HowTos/Https - CentOS Wiki](https://wiki.centos.org/HowTos/Https)
@@ -47,3 +41,7 @@ After we're satisfied with the HTTPS configuration, maybe a couple months in or 
 [How to configure HTTP Strict Transport Security (HSTS) on Apache & NGINX | IT Igloo](http://itigloo.com/security/how-to-configure-http-strict-transport-security-hsts-on-apache-nginx/)
 
 ---
+
+For an older article dicussing the speed of ssl and how to optimize it, see [5 easy tips to accelerate SSL – Unhandled expression](http://unhandledexpression.com/2013/01/25/5-easy-tips-to-accelerate-ssl/). But this is too old for the actual cipher suite recommendations to be useful.
+
+
