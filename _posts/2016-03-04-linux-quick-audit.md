@@ -6,6 +6,7 @@ title: "Linux Quick-Audit Commands Collections"
 
 
 
+
 I'm just trying to collect some commands I'm using for some manual auditing/assessing for our linux boxes.
 
 ---
@@ -55,7 +56,7 @@ sudo find / -regex '.*/authorized_keys2?'
 To see all the non-comment and non-blank lines of `/etc/ssh/sshd_config` and other files:
 
 ```
-sudo grep -v -e ^# -e ^$ /etc/ssh/sshd_config
+sudo grep -v -e ^\s*# -e ^\s*$ /etc/ssh/sshd_config
 ```
 
 ---
