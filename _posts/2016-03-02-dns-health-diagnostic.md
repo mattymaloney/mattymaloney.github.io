@@ -25,7 +25,7 @@ dig soa example.com
 
 adds the SOA record to the normal `dig` output.
 
-For `nslookup`, I don't think we can make an SOA query directly from the command line. Including starting an interactive `nslookup` session, we can use:
+For `nslookup`, I don't think we can make an SOA query directly from the command line. Starting an interactive `nslookup` session, we can use:
 
 ```
 $ nslookup
@@ -35,6 +35,7 @@ $ nslookup
 
 This returns a parsed and labeled version of the SOA record as well as a listing of all the servers in the NS record and the resolved IP addresses of up to 4 of those name servers.
 
+For more `nslookup` options, see [Using NSLOOKUP | The Domain Name System | InformIT](http://www.informit.com/articles/article.aspx?p=130901&seqNum=8).
 
 ---
 
