@@ -5,17 +5,8 @@ title: "Linux Quick-Audit Commands Collections"
 ---
 
 
+
 I'm just trying to collect some commands I'm using for some manual auditing/assessing for our linux boxes.
-
----
-
-To see which users have (or might have) legit login shells:
-
-```
-cat /etc/passwd | grep -Ev -e '/s?bin/(nologin|sync|shutdown|halt)$'
-```
-
-I should further awk or cut this to show only the username, maybe along with whatever shell is defined.
 
 ---
 
@@ -26,6 +17,16 @@ sudo netstat -tuwanp | grep LISTEN | awk '{print $4}' | grep ':' | cut -d ':' -f
 ```
 
 Add `| paste -sd ',' -` on the end to get a comma-separated list.
+
+---
+
+To see which users have (or might have) legit login shells:
+
+```
+cat /etc/passwd | grep -Ev -e '/s?bin/(nologin|sync|shutdown|halt|false)$'
+```
+
+I should further awk or cut this to show only the username, maybe along with whatever shell is defined.
 
 ---
 
@@ -43,6 +44,14 @@ I gathered these details mostly from [\[all variants\] exclamation mark vs aster
 
 ---
 
+To find all `authorized_keys` and `authorized_keys2` files:
+
+```
+sudo find / -regex '.*/authorized_keys2?'
+```
+
+---
+
 To see all the non-comment and non-blank lines of `/etc/ssh/sshd_config` and other files:
 
 ```
@@ -50,10 +59,3 @@ sudo grep -v -e ^# -e ^$ /etc/ssh/sshd_config
 ```
 
 ---
-
-To find all `authorized_keys` and `authorized_keys2` files:
-
-```
-sudo find / -regex '.*/authorized_keys2?'
-```
-
