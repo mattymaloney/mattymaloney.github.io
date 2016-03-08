@@ -4,9 +4,10 @@ layout: post
 title: Creating a New Private Key and Certificate Signing Request (CSR)
 ---
 
+
 I do this rarely enough that I always have to look it up and be very careful that I'm doing exactly what I want to do.
 
-Update for modern day, we want the signing request and the certificate to be `
+Update for modern day, we want the signing request and the certificate to be signed with SHA-2 (SHA256).
 
 ## Check Prerequisites
 
@@ -20,7 +21,8 @@ Check if and what version of openssl is installed:
 ## Generate Private Key and CSR
 
 ```
-openssl req -new -nodes -newkey rsa:2048 -keyout www.example.com.key -out www.example.com.csr
+openssl req -new -newkey rsa:2048 -nodes -keyout example.com.key -out example.com.csr -sha256
+```
 
 
 ---
@@ -30,4 +32,3 @@ Also interesting, apparently you can include the CSR details on the command line
 ```
 openssl req -new -newkey rsa:2048 -nodes -out www.example.com.csr -keyout www.example.com.key -subj "/C=US/ST=SC/L=Magic Hills/O=Dinglepie Berry Farms/CN=www.example.com"
 ```
-
