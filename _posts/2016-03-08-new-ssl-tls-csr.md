@@ -21,7 +21,7 @@ Check if and what version of openssl is installed:
 ## Generate Private Key and CSR
 
 ```
-openssl req -new -newkey rsa:2048 -nodes -keyout example.com.key -out example.com.csr -sha256
+openssl req -new -sha256 -newkey rsa:2048 -nodes -keyout example.com.key -out example.com.csr
 ```
 
 
