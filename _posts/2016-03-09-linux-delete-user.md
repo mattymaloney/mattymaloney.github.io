@@ -11,10 +11,19 @@ To lock their password, preventing login via password: `passwd -l username`.
 
 To expire the account, disabling authentication of any kind: `chage -E 0 username` or `usermod -e 0 username`.
 
-Archive the home directory: `tar czf /home/username.tgz /home/username`.
+Archive the home directory, crontab, and mail: `tar czf /home/username.tgz /home/username /var/spool/cron/username /var/spool/mail/username`.
 
+Check for running processes owned by user: `ps -fp $(pgrep -u username)`.
 
+If user's processes need to be killed: `killall -KILL -u username`.
 
+Delete the user account and home directory: `userdel -r username`.
+
+---
+
+To see what's configured to be created for new users and deleted when running the `userdel` command, see `/etc/login.defs`.
+
+---
 
 See also:
 
