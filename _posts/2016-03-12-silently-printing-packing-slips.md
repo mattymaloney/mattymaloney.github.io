@@ -36,3 +36,14 @@ extensions.update.enabled, false
 browser.search.update, false
 
 I didn't uncheck "Block pop-up windows", although I had expected I'd need to do that.
+
+Margins:
+
+* top: 0.4in
+* left: 0.4in
+* right: 0.2in
+* bottom: 0.2in
+
+Check box to print background images and colors.
+
+Remove all the header and footer components.
