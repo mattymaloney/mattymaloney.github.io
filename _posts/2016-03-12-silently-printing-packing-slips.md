@@ -34,8 +34,11 @@ Other changes:
 app.update.enabled, false
 extensions.update.enabled, false
 browser.search.update, false
+security.warn_viewing_mixed, false
 
 I didn't uncheck "Block pop-up windows", although I had expected I'd need to do that.
+
+Printing:
 
 Margins:
 
