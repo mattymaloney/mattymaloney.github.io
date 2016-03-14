@@ -4,6 +4,7 @@ layout: post
 title: Silently Printing Our Packing Slips
 ---
 
+
 Preferences created or changed for Firfox 3.6.9 to enable auto login and silent printing.
 
 In `about:config`, I added these 2 properties:
@@ -50,3 +51,6 @@ Margins:
 Check box to print background images and colors.
 
 Remove all the header and footer components.
+
+I haven't done it yet, but we may also want to disable `security.mixed_content.block_active_content`. See also: [Mixed Content Blocking preferences not remembered | Firefox Support Forum | Mozilla Support](https://support.mozilla.org/en-US/questions/967760).
+
