@@ -54,7 +54,7 @@ More interesting recommendations about cipher suites.
 
 ---
 
-Recommendations specific to Deploying Diffie-Hellman for TLS, "custom groups" and more that I don't completely understand. There's also reference here to Mozilla's "medium" cipher suite selection.
+Recommendations specific to Deploying Diffie-Hellman for TLS, "custom groups" and more that I don't completely understand. There's also reference here to Mozilla's "medium" cipher suite selection. Deploying the custom HL groups requires apache 2.4.7 or later.
 
 [Logjam: PFS Deployment Guide](https://weakdh.org/sysadmin.html)
 
