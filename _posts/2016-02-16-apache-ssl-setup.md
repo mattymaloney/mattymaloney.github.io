@@ -5,6 +5,7 @@ title: Apache SSL/HTTPS Setup
 ---
 
 
+
 I always need a refresher when it's time to create a CSR and/or a self-signed certificate. I also always need to look up the basic httpd.conf directives for enabling SSL. This centos article is a very concise articulation of the process.
 
 [HowTos/Https - CentOS Wiki](https://wiki.centos.org/HowTos/Https)
@@ -51,4 +52,11 @@ More interesting recommendations about cipher suites.
 
 [Strong SSL Security on Apache2 - Raymii.org](https://raymii.org/s/tutorials/Strong_SSL_Security_On_Apache2.html#The_Cipher_Suite)
 
+---
+
+Recommendations specific to Deploying Diffie-Hellman for TLS, "custom groups" and more that I don't completely understand. There's also reference here to Mozilla's "medium" cipher suite selection.
+
+[Logjam: PFS Deployment Guide](https://weakdh.org/sysadmin.html)
+
+---
 
