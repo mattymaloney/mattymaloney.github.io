@@ -60,3 +60,16 @@ Recommendations specific to Deploying Diffie-Hellman for TLS, "custom groups" an
 
 ---
 
+Mozilla's recommendations for SSL/TLS configuration:
+
+[Security/Server Side TLS - MozillaWiki](https://wiki.mozilla.org/Security/Server_Side_TLS)
+
+---
+
+For details and insights about enabling forward secrecy:
+
+[SSL Enabling Forward Secrecy | DigiCert.com](https://www.digicert.com/ssl-support/ssl-enabling-perfect-forward-secrecy.htm)
+
+---
+
+
