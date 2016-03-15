@@ -78,3 +78,12 @@ Some details about supported cipher suites in Internet Explorer versions back to
 
 ---
 
+Four online tools to evaluate SSL implementation:
+
+* [SSL Server Test (Powered by Qualys SSL Labs)](https://www.ssllabs.com/ssltest/analyze.html)
+* [mozilla/tls-observatory: An observatory for TLS configurations, X509 certificates, and more.](https://github.com/mozilla/tls-observatory)
+* [jvehent/cipherscan: A very simple way to find out which SSL ciphersuites are supported by a target.](https://github.com/jvehent/cipherscan)
+* [SSL Certificate Inspector | DigiCert.com](https://www.digicert.com/cert-inspector.htm)
+
+---
+
