@@ -72,4 +72,9 @@ For details and insights about enabling forward secrecy:
 
 ---
 
+Some details about supported cipher suites in Internet Explorer versions back to IE7.
+
+[IE Supported Cipher Suites · client9/sslassert Wiki](https://github.com/client9/sslassert/wiki/IE-Supported-Cipher-Suites)
+
+---
 
