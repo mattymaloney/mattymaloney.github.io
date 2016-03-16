@@ -6,6 +6,7 @@ title: Apache SSL/HTTPS Setup
 
 
 
+
 I always need a refresher when it's time to create a CSR and/or a self-signed certificate. I also always need to look up the basic httpd.conf directives for enabling SSL. This centos article is a very concise articulation of the process.
 
 [HowTos/Https - CentOS Wiki](https://wiki.centos.org/HowTos/Https)
@@ -84,6 +85,8 @@ Four online tools to evaluate SSL implementation:
 * [mozilla/tls-observatory: An observatory for TLS configurations, X509 certificates, and more.](https://github.com/mozilla/tls-observatory)
 * [jvehent/cipherscan: A very simple way to find out which SSL ciphersuites are supported by a target.](https://github.com/jvehent/cipherscan)
 * [SSL Certificate Inspector | DigiCert.com](https://www.digicert.com/cert-inspector.htm)
+* [SSL Analyzer and SSL Certificate Checker | COMODO](https://sslanalyzer.comodoca.com/)
+
+
 
 ---
-
