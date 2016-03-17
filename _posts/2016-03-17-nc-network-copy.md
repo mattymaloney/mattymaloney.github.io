@@ -20,3 +20,7 @@ CFLAGS=""
 EOF
 # press ctrl-c
 ```
+
+But according to `man nc`, the `-l` and `-p` flags can not be used together. That command should be `nc -l 1234`.
+
+So, this doesn't work for me everywhere I want it to work because the public servers are all firewalled with restricted ports open. I'd need to open up an additional port that I can use for nc. So, I guess I'll just stick with `scp` and `rsync` for now.
