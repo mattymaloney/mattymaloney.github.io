@@ -10,7 +10,7 @@ Our second generation of warehouse iPods. I'm proposing and experimenting with t
 
 * iPod Touch 4th Gen
 * Linea Pro Barcode Scanner (some with MSR, 2D, 1D -- we only need the 1D scanners)
-* neck strap (haven't decided on one yet)
+* neck/shoulder/write strap (haven't decided on one yet)
 * Linea support apps
 * jailbreak to hide all except ccraze apps
 
