@@ -5,6 +5,7 @@ title: EC2 LAMP Stack Implementation Options and Considerations
 ---
 
 
+
 I was just starting to look into ways to improve our LAMP stack implementation on EC2, but I need to clean up and concentrate on some other tasks. This is what I found so far:
 
 * [Install LAMP Stack, Download LAMP Stack](https://bitnami.com/stack/lamp/installer)
@@ -22,4 +23,12 @@ I also went back to basics a bit and started reading some amazon literature whic
 
 * [Tutorial: Installing a LAMP Web Server on Amazon Linux - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
 * [Getting Started with Amazon EC2 Linux Instances - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html#ec2-launch-instance_linux)
+
+---
+
+Now, to actually set up an ec2 instance with apache and php, using mysql from an rds instance, I followed these guides:
+
+* [Tutorial: Installing a LAMP Web Server on Amazon Linux - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html) (but didn't install or configure mysql server)
+
+* [Tutorial: Configure Apache Web Server on Amazon Linux to use SSL/TLS - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)
 
