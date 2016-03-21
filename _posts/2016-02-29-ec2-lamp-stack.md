@@ -30,5 +30,7 @@ Now, to actually set up an ec2 instance with apache and php, using mysql from an
 
 * [Tutorial: Installing a LAMP Web Server on Amazon Linux - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html) (but didn't install or configure mysql server)
 
-* [Tutorial: Configure Apache Web Server on Amazon Linux to use SSL/TLS - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)
+* [Tutorial: Configure Apache Web Server on Amazon Linux to use SSL/TLS - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html) (but just using a self-signed cert and amazon's default public dns name)
+
+
 
