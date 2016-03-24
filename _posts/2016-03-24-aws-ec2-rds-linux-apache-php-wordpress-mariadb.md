@@ -145,6 +145,7 @@ Download and extract wordpress.
 cd
 wget --ca-certificate /etc/pki/tls/certs/ca-bundle.crt https://wordpress.org/latest.tar.gz
 tar xzf latest.tar.gz
+rm latest.tar.gz
 ```
 
 Edit wordpress wp-config.php, setting up db connection details and replacing the keys/salts section with data from https://api.wordpress.org/secret-key/1.1/salt/.
@@ -153,6 +154,14 @@ Edit wordpress wp-config.php, setting up db connection details and replacing the
 cd wordpress
 cp wp-config-sample.php wp-config.php
 vi wp-config.php
+```
+
+Move extracted wordpress into `/var/www`, set apache:www permissions, and point `DocumentRoot` at this folder.
+
+```
+cd ..
+mv wordpress /var/www/
+
 ```
 
 Do wordpress installation script.
