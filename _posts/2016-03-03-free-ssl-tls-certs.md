@@ -5,6 +5,7 @@ title: Free SSL/TLS Certificates
 ---
 
 
+
 So far, I see 3 ways to get free SSL certificates.
 
 ## [CAcert.org](http://www.cacert.org/)
@@ -19,6 +20,10 @@ Conclusion: ccert.org is not a good option.
 ## [StartSSL™ Certificates & Public Key Infrastructure](https://www.startssl.com/Support?v=39)
 
 I haven't looked very closely, as I'm more interested in LetsEncrypt right now.
+
+Well, I used this experimentally to create a cert that I didn't really need. But I installed the cert anyway (in place of a wildcard cert), and it works perfectly. It's an internal app, and not high traffic. Haven't seen any problems with the cert over the last couple days.
+
+For more insight into personal and organizational validation for startssl.com, see [Pitfall-Free Howto/Guide to StartCom/StartSSL Class 2 Organization Validation/Certification | MuchTall.com](https://www.muchtall.com/2013/05/22/pitfall-free-howto-guide-to-startcom-startssl-class-2-organization-validation-certification/).
 
 
 ## [Let's Encrypt - Free SSL/TLS Certificates](https://letsencrypt.org/)
@@ -36,4 +41,3 @@ A guide, some client scripts (because the official client may not be ideal), and
 * [diafygi/letsencrypt-nosudo: Free HTTPS certificates without having to trust the letsencrypt cli with sudo/root](https://github.com/diafygi/letsencrypt-nosudo)
 * [diafygi/acme-tiny: A tiny script to issue and renew TLS certs from Let's Encrypt](https://github.com/diafygi/acme-tiny/)
 * [List of Client Implementations - Documentation - Let's Encrypt Community Support](https://community.letsencrypt.org/t/list-of-client-implementations/2103)
-
