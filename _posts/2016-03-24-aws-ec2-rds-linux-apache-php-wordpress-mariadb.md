@@ -165,9 +165,9 @@ sudo chown -R apache:www /var/www
 sudo chmod 2775 /var/www
 find /var/www -type d -exec sudo chmod 2775 {} \;
 find /var/www -type f -exec sudo chmod 0664 {} \;
+sudo vi /etc/httpd/conf/httpd.conf
 sudo service httpd restart
-vi /etc/httpd/conf/httpd.conf
 ```
 
-Do wordpress installation script.
+Do wordpress installation script. In browser, go to http://public.dns.hostname/.
 
