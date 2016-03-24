@@ -79,3 +79,18 @@ echo "<?php phpinfo(); ?>" > /var/www/html/pi.php
 
 Then, in web browser, go to http://public.dns.hostname/pi.php to verify that Apache and PHP are working and have the proper packages and modules installed and enabled.
 
+
+## 5
+
+Set up ssl for apache.
+Tight ciphersuite.
+Force http --> https.
+Enable hsts.
+Test at ssllabs.com.
+
+
+## 6
+
+Download and extract wordpress.
+Setup wordpress wp-config.php.
+Do wordpress installation script.
