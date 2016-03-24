@@ -91,6 +91,40 @@ Test at ssllabs.com.
 
 ## 6
 
+If you already have a MariaDB RDS instance you want to reuse, simply add a new database to it.
+
+Create an new MariaDB RDS instance, if necessary.
+
+I'm using the t2 instance class because I want it to be available only to clients in the VPC. I haven't looked around enough yet to know how to make sure other instance types belong to my VPC and are only accessible to the VPC.
+
+```
+Multi-AZ: no
+Storage: SSD
+VPC: the same VPC to which the EC2 instance belongs
+Publicly Accessible: no
+Availability Zone: same zone to which the EC2 instance belongs
+VPC Security Groups: only the default group which appears to only allow incoming traffic from itself.
+DB Name: why not create first db while creating the rds instance.
+Backup Retention: 21 days
+```
+
+
+## 7
+
+Install mysql client cli and php mysql native driver.
+
+```
+sudo yum install php56-mysqlnd mysql56
+sudo service httpd restart
+```
+
+Check phpinfo again to verify `mysqlnd` installation.
+
+Use mysql cli to connect to rds with root id. Create new user for this wordpress installation and assign privileges.
+
 Download and extract wordpress.
+
 Setup wordpress wp-config.php.
+
 Do wordpress installation script.
+
