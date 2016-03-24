@@ -141,7 +141,19 @@ exit;
 
 Download and extract wordpress.
 
-Setup wordpress wp-config.php.
+```
+cd
+wget --ca-certificate /etc/pki/tls/certs/ca-bundle.crt https://wordpress.org/latest.tar.gz
+tar xzf latest.tar.gz
+```
+
+Edit wordpress wp-config.php, setting up db connection details and replacing the keys/salts section with data from https://api.wordpress.org/secret-key/1.1/salt/.
+
+```
+cd wordpress
+cp wp-config-sample.php wp-config.php
+vi wp-config.php
+```
 
 Do wordpress installation script.
 
