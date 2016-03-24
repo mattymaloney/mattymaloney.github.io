@@ -128,6 +128,14 @@ mysql -h db.instance.endpoint.rds.amazonaws.com -u root -p
 
 In mysql, create the database (if not done while creating the rds instance), create the user (if not reusing a pre-existing user), and grant permissions for that user on the database. I'm granting permissions for the user from all hosts, as I'll rely on VPC security to limit which hosts can contact the db server.
 
+```
+create database `db_name`;
+create user 'username' identified by 'awesome-password';
+grant all privileges on `db_name`.* to 'username'@'%';
+flush privileges;
+exit;
+```
+
 
 ## 9 - Install WordPress
 
