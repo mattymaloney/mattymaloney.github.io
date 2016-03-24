@@ -126,6 +126,8 @@ Use mysql cli to connect to rds with root id. Create new user for this wordpress
 mysql -h db.instance.endpoint.rds.amazonaws.com -u root -p
 ```
 
+In mysql, create the database (if not done while creating the rds instance), create the user (if not reusing a pre-existing user), and grant permissions for that user on the database. I'm granting permissions for the user from all hosts, as I'll rely on VPC security to limit which hosts can contact the db server.
+
 
 ## 9 - Install WordPress
 
