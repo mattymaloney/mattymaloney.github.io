@@ -4,6 +4,7 @@ layout: post
 title: Obtaining an OS X El Capitan ISO or Bootable USB Device
 ---
 
+
 Apple is not providing an OS X El Capitan iso image -- not even for sale, as far as I can tell. Although they do allow download of the full installer app from the App Store.
 
 I'm using these 2 resources to understand the makeup of the downloaded installer app and to create an ISO or bootable USB from it.
@@ -13,7 +14,7 @@ I'm using these 2 resources to understand the makeup of the downloaded installer
 
 ---
 
-This seems to have worked, but I'm still running the install.
+This worked:
 
 ```
  #!/bin/bash
