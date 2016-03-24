@@ -35,5 +35,47 @@ sudo service httpd start
 sudo chkconfig httpd on
 ```
 
-At this point, we should be able to see the server using the public dns hostname shown in the ECs Management Console.
+At this point, we should be able to see the server's default apache "noindex" page over http using the public dns hostname shown in the ECs Management Console.
+
+
+## 3
+
+Set file permissions on the `/var/www` folder to allow the `ec2-user` and `apache` users to access and change the content.
+
+Outside of wordpress installations, do we need the apache service to have modify access to the `/var/www` folder?
+
+Create the `www` group and add the `ec2-user` and `apache` users to it.
+
+```
+sudo groupadd www
+sudo usermod -a -G www ec2-user apache
+exit
+```
+
+Reconnect and check permissions.
+
+```
+groups
+# should show "ec2-user wheel www"
+```
+
+Set better ownership and permissions on the `/var/www` directory, sub-directories, and files.
+
+```
+sudo chown -R apache:www /var/www
+sudo chmod 2775 /var/www
+find /var/www -type d -exec sudo chmod 2775 {} \;
+find /var/www -type f -exec sudo chmod 0664 {} \;
+sudo service httpd restart
+```
+
+## 4
+
+Test and inspect the Apache/PHP installation.
+
+```
+echo "<?php phpinfo(); ?>" > /var/www/html/pi.php
+```
+
+Then, in web browser, go to http://public.dns.hostname/pi.php to verify that Apache and PHP are working and have the proper packages and modules installed and enabled.
 
