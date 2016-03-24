@@ -4,6 +4,7 @@ layout: post
 title: Free SSL/TLS Certificates
 ---
 
+
 So far, I see 3 ways to get free SSL certificates.
 
 ## [CAcert.org](http://www.cacert.org/)
@@ -24,7 +25,9 @@ I haven't looked very closely, as I'm more interested in LetsEncrypt right now.
 
 LetsEncrypt has significant public backing right now, and I think that goes a long way to ensuring its near-future reliability.
 
-LetsEncrypt apparently allows up to 100 domain names on each certificate. This makes it especially attractive for our internal app and all the alternate and subdomains that 3rd parties use to communicate with the app. See [Rate Limits for Let's Encrypt](https://community.letsencrypt.org/t/rate-limits-for-lets-encrypt/6769).
+LetsEncrypt apparently allows up to 100 domain names on each certificate. This makes it especially attractive for our internal app and all the alternate and subdomains that 3rd parties use to communicate with the app.
+
+Let's Encrypt does have rate limits, but they appear to address certificate create rather than limits on client traffic for certificate validation. See [Rate Limits for Let's Encrypt](https://community.letsencrypt.org/t/rate-limits-for-lets-encrypt/6769).
 
 A guide, some client scripts (because the official client may not be ideal), and a more comprehensive list of available clients:
 
@@ -33,3 +36,4 @@ A guide, some client scripts (because the official client may not be ideal), and
 * [diafygi/letsencrypt-nosudo: Free HTTPS certificates without having to trust the letsencrypt cli with sudo/root](https://github.com/diafygi/letsencrypt-nosudo)
 * [diafygi/acme-tiny: A tiny script to issue and renew TLS certs from Let's Encrypt](https://github.com/diafygi/acme-tiny/)
 * [List of Client Implementations - Documentation - Let's Encrypt Community Support](https://community.letsencrypt.org/t/list-of-client-implementations/2103)
+
