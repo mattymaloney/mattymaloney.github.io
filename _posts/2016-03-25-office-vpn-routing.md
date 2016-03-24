@@ -15,5 +15,5 @@ sudo ifconfig ppp0 inet 192.168.2.44 192.168.0.250 netmask 255.255.248.0
 sudo route add 192.168.0.0 192.168.0.250 255.255.248.0
 ```
 
-I found that using CIDR notation in the `ifconfig` and `route` commands were not producing the proper results, and I don't understand why there's a difference. All I know right now is that these commands work.
+I found that using CIDR notation in the `ifconfig` and `route` commands were not producing the proper results, and I don't understand why there's a difference. All I know right now is that these commands are working for me right now.
 
