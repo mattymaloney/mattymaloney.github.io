@@ -24,7 +24,7 @@ I'm allowing ssh from only the office and my home ip addresses.
 For this dev server that may temporarily contain content imported from production, I may also limit access via http and https to our office and my home ip addresses.
 
 
-## 2
+## 2 - Install services and 
 
 Run updates and install apache/php as well as the php mysql native driver and the mysql client cli. Start httpd and set it to start automatically when the server boots.
 
@@ -38,7 +38,7 @@ sudo chkconfig httpd on
 At this point, we should be able to see the server's default apache "noindex" page over http using the public dns hostname shown in the ECs Management Console.
 
 
-## 3
+## 3 - Set DocumentRoot permissions
 
 Set file permissions on the `/var/www` folder to allow the `ec2-user` and `apache` users to access and change the content.
 
@@ -69,7 +69,7 @@ find /var/www -type f -exec sudo chmod 0664 {} \;
 sudo service httpd restart
 ```
 
-## 4
+## 4 - Test Apache/PHP
 
 Test and inspect the Apache/PHP installation.
 
@@ -80,7 +80,7 @@ echo "<?php phpinfo(); ?>" > /var/www/html/pi.php
 Then, in web browser, go to http://public.dns.hostname/pi.php to verify that Apache and PHP are working and have the proper packages and modules installed and enabled.
 
 
-## 5
+## 5 - Apache SSL
 
 Set up ssl for apache.
 Tight ciphersuite.
@@ -89,7 +89,7 @@ Enable hsts.
 Test at ssllabs.com.
 
 
-## 6
+## 6 - Create DB in new or existing MariaSB instance
 
 If you already have a MariaDB RDS instance you want to reuse, simply add a new database to it.
 
@@ -103,15 +103,13 @@ Storage: SSD
 VPC: the same VPC to which the EC2 instance belongs
 Publicly Accessible: no
 Availability Zone: same zone to which the EC2 instance belongs
-VPC Security Groups: only the default group which appears to only allow incoming traffic from itself.
+VPC Security Groups: create or reuse a group that allows 3306 traffic from your VPC private network.
 DB Name: why not create first db while creating the rds instance.
 Backup Retention: 21 days
 ```
 
 
-## 7
-
-Install mysql client cli and php mysql native driver.
+## 7 - Install mysql client cli and php mysql native driver.
 
 ```
 sudo yum install php56-mysqlnd mysql56
@@ -120,7 +118,16 @@ sudo service httpd restart
 
 Check phpinfo again to verify `mysqlnd` installation.
 
+## 8 - Create wordpress user and grant permissions.
+
 Use mysql cli to connect to rds with root id. Create new user for this wordpress installation and assign privileges.
+
+```
+mysql -h db.instance.endpoint.rds.amazonaws.com -u root -p
+```
+
+
+## 9 - Install WordPress
 
 Download and extract wordpress.
 
