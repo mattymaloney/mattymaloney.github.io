@@ -177,14 +177,12 @@ Do wordpress installation script. In browser, go to http://public.dns.hostname/.
 
 phpMyAdmin requires `mbstring`. Install that along with phpMyAdmin.
 
-Install ssl certificate.
-
-
 ```
 cd /var/www
 sudo yum install php56-mbstring
 wget --no-check-certificate https://files.phpmyadmin.net/phpMyAdmin/4.6.0/phpMyAdmin-4.6.0-english.tar.gz
 tar xzf phpMyAdmin-4.6.0-english.tar.gz
+rm phpMyAdmin-4.6.0-english.tar.gz
 mv phpMyAdmin-4.6.0-english phpMyAdmin
 sudo chown -R apache:www /var/www
 sudo chmod 2775 /var/www
@@ -192,9 +190,11 @@ find /var/www -type d -exec sudo chmod 2775 {} \;
 find /var/www -type f -exec sudo chmod 0664 {} \;
 ```
 
+Put ssl certificate, key, and bundle somewhere, maybe in `/etc/pki/tls`, and enable the cert in the port-443 virtual host.
+
 Setup port-80 and port-443 virtual hosts for phpMyAdmin. The port-80 virtual host will force traffic to the port-443 virtual host.
 
-The phpMyAdmin port-80 virtual host should look something like this:
+The phpMyAdmin port-80 virtual host must come before the `_default_:80` virtual host that we're using for the wordpress site, and it should look something like this:
 
 ```
 <VirtualHost *:80>
