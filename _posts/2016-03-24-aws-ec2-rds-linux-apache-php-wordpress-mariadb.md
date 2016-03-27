@@ -225,7 +225,7 @@ The phpMyAdmin port-80 virtual host should look something like this:
 </VirtualHost>
 ```
 
-The port-443 virtual host for phpMyAdmin must come before the `_default_:443` virtual host being used by the wordpress site and should look something like this:
+The port-443 virtual host for phpMyAdmin must come before the `_default_:443` virtual host that we're using for the wordpress site, and it should look something like this:
 
 ```
 <VirtualHost *:443>
