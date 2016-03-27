@@ -197,6 +197,32 @@ Setup port-80 and port-443 virtual hosts for phpMyAdmin. The port-80 virtual hos
 The phpMyAdmin port-80 virtual host should look something like this:
 
 ```
+<VirtualHost *:80>
+  ServerName phpmyadmin.example.com
+  DocumentRoot "/var/www/phpMyAdmin"
+
+  ErrorLog logs/phpmyadmin-error_log
+  #TransferLog logs/phpmyadmin-access_log
+  LogLevel warn
+
+  # Because we're using the server_name variable below, be doubly sure that
+  # apache will use the VirtualHost's ServerName value.
+  UseCanonicalName On
+
+  # Enable the Rewrite capabilities
+  RewriteEngine On
+
+  # Make sure the connection is not already HTTPS
+  RewriteCond %{HTTPS} off
+
+  # Redirect users from their original location, to the same location
+  # but using HTTPS.
+  # i.e.  http://www.example.com/foo/ to https://www.example.com/foo/
+  # The leading slash is made optional so that this will work either
+  # in httpd.conf or .htaccess context
+  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,QSA,L]
+  #RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
+</VirtualHost>
 ```
 
 The port-443 virtual host for phpMyAdmin must come before the `_default_:443` virtual host being used by the wordpress site and should look something like this:
@@ -207,7 +233,7 @@ The port-443 virtual host for phpMyAdmin must come before the `_default_:443` vi
   DocumentRoot "/var/www/phpMyAdmin"
 
   ErrorLog logs/phpmyadmin-ssl_error_log
-  TransferLog logs/phpmyadmin-ssl_access_log
+  #TransferLog logs/phpmyadmin-ssl_access_log
   LogLevel warn
 
   SSLEngine on
@@ -222,7 +248,7 @@ The port-443 virtual host for phpMyAdmin must come before the `_default_:443` vi
   SSLCertificateKeyFile /etc/pki/tls/private/phpmyadmin.example.com.key
   SSLCertificateChainFile /etc/pki/tls/certs/bundle.crt
 
-  CustomLog logs/phpmyadmin-ssl_request_log \
-            "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+  #CustomLog logs/phpmyadmin-ssl_request_log \
+  #          "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
 </VirtualHost>
 ```
