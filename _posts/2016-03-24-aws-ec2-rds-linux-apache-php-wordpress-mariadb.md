@@ -4,6 +4,7 @@ layout: post
 title: "Setting Up Apache, PHP, WordPress on AWS EC2 Linux and RDS MariaDB"
 ---
 
+
 Several takes on looking for the ideal setup of Apache/PHP with MariaDB on RDS.
 
 The simplest explanation of my setup choices are described in these documents:
@@ -156,7 +157,7 @@ cp wp-config-sample.php wp-config.php
 vi wp-config.php
 ```
 
-Move extracted wordpress into `/var/www`, set apache:www permissions, and point `DocumentRoot` at this folder.
+Move extracted wordpress into `/var/www`, set apache:www ownership and appropriate permissions, and point `DocumentRoot` at `/var/www/wordpress`.
 
 ```
 cd ..
@@ -171,3 +172,56 @@ sudo service httpd restart
 
 Do wordpress installation script. In browser, go to http://public.dns.hostname/.
 
+## - Install phpMyAdmin
+
+phpMyAdmin requires `mbstring`. Install that along with phpMyAdmin and setup a virtual host for the phpMyAdmin directory.
+
+```
+cd /var/www
+sudo yum install php56-mbstring
+wget --no-check-certificate https://files.phpmyadmin.net/phpMyAdmin/4.6.0/phpMyAdmin-4.6.0-english.tar.gz
+tar xzf phpMyAdmin-4.6.0-english.tar.gz
+mv phpMyAdmin-4.6.0-english phpMyAdmin
+sudo chown -R apache:www /var/www
+sudo chmod 2775 /var/www
+find /var/www -type d -exec sudo chmod 2775 {} \;
+find /var/www -type f -exec sudo chmod 0664 {} \;
+```
+
+The phpMyAdmin port-80 virtual host should look something like this:
+
+```
+```
+
+Install ssl certificate.
+
+The port-443 virtual host should look something like this:
+
+```
+<VirtualHost *:443>
+
+ServerName ccbmyadmin-test.sensiblebiz.com
+DocumentRoot "/var/www/phpMyAdmin"
+
+ErrorLog logs/myadmin-ssl_error_log
+TransferLog logs/myadmin-ssl_access_log
+LogLevel warn
+
+SSLEngine on
+
+SSLProtocol all -SSLv2 -SSLv3
+
+SSLCipherSuite ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA
+
+SSLHonorCipherOrder on
+
+SSLCertificateFile /etc/pki/tls/certs/2016-06-05._.sensiblebiz.com.crt
+SSLCertificateKeyFile /etc/pki/tls/private/2016-06-05._.sensiblebiz.com.key
+SSLCertificateChainFile /etc/pki/tls/certs/gd_bundle-g2-g1.crt
+
+CustomLog logs/myadmin-ssl_request_log \
+          "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+
+</VirtualHost>
+
+```
