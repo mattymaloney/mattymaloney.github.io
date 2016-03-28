@@ -28,11 +28,11 @@ For this dev server that may temporarily contain content imported from productio
 
 ## 2 - Install services and 
 
-Run updates and install apache/php as well as the php mysql native driver and the mysql client cli. Start httpd and set it to start automatically when the server boots.
+Run updates and install apache/php as well as the php mysql native driver, the php mbstring extension, and the mysql client cli. Start httpd and set it to start automatically when the server boots.
 
 ```
 sudo yum update -y
-sudo yum install -y httpd24 php56 php56-mysqlnd mysql56
+sudo yum install -y httpd24 php56 php56-mysqlnd php56-mbstring mysql56
 sudo service httpd start
 sudo chkconfig httpd on
 ```
