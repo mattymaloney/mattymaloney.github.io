@@ -198,7 +198,12 @@ LoadModule dir_module modules/mod_dir.so
 LoadModule php5_module modules/libphp-5.6.so
 ```
 
-As far as I can tell, these are the only modules we need. So far. We'll see what else specifically is needed by phpMyAdmin and WordPress.
+As far as I can tell, these are the only modules we need... so far. We'll see what else specifically is needed by phpMyAdmin and WordPress.
+
+
+## Create an AMI for this baseline
+
+Use AWS console to create an AMI from this instance. Set the name of the ami and its snapshot to _lap-baseline_.
 
 
 ## Create phpMyAdmin EC2 instance
