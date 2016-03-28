@@ -80,7 +80,8 @@ Outside of wordpress installations, do we need the apache service to have modify
 Create the www group and add the ec2-user and apache users to it.
 
     sudo groupadd www
-    sudo usermod -a -G www ec2-user apache
+    sudo usermod -a -G www ec2-user
+    sudo usermod -a -G www apache
     exit
 
 Reconnect and check permissions.
@@ -95,6 +96,15 @@ Set better ownership and permissions on the /var/www directory, sub-directories,
     find /var/www -type d -exec sudo chmod 2775 {} \;
     find /var/www -type f -exec sudo chmod 0664 {} \;
     sudo service httpd restart
+
+
+## Test Apache/PHP
+
+Test and inspect the Apache/PHP installation.
+
+	echo "<?php phpinfo(); ?>" > /var/www/html/pi.php
+    
+Then, in web browser, go to http://public.dns.hostname/pi.php to verify that Apache and PHP are working and have the proper packages and modules installed and enabled.
 
 
 ## Create phpMyAdmin EC2 instance
