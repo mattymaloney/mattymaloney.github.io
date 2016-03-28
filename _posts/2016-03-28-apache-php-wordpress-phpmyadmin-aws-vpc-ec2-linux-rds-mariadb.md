@@ -107,6 +107,98 @@ Test and inspect the Apache/PHP installation.
 Then, in web browser, go to http://public.dns.hostname/pi.php to verify that Apache and PHP are working and have the proper packages and modules installed and enabled.
 
 
+## Slim Apache's per-process footprint
+
+	sudo mv conf.d conf.d.disabled
+    sudo mv conf.moduled.d conf.modules.d.disabled
+    
+Then, add the following files:
+
+`conf.d/10-php56.conf`:
+
+```
+#
+# Allow php to handle Multiviews
+#
+AddType text/html .php
+
+#
+# Add index.php to the list of files that will be served as directory
+# indexes.
+#
+DirectoryIndex index.php
+
+#
+# Cause the PHP interpreter to handle files with a .php extension.
+#
+<FilesMatch \.php$>
+SetHandler application/x-httpd-php
+</FilesMatch>
+
+#
+# Apache specific PHP configuration options
+# those can be override in each configured vhost
+#
+php_value session.save_handler "files"
+php_value session.save_path    "/var/lib/php/5.6/session"
+php_value soap.wsdl_cache_dir  "/var/lib/php/5.6/wsdlcache"
+```
+
+`conf.d/50-server-status.conf.disabled`:
+
+```
+LoadModule info_module modules/mod_info.so
+LoadModule status_module modules/mod_status.so
+
+<Location "/server-status">
+    SetHandler server-status
+</Location>
+
+<Location "/server-info">
+    SetHandler server-info
+</Location>
+```
+
+`conf.modules.d/00-required.conf`:
+
+```
+#
+# prefork MPM: Implements a non-threaded, pre-forking web server
+# See: http://httpd.apache.org/docs/2.4/mod/prefork.html
+#
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+
+#
+# mod_unixd to support the User and Group directives.
+# - to run Apache as an alternative user and/or group.
+#
+LoadModule unixd_module modules/mod_unixd.so
+
+#
+# mod_authz_core to support the Require directive.
+# - to restrict and allow access to given directories and/or locations.
+#
+LoadModule authz_core_module modules/mod_authz_core.so
+
+#
+# mod_mime required for AddType and AddHandler directives
+#
+LoadModule mime_module modules/mod_mime.so
+
+#
+# mod_dir required for DirectoryIndex directive.
+#
+LoadModule dir_module modules/mod_dir.so
+
+#
+# PHP as a prefork module
+#
+LoadModule php5_module modules/libphp-5.6.so
+```
+
+As far as I can tell, these are the only modules we need. So far. We'll see what else specifically is needed by phpMyAdmin and WordPress.
+
+
 ## Create phpMyAdmin EC2 instance
 
 Choosing:
