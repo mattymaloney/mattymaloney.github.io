@@ -25,7 +25,7 @@ I'm allowing ssh from only the office and my home ip addresses.
 For this dev server that may temporarily contain content imported from production, I may also limit access via http and https to our office and my home ip addresses.
 
 
-## 2 - Install services and 
+## 2 - Update OS and Install services
 
 Run updates and install apache/php as well as the php mysql native driver, the php mbstring extension, and the mysql client cli. Start httpd and set it to start automatically when the server boots.
 
