@@ -25,8 +25,8 @@ Create an new MariaDB RDS instance, if necessary.
 - **Storage**: SSD
 - **VPC**: let AWS create a new VPC
 - **Publicly Accessible**: no
-- **Availability Zone**: any, but use the same one for everything
-- **VPC Security Groups**: create new or reuse a group that allows 3306 traffic from your VPC private network.
+- **Availability Zone**: any, but use the same one later for EC2 instances
+- **VPC Security Groups**: create new or reuse a group that allows 3306 traffic from your VPC private network
 - **DB options**: leave empty, except port 3306 and copy tags to snapshots
 - **Backup Retention**: 21 days
 
@@ -37,7 +37,9 @@ I'm using the _t2_ instance class because I want it to be available only to clie
 
 I don't understand everything that's been created with the VPC that AWS creates in this process.
 
-- I don't understand why we need subnets, 4 of them.
-- I don't understand what our RDS instance calls a "Subnet Group", which I don't see anywhere in the AWS VPC dashboard.
-- I don't understand why the RDS instance says it's on all 4 subnets that were created. Why divide the network into subnets only to put the service directly on all 4 subnets?
+- I don't understand why we need subnets, 4 of them. **UPDATE:** I see now that each subnet is in a different availability zone. Between the 4 of them, they encompass 4 of the 5 _us-east-*_ availability zones.
+- I don't understand what our RDS instance calls a "Subnet Group", which I don't see anywhere in the AWS VPC dashboard. **UPDATE:** I do see Subnet Groups in the RDS dashboard. Still not sure what it means or what's its purpose.
+- I don't understand why the RDS instance says it's on all 4 subnets that were created. Why divide the network into subnets only to put the service directly on all 4 subnets? **UPDATE:** see above. I think this is so that EC2 instances in any of the subnets or availability zones can communicate with the RDS instance without incurring bandwidth/transfer fees. ??
 
+
+## 
