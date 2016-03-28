@@ -46,6 +46,56 @@ I don't understand everything that's been created with the VPC that AWS creates 
 
 We will use this instance as a template for the phpMyAdmin instance as well as the 
 
+- **OS/AMI**: Amazon Linux (ami-08111162)
+- **Instance Type**: t2.nano (this is a necessary, but not-oft-used vm)
+- **VPC**: the VPC that was create with the RDS instance
+- **Availability Zone**: same that was chosen when creating the RDS instance
+- **Enable termination protection**: yes
+- Security Group: Select or create one with the following settings:
+	- port 22 from office and home IPs.
+    - ports 80 and 443 from all.
+
+Associate an Elastic IP with the instance. I had to make this association in the VPC Console's "Elastic IPs" screen rather than the EC2 Console's Elastic IPs screen.
+
+## Update OS and Install Services
+
+Run updates and install apache/php as well as the php mysql native driver, the php mbstring extension, and the mysql client cli. Start httpd and set it to start automatically when the server boots.
+
+```
+sudo yum update
+sudo yum install httpd24 php56 php56-mysqlnd php56-mbstring mysql56
+sudo service httpd start
+sudo chkconfig httpd on
+```
+
+At this point, we should be able to see the server’s default apache “noindex” page over http using the public dns hostname shown in the ECs Management Console.
+
+
+## Create OS permissions and apply to /var/www
+
+Set file permissions on the /var/www folder to allow the ec2-user and apache users to access and change the content.
+
+Outside of wordpress installations, do we need the apache service to have modify access to the /var/www folder?
+
+Create the www group and add the ec2-user and apache users to it.
+
+    sudo groupadd www
+    sudo usermod -a -G www ec2-user apache
+    exit
+
+Reconnect and check permissions.
+
+	groups
+    # should show "ec2-user wheel www"
+ 
+Set better ownership and permissions on the /var/www directory, sub-directories, and files.
+
+    sudo chown -R apache:www /var/www
+    sudo chmod 2775 /var/www
+    find /var/www -type d -exec sudo chmod 2775 {} \;
+    find /var/www -type f -exec sudo chmod 0664 {} \;
+    sudo service httpd restart
+
 
 ## Create phpMyAdmin EC2 instance
 
