@@ -5,7 +5,6 @@ title: "Setting Up Apache, PHP, WordPress on AWS EC2 Linux and RDS MariaDB"
 ---
 
 
-
 Several takes on looking for the ideal setup of Apache/PHP with MariaDB on RDS.
 
 The simplest explanation of my setup choices are described in these documents:
@@ -356,4 +355,3 @@ Verify now that you can connect to the database using wordpress's username and p
 All done with phpMyAdmin.
 
 ##
-
