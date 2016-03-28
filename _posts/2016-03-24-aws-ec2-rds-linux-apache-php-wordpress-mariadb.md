@@ -91,7 +91,7 @@ Enable hsts.
 Test at ssllabs.com.
 
 
-## 6 - Create DB in new or existing MariaSB instance
+## 6 - Create DB in new or existing MariaDB instance
 
 If you already have a MariaDB RDS instance you want to reuse, simply add a new database to it.
 
