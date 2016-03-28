@@ -1,6 +1,43 @@
 ---
 published: true
 layout: post
-title: "Setting Up Apache, PHP, WordPress, phpMyAdmin on and AWS VPC with EC2 Linux and RDS MariaDB"
+title: "Setting Up Apache, PHP, WordPress, phpMyAdmin on and AWS VPC with EC2 Linux and RDS MariaDB, Take 2"
 ---
+
+## Region and Availability Zone
+
+Pick a region and availability zone. For a VPC, I'm pretty sure that all the boxes do not all need to be in the same availability zone, but as I understand so far, data transfer is free between boxes in a VPC when they are all in the same region and availability zone.
+
+I'm picking:
+
+	region: us-east-1
+    availability zone: us-east-1c
+
+
+## Create DB in new or existing MariaDB RDS instance
+
+If you already have a MariaDB RDS instance you want to reuse, simply add a new database to it.
+
+Create an new MariaDB RDS instance, if necessary.
+
+- **DB Instance Class**: db.t2.micro
+- **Multi-AZ**: no
+- **Storage**: SSD
+- **VPC**: let AWS create a new VPC
+- **Publicly Accessible**: no
+- **Availability Zone**: any, but use the same one for everything
+- **VPC Security Groups**: create new or reuse a group that allows 3306 traffic from your VPC private network.
+- **DB options**: leave empty, except port 3306 and copy tags to snapshots
+- **Backup Retention**: 21 days
+
+I'm using the _t2_ instance class because I want it to be available only to clients in the VPC. I haven't looked around enough yet to know how to make sure other instance types belong to my VPC and are only accessible to the VPC. UPDATE: I think I understand this better, and can set this security via Security Groups. I haven't tried this yet, as I'm still using the _t2_ instance classes.
+
+
+## Examine the VPC
+
+I don't understand everything that's been created with the VPC that AWS creates in this process.
+
+- I don't understand why we need subnets, 4 of them.
+- I don't understand what our RDS instance calls a "Subnet Group", which I don't see anywhere in the AWS VPC dashboard.
+- I don't understand why the RDS instance says it's on all 4 subnets that were created. Why divide the network into subnets only to put the service directly on all 4 subnets?
 
