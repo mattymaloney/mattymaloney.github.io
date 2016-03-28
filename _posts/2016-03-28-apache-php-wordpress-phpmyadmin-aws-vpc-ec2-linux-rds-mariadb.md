@@ -42,4 +42,22 @@ I don't understand everything that's been created with the VPC that AWS creates 
 - I don't understand why the RDS instance says it's on all 4 subnets that were created. Why divide the network into subnets only to put the service directly on all 4 subnets? **UPDATE:** see above. I think this is so that EC2 instances in any of the subnets or availability zones can communicate with the RDS instance without incurring bandwidth/transfer fees. ??
 
 
+## Create httpd baseline instance
+
+We will use this instance as a template for the phpMyAdmin instance as well as the 
+
+
+## Create phpMyAdmin EC2 instance
+
+Choosing:
+
+- **OS/AMI**: Amazon Linux (ami-08111162)
+- **Instance Type**: t2.nano (this is a necessary, but not-oft-used vm)
+- **VPC**: the VPC that was create with the RDS instance
+- **Availability Zone**: same that was chosen when creating the RDS instance
+- **Enable termination protection**: yes
+- Security Group: Select or create one with the following settings:
+	- port 22 from office and home IPs.
+    - ports 80 and 443 from all.
+
 ## 
