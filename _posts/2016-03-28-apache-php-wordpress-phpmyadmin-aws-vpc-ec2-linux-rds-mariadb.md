@@ -55,6 +55,8 @@ We will use this instance as a template for the phpMyAdmin instance as well as t
 	- port 22 from office and home IPs.
     - ports 80 and 443 from all.
 
+Name the instance, e.g. _lap-baseline_. In this case, _lap_ stands for Linux, Apache, PHP.
+
 Associate an Elastic IP with the instance. I had to make this association in the VPC Console's "Elastic IPs" screen rather than the EC2 Console's Elastic IPs screen.
 
 ## Update OS and Install Services
@@ -203,8 +205,8 @@ As far as I can tell, these are the only modules we need. So far. We'll see what
 
 Choosing:
 
-- **OS/AMI**: Amazon Linux (ami-08111162)
-- **Instance Type**: t2.nano (this is a necessary, but not-oft-used vm)
+- **OS/AMI**: _lap-baseline_ created previously.
+- **Instance Type**: t2.nano (since this is a necessary, but not-oft-used vm)
 - **VPC**: the VPC that was create with the RDS instance
 - **Availability Zone**: same that was chosen when creating the RDS instance
 - **Enable termination protection**: yes
