@@ -7,6 +7,7 @@ title: Creating a New Private Key and Certificate Signing Request (CSR)
 
 
 
+
 I do this rarely enough that I always have to look it up and be very careful that I'm doing exactly what I want to do.
 
 Update for modern day, we want the signing request and the certificate to be signed with SHA-2 (SHA256).
@@ -49,3 +50,6 @@ See also:
 * [Generate a CSR with OpenSSL](https://support.rackspace.com/how-to/generate-a-csr-with-openssl/)
 
 * [CSR Generation: Using OpenSSL (Apache w/mod_ssl, NGINX, OS X) - Powered by Kayako Help Desk Software](https://support.comodo.com/index.php?/Default/Knowledgebase/Article/View/1/19/)
+
+* [The Most Common OpenSSL Commands](https://www.sslshopper.com/article-most-common-openssl-commands.html)
+
