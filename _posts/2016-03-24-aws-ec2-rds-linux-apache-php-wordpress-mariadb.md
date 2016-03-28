@@ -173,7 +173,7 @@ sudo service httpd restart
 
 Do wordpress installation script. In browser, go to http://public.dns.hostname/.
 
-## - Install phpMyAdmin
+## 10 - Install phpMyAdmin
 
 phpMyAdmin requires `mbstring`. Install that along with phpMyAdmin.
 
@@ -253,8 +253,6 @@ The port-443 virtual host for phpMyAdmin must come before the `_default_:443` vi
 </VirtualHost>
 ```
 
-##
-
 Setup phpMyAdmin configuration, including configuration db and user.
 
 Log into phpMyAdmin as root, and run this sql, after updating the password, outside of any DB context.
@@ -323,3 +321,10 @@ $cfg['UploadDir'] = '';
 $cfg['SaveDir'] = '';
 ?>
 ```
+
+Verify now that you can connect to the database using wordpress's username and password.
+
+All done with phpMyAdmin.
+
+##
+
