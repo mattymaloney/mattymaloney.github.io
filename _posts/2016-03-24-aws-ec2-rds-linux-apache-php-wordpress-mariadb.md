@@ -158,7 +158,7 @@ cp wp-config-sample.php wp-config.php
 vi wp-config.php
 ```
 
-Move extracted wordpress into `/var/www`, set apache:www ownership and appropriate permissions, and point `DocumentRoot` at `/var/www/wordpress`.
+Move extracted wordpress into `/var/www`, set apache:www ownership and appropriate permissions, and point `DocumentRoot` at `/var/www/wordpress`. Also, create and edit `/etc/httpd/conf.d/vhosts.conf`, creating a `VirtualHost` for wordpress.
 
 ```
 cd ..
@@ -167,7 +167,36 @@ sudo chown -R apache:www /var/www
 sudo chmod 2775 /var/www
 find /var/www -type d -exec sudo chmod 2775 {} \;
 find /var/www -type f -exec sudo chmod 0664 {} \;
-sudo vi /etc/httpd/conf/httpd.conf
+```
+
+Open `/etc/httpd/conf/httpd.conf` and make the edits for the default `DocumentRoot` and it's related `<Directory>` container, both of which should use `/var/www/wordpress`.
+
+Now create/edit `vhosts.conf`. We don't need ot specify `DocumentRoot` because we want to use Apache's default document root which we've already set to `/var/www/wordpress`. This port-80 vhost only exists to forward the user to the port-443 vhost. The `vhosts.conf` file should look something like this:
+
+```
+<VirtualHost *:80>
+  ServerName aws-test.sensiblebiz.com
+  #DocumentRoot "/var/www/wordpress"
+
+  # Because we're using the server_name variable below, be doubly sure that
+  # apache will use the VirtualHost's ServerName value.
+  UseCanonicalName On
+
+  # Enable the Rewrite capabilities
+  RewriteEngine On
+
+  # Make sure the connection is not already HTTPS
+  RewriteCond %{HTTPS} off
+
+  # Redirect users from their original location, to the same location
+  # but using HTTPS.
+  # i.e.  http://www.example.com/foo/ to https://www.example.com/foo/
+  # The leading slash is made optional so that this will work either
+  # in httpd.conf or .htaccess context
+  RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,QSA,L]
+  #RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
+</VirtualHost>
+```
 sudo service httpd restart
 ```
 
@@ -194,7 +223,7 @@ Put ssl certificate, key, and bundle somewhere, maybe in `/etc/pki/tls`, and ena
 
 Setup port-80 and port-443 virtual hosts for phpMyAdmin. The port-80 virtual host will force traffic to the port-443 virtual host.
 
-The phpMyAdmin port-80 virtual host must come before the `_default_:80` virtual host that we're using for the wordpress site, and it should look something like this:
+The phpMyAdmin port-80 virtual host should be placed after the `*:80` virtual host that we're using for the wordpress site, and it should look something like this:
 
 ```
 <VirtualHost *:80>
@@ -225,7 +254,7 @@ The phpMyAdmin port-80 virtual host must come before the `_default_:80` virtual 
 </VirtualHost>
 ```
 
-The port-443 virtual host for phpMyAdmin must come before the `_default_:443` virtual host that we're using for the wordpress site, and it should look something like this:
+The port-443 virtual host for phpMyAdmin should come after the `*:443` virtual host that we're using for the wordpress site, and it should look something like this:
 
 ```
 <VirtualHost *:443>
