@@ -115,7 +115,7 @@ Test and inspect the Apache/PHP installation.
 Then, in web browser, go to http://public.dns.hostname/pi.php to verify that Apache and PHP are working and have the proper packages and modules installed and enabled.
 
 
-## Slim Apache's per-process footprint
+## Slim-down Apache's per-process footprint
 
 	sudo mv conf.d conf.d.disabled
     sudo mv conf.moduled.d conf.modules.d.disabled
@@ -205,6 +205,23 @@ LoadModule php5_module modules/libphp-5.6.so
 ```
 
 As far as I can tell, these are the only modules we need... so far. We'll see what else specifically is needed by phpMyAdmin and WordPress.
+
+
+## Setup Apache SSL
+
+Setup SSL, even without the final hostname or certificates. For now, use a self-signed certificate. The purpose of the setup is not to finalize it, but rather to setup the proper structure. The actual certificate files will need to be added later.
+
+Set up ssl for apache.
+Tight ciphersuite.
+Force http --> https.
+Enable hsts.
+Test at ssllabs.com.
+
+```
+sudo mkdir /etc/httpd/ssl
+cd /etc/httpd/ssl
+
+```
 
 
 ## Create an AMI for this baseline
