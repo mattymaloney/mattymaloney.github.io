@@ -71,7 +71,7 @@ Run updates and install apache/php as well as the php mysql native driver, the p
 
 ```
 sudo yum update
-sudo yum install httpd24 php56 php56-mysqlnd php56-mbstring mysql56
+sudo yum install httpd24 mod24_ssl php56 php56-mysqlnd php56-mbstring mysql56
 sudo service httpd start
 sudo chkconfig httpd on
 ```
