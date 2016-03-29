@@ -159,11 +159,17 @@ LoadModule info_module modules/mod_info.so
 LoadModule status_module modules/mod_status.so
 
 <Location "/server-status">
-    SetHandler server-status
+  SetHandler server-status
+  Require ip [office ip block(s)]
+  Require ip [other authorized ip block(s)]
+  Require local
 </Location>
 
 <Location "/server-info">
-    SetHandler server-info
+  SetHandler server-info
+  Require ip [office ip block(s)]
+  Require ip [other authorized ip block(s)]
+  Require local
 </Location>
 ```
 
