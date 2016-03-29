@@ -190,9 +190,11 @@ LoadModule unixd_module modules/mod_unixd.so
 
 #
 # mod_authz_core to support the Require directive.
+# mod_authz_host to allow `ip` and `local` in Require directive.
 # - to restrict and allow access to given directories and/or locations.
 #
 LoadModule authz_core_module modules/mod_authz_core.so
+LoadModule authz_host_module modules/mod_authz_host.so
 
 #
 # mod_mime required for AddType and AddHandler directives
