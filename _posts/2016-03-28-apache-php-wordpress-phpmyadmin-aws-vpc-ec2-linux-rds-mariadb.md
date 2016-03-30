@@ -115,112 +115,203 @@ Test and inspect the Apache/PHP installation.
 Then, in web browser, go to http://public.dns.hostname/pi.php to verify that Apache and PHP are working and have the proper packages and modules installed and enabled.
 
 
+## Cleanup `httpd.conf`
+
+```
+ServerRoot "/etc/httpd"
+Listen 80
+
+#
+# Load required moduled before doing anything else.
+#
+Include conf.modules.d/*.conf
+
+#
+# If you wish httpd to run as a different user or group, you must run
+# httpd as root initially and it will switch.
+#
+# User/Group: The name (or #number) of the user/group to run httpd as.
+# It is usually good practice to create a dedicated user and group for
+# running httpd, as with most system services.
+#
+User apache
+Group apache
+
+#
+# 'Main' server configuration
+#
+# The directives in this section set up the values used by the 'main'
+# server, which responds to any requests that aren't handled by a
+# <VirtualHost> definition.  These values also provide defaults for
+# any <VirtualHost> containers you may define later in the file.
+#
+# All of these directives may appear inside <VirtualHost> containers,
+# in which case these default settings will be overridden for the
+# virtual host being defined.
+#
+
+#
+# Deny access to the entirety of your server's filesystem. You must
+# explicitly permit access to web content directories in other
+# <Directory> blocks below.
+#
+<Directory />
+  AllowOverride none
+  Require all denied
+</Directory>
+
+#
+# Relax access to content within /var/www.
+#
+<Directory "/var/www">
+  AllowOverride None
+  Require all granted
+</Directory>
+
+#
+# DirectoryIndex: sets the file that Apache will serve if a directory
+# is requested.
+#
+<IfModule dir_module>
+  DirectoryIndex index.html
+</IfModule>
+
+#
+# The following lines prevent .htaccess and .htpasswd files from being
+# viewed by Web clients.
+#
+<Files ".ht*">
+  Require all denied
+</Files>
+
+
+ServerName blog-test.sensiblebiz.com
+DocumentRoot "/var/www/html"
+
+#
+# Further relax access to the default document root:
+#
+<Directory "/var/www/html">
+  Options -Indexes +FollowSymLinks
+  AllowOverride All
+  Require all granted
+</Directory>
+
+LogLevel warn
+ErrorLog "logs/error_log"
+
+#<IfModule log_config_module>
+#  LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+#  LogFormat "%h %l %u %t \"%r\" %>s %b" common
+#
+#  <IfModule logio_module>
+#    # You need to enable mod_logio.c to use %I and %O
+#    LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %I %O" combinedio
+#  </IfModule>
+#
+#  #CustomLog "logs/access_log" common
+#  CustomLog "logs/access_log" combined
+#</IfModule>
+
+TypesConfig /etc/mime.types
+
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+SetInputFilter DEFLATE
+
+#
+# Specify a default charset for all content served; this enables
+# interpretation of all content as UTF-8 by default.  To use the
+# default browser choice (ISO-8859-1), or to allow the META tags
+# in HTML content to override this choice, comment out this
+# directive:
+#
+AddDefaultCharset UTF-8
+
+<IfModule mime_magic_module>
+  #
+  # The mod_mime_magic module allows the server to use various hints from the
+  # contents of the file itself to determine its type.  The MIMEMagicFile
+  # directive tells the module where the hint definitions are located.
+  #
+  MIMEMagicFile conf/magic
+</IfModule>
+
+#
+# Customizable error responses come in three flavors:
+# 1) plain text 2) local redirects 3) external redirects
+#
+# Some examples:
+#ErrorDocument 500 "The server made a boo boo."
+#ErrorDocument 404 /missing.html
+#ErrorDocument 404 "/cgi-bin/missing_handler.pl"
+#ErrorDocument 402 http://www.example.com/subscription_info.html
+#
+
+#
+# EnableMMAP and EnableSendfile: On systems that support it,
+# memory-mapping or the sendfile syscall may be used to deliver
+# files.  This usually improves server performance, but must
+# be turned off when serving from networked-mounted
+# filesystems or if support for these functions is otherwise
+# broken on your system.
+# Defaults if commented: EnableMMAP On, EnableSendfile Off
+#
+#EnableMMAP off
+EnableSendfile on
+
+# Supplemental configuration
+#
+# Load config files in the "/etc/httpd/conf.d" directory, if any.
+IncludeOptional conf.d/*.conf
+
+Include conf.include/forbidden-locations.conf
+Include conf.include/force-http2https.conf
+```
+
+The 2 includes at the end of `httpd.conf` are:
+
+### `Include conf.include/forbidden-locations.conf`
+
+```
+<LocationMatch "/(\.git|ddl|log|cache)/">
+  Require all denied
+</LocationMatch>
+```
+
+### `Include conf.include/force-http2https.conf`
+
+```
+###
+#
+# Force traffic to HTTPS
+#
+###
+
+# Because we're using the server_name variable below, be doubly sure that
+# apache will use the VirtualHost's ServerName value.
+UseCanonicalName On
+
+# This will enable the Rewrite capabilities
+RewriteEngine On
+
+# This checks to make sure the connection is not already HTTPS
+RewriteCond %{HTTPS} off
+
+# This rule will redirect users from their original location, to the same location but using HTTPS.
+# i.e.  http://www.example.com/foo/ to https://www.example.com/foo/
+# The leading slash is made optional so that this will work either in httpd.conf
+# or .htaccess context
+RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,QSA,L]
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
+```
+
 ## Slim-down Apache's per-process footprint
 
-	sudo mv conf.d conf.d.disabled
-    sudo mv conf.moduled.d conf.modules.d.disabled
-    
-Then, add the following files:
-
-### `conf.d/10-php56.conf`:
-
 ```
-#
-# Add index.php as a directory index.
-#
-DirectoryIndex index.php
-
-#
-# Cause the PHP interpreter to handle files with a .php extension.
-#
-<FilesMatch \.php$>
-SetHandler application/x-httpd-php
-</FilesMatch>
-
-#
-# Apache specific PHP configuration options
-# those can be override in each configured vhost
-#
-php_value session.save_handler "files"
-php_value session.save_path    "/var/lib/php/5.6/session"
-php_value soap.wsdl_cache_dir  "/var/lib/php/5.6/wsdlcache"
+sudo mv conf.moduled.d conf.modules.d.disabled
 ```
 
-### `conf.d/20-ssl.conf`:
-
-Note that the SSLv2 protocol is not included in Apache v2.4, so we don't need to exclude it in the `SSLProtocol` directive.
-
-I use the dates in the certificate files to denote the certificate expiration date.
-
-```
-#
-# When we also provide SSL we have to listen to the
-# the HTTPS port in addition.
-#
-Listen 443 https
-
-SSLPassPhraseDialog exec:/usr/libexec/httpd-ssl-pass-dialog
-
-SSLSessionCache         shmcb:/run/httpd/sslcache(512000)
-SSLSessionCacheTimeout  300
-
-SSLRandomSeed startup file:/dev/urandom  256
-SSLRandomSeed connect builtin
-
-SSLCryptoDevice builtin
-
-SSLProtocol ALL -SSLv3
-SSLHonorCipherOrder On
-SSLCipherSuite ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS:!AES256
-SSLCompression Off
-
-SSLCertificateFile      /etc/httpd/tls/2016-06-06._.example.com.crt
-SSLCertificateKeyFile   /etc/httpd/tls/2016-06-06._.example.com.key
-SSLCertificateChainFile /etc/httpd/tls/2016-06-06._.example.com.gdbundle.crt
-```
-
-### `conf.d/50-server-status.conf.disabled`:
-
-Remove ".disabled" from this filename and restart apache at moments when you do want to see apache server-status and server-info.
-
-```
-LoadModule info_module modules/mod_info.so
-LoadModule status_module modules/mod_status.so
-
-<Location "/server-status">
-  SetHandler server-status
-  Require ip [office ip block(s)]
-  Require ip [other authorized ip block(s)]
-  Require local
-</Location>
-
-<Location "/server-info">
-  SetHandler server-info
-  Require ip [office ip block(s)]
-  Require ip [other authorized ip block(s)]
-  Require local
-</Location>
-```
-
-### `conf.d/90-vhosts.conf`:
-
-This is the only vhost we need right now, and it exists almost entirely for the `SSLEngine` directive which can't be placed in the main server configuration.
-
-```
-<VirtualHost _default_:443>
-  SSLEngine on
-
-  # LogLevel is not inherited from httpd.conf.
-  LogLevel warn
-  ErrorLog logs/ssl_error_log
-
-  #TransferLog logs/ssl_access_log
-  #CustomLog logs/ssl_request_log \
-  #        "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
-</VirtualHost>
-```
-
-### `conf.modules.d/00-required.conf`:
+Then create a single module-loading conf file: `conf.modules.d/00-required.conf`.
 
 ```
 #
@@ -289,13 +380,115 @@ As far as I can tell, these are the only modules we need... so far. We'll see wh
 
 The `log_config_module` can probably be removed as well since we're not using any custom log lines.
 
+## Clean out other unnecessary configuration data
+
+```
+sudo mv conf.d conf.d.disabled
+```
+
+Then, add the following files to `conf.d`:
+
+### `conf.d/10-php56.conf`:
+
+```
+#
+# Add index.php as a directory index.
+#
+DirectoryIndex index.php
+
+#
+# Cause the PHP interpreter to handle files with a .php extension.
+#
+<FilesMatch \.php$>
+SetHandler application/x-httpd-php
+</FilesMatch>
+
+#
+# Apache specific PHP configuration options
+# those can be override in each configured vhost
+#
+php_value session.save_handler "files"
+php_value session.save_path    "/var/lib/php/5.6/session"
+php_value soap.wsdl_cache_dir  "/var/lib/php/5.6/wsdlcache"
+```
+
+### `conf.d/20-ssl.conf`:
+
+Note that the SSLv2 protocol is not included in Apache v2.4, so we don't need to exclude it in the `SSLProtocol` directive.
+
+I use the dates in the certificate files to denote the certificate expiration date.
+
+```
+Listen 443 https
+
+SSLPassPhraseDialog exec:/usr/libexec/httpd-ssl-pass-dialog
+
+SSLSessionCache         shmcb:/run/httpd/sslcache(512000)
+SSLSessionCacheTimeout  300
+
+SSLRandomSeed startup file:/dev/urandom  256
+SSLRandomSeed connect builtin
+
+SSLCryptoDevice builtin
+
+#
+# For insight into cipher choices, see
+# https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/
+#
+SSLProtocol ALL -SSLv3
+SSLHonorCipherOrder On
+SSLCipherSuite ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS:!AES256
+SSLCompression Off
+
+SSLCertificateFile      /etc/httpd/tls/2016-06-06._.example.com.crt
+SSLCertificateKeyFile   /etc/httpd/tls/2016-06-06._.example.com.key
+SSLCertificateChainFile /etc/httpd/tls/2016-06-06._.example.com.gdbundle.crt
+```
+
+### `conf.d/50-server-status.conf.disabled`:
+
+Remove ".disabled" from this filename and restart apache at moments when you do want to see apache server-status and server-info.
+
+```
+LoadModule info_module modules/mod_info.so
+LoadModule status_module modules/mod_status.so
+
+<Location "/server-status">
+  SetHandler server-status
+  Require ip [office ip block(s)]
+  Require ip [other authorized ip block(s)]
+  Require local
+</Location>
+
+<Location "/server-info">
+  SetHandler server-info
+  Require ip [office ip block(s)]
+  Require ip [other authorized ip block(s)]
+  Require local
+</Location>
+```
+
+### `conf.d/90-vhosts.conf`:
+
+This is the only vhost we need right now, and it exists almost entirely for the `SSLEngine` directive which can't be placed in the main server configuration.
+
+```
+<VirtualHost _default_:443>
+  SSLEngine on
+
+  # LogLevel is not inherited from httpd.conf.
+  LogLevel warn
+  ErrorLog logs/ssl_error_log
+
+  #TransferLog logs/ssl_access_log
+  #CustomLog logs/ssl_request_log \
+  #        "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+</VirtualHost>
+```
+
 
 ## Setup Apache SSL
 
-Setup SSL, even without the final hostname or certificates. For now, use a self-signed certificate. The purpose of the setup is not to finalize it, but rather to setup the proper structure. The actual certificate files will need to be added later.
-
-Set up ssl for apache.
-Tight ciphersuite.
 Force http --> https.
 Enable hsts.
 Test at ssllabs.com.
