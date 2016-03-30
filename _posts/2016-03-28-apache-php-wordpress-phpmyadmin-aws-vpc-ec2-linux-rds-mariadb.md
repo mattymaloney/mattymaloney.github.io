@@ -185,7 +185,7 @@ Group apache
 </Files>
 
 
-ServerName blog-test.sensiblebiz.com
+ServerName test.example.com
 DocumentRoot "/var/www/html"
 
 #
@@ -494,6 +494,19 @@ I don't see an absolutely definitive guide for HSTS, so I haven't enabled it yet
 * [How to configure HTTP Strict Transport Security (HSTS) on Apache & NGINX | IT Igloo](http://itigloo.com/security/how-to-configure-http-strict-transport-security-hsts-on-apache-nginx/)
 * [HTTP Strict Transport Security for Apache, NGINX and Lighttpd - Raymii.org](https://raymii.org/s/tutorials/HTTP_Strict_Transport_Security_for_Apache_NGINX_and_Lighttpd.html)
 * [HTTP Strict Transport Security - OWASP](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security)
+* [HSTS (HTTP Strict Transport Security) for Apache/Nginx](http://linux-audit.com/configure-hsts-http-strict-transport-security-apache-nginx/)
+
+This seems to be a more "definitive" guide to HSTS, or at least `includeSubDomains` and `preload` are explained in terms that I understand.
+
+[HTTP Strict Transport Security](https://https.cio.gov/hsts/)
+
+I think we'll add 
+
+```
+Header always set Strict-Transport-Security "max-age=31536000"
+```
+
+as the simplest implementation to our https virtual host. If we get around to submitting a site to google's/chrome's preload list, we can add `includeSubDomains` and `preload` to the header.
 
 
 ## More...
