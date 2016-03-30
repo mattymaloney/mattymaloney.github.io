@@ -487,17 +487,14 @@ This is the only vhost we need right now, and it exists almost entirely for the 
 ```
 
 
-## Setup Apache SSL
+## Setup HSTS in Apache, maybe
 
-Force http --> https.
-Enable hsts.
-Test at ssllabs.com.
+I don't see an absolutely definitive guide for HSTS, so I haven't enabled it yet. I need to look at this some more. There may even be some privacy concerns caused by servers using HSTS.
 
-```
-sudo mkdir /etc/httpd/ssl
-cd /etc/httpd/ssl
+* [How to configure HTTP Strict Transport Security (HSTS) on Apache & NGINX | IT Igloo](http://itigloo.com/security/how-to-configure-http-strict-transport-security-hsts-on-apache-nginx/)
+* [HTTP Strict Transport Security for Apache, NGINX and Lighttpd - Raymii.org](https://raymii.org/s/tutorials/HTTP_Strict_Transport_Security_for_Apache_NGINX_and_Lighttpd.html)
+* [HTTP Strict Transport Security - OWASP](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security)
 
-```
 
 ## More...
 
