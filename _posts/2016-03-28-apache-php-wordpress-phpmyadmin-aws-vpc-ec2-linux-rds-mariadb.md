@@ -146,7 +146,7 @@ php_value session.save_path    "/var/lib/php/5.6/session"
 php_value soap.wsdl_cache_dir  "/var/lib/php/5.6/wsdlcache"
 ```
 
-###
+### `conf.d/20-ssl.conf`:
 
 Note that the SSLv2 protocol is not included in Apache v2.4, so we don't need to exclude it in the `SSLProtocol` directive.
 
@@ -200,6 +200,24 @@ LoadModule status_module modules/mod_status.so
   Require ip [other authorized ip block(s)]
   Require local
 </Location>
+```
+
+### `conf.d/90-vhosts.conf`:
+
+This is the only vhost we need right now, and it exists almost entirely for the `SSLEngine` directive which can't be placed in the main server configuration.
+
+```
+<VirtualHost _default_:443>
+  SSLEngine on
+
+  # LogLevel is not inherited from httpd.conf.
+  LogLevel warn
+  ErrorLog logs/ssl_error_log
+
+  #TransferLog logs/ssl_access_log
+  #CustomLog logs/ssl_request_log \
+  #        "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+</VirtualHost>
 ```
 
 ### `conf.modules.d/00-required.conf`:
