@@ -122,17 +122,11 @@ Then, in web browser, go to http://public.dns.hostname/pi.php to verify that Apa
     
 Then, add the following files:
 
-`conf.d/10-php56.conf`:
+### `conf.d/10-php56.conf`:
 
 ```
 #
-# Allow php to handle Multiviews
-#
-AddType text/html .php
-
-#
-# Add index.php to the list of files that will be served as directory
-# indexes.
+# Add index.php as a directory index.
 #
 DirectoryIndex index.php
 
@@ -152,7 +146,9 @@ php_value session.save_path    "/var/lib/php/5.6/session"
 php_value soap.wsdl_cache_dir  "/var/lib/php/5.6/wsdlcache"
 ```
 
-`conf.d/50-server-status.conf.disabled`:
+### `conf.d/50-server-status.conf.disabled`:
+
+Remove ".disabled" from this filename and restart apache at moments when you do want to see apache server-status and server-info.
 
 ```
 LoadModule info_module modules/mod_info.so
@@ -173,7 +169,7 @@ LoadModule status_module modules/mod_status.so
 </Location>
 ```
 
-`conf.modules.d/00-required.conf`:
+### `conf.modules.d/00-required.conf`:
 
 ```
 #
@@ -231,6 +227,14 @@ cd /etc/httpd/ssl
 
 ```
 
+## More...
+
+Plan on deleting these directories, but just renaming for now.
+```
+mv /var/www/cgi-bin /var/www/cgi-bin.disabled
+mv /var/www/icons /var/www/icons.disabled
+mv /var/www/noindex /var/www/noindex.disabled
+```
 
 ## Create an AMI for this baseline
 
