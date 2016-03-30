@@ -257,9 +257,37 @@ LoadModule dir_module modules/mod_dir.so
 # PHP as a prefork module
 #
 LoadModule php5_module modules/libphp-5.6.so
+
+#
+# SSL
+#
+LoadModule ssl_module modules/mod_ssl.so
+
+#
+# socache_memcache_module to support memcached
+# socache_shmcb_module to support shmcb for tls
+#
+LoadModule socache_memcache_module modules/mod_socache_memcache.so
+LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
+
+#
+# filter_module to enable input and output filtering
+# deflate_module to enable the gzip/deflate filters
+#
+LoadModule filter_module modules/mod_filter.so
+LoadModule deflate_module modules/mod_deflate.so
+
+#
+# More...
+#
+LoadModule log_config_module modules/mod_log_config.so
+LoadModule rewrite_module modules/mod_rewrite.so
+LoadModule alias_module modules/mod_alias.so
 ```
 
 As far as I can tell, these are the only modules we need... so far. We'll see what else specifically is needed by phpMyAdmin and WordPress.
+
+The `log_config_module` can probably be removed as well since we're not using any custom log lines.
 
 
 ## Setup Apache SSL
