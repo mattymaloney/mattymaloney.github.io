@@ -536,4 +536,27 @@ Choosing:
 	- port 22 from office and home IPs.
     - ports 80 and 443 from all.
 
-## 
+Make sure that this EC2 instance's security group is added to the permitted ingress traffic for the RDS instance's security group.
+
+Edit `/etc/httpd/conf/httpd.conf` to update the `ServerName` directive.
+
+Restart Apache.
+
+
+## Install and Configure phpMyAdmin
+
+This expects that `php56-mbstring` is already installed.
+
+```
+cd /var/www
+wget --no-check-certificate https://files.phpmyadmin.net/phpMyAdmin/4.6.0/phpMyAdmin-4.6.0-english.tar.gz
+tar xzf phpMyAdmin-4.6.0-english.tar.gz
+rm phpMyAdmin-4.6.0-english.tar.gz
+mv phpMyAdmin-4.6.0-english/* html/
+sudo chown -R apache:www /var/www
+sudo chmod 2775 /var/www
+find /var/www -type d -exec sudo chmod 2775 {} \;
+find /var/www -type f -exec sudo chmod 0664 {} \;
+```
+
+
