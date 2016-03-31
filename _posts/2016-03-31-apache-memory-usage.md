@@ -5,11 +5,14 @@ title: "Determining Apache (Average) Per-Process Memory Usage"
 ---
 
 
+
 ```
 ps -ylC httpd --sort:rss | awk '{sum+=$8; ++n} END {print "Tot="sum"("n")";print "Avg="sum"/"n"="sum/n/1024"MB"}'
 ```
 
-or simply `ps -ylC httpd`.
+but this has the problem of counting 1 more process than actually exists, and it counts the root process as well -- I'm really looking for the size (or average size) or child processes. The parent process needs to be examined separately.
+
+... or simply `ps -ylC httpd` for a glance.
 
 ---
 
