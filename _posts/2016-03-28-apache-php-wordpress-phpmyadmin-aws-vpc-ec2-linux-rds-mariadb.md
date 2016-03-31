@@ -648,7 +648,27 @@ $cfg['SaveDir'] = '';
 ?>
 ```
 
-Verify now that you can connect to the database using wordpress's username and password.
-
 All done with phpMyAdmin.
 
+
+## Create WordPress EC2 instance
+
+Choosing:
+
+- **OS/AMI**: _lap-baseline_ created previously.
+- **Instance Type**: t2.nano (since this is just a test)
+- **VPC**: the VPC that was create with the RDS instance
+- **Availability Zone**: same that was chosen when creating the RDS instance
+- **Enable termination protection**: yes
+- Security Group: Select or create one with the following settings:
+	- port 22 from office and home IPs.
+    - ports 80 and 443 from all.
+
+Make sure that this EC2 instance's security group is added to the permitted ingress traffic for the RDS instance's security group.
+
+Edit `/etc/httpd/conf/httpd.conf` to update the `ServerName` directive.
+
+Restart Apache.
+
+
+Verify now that you can connect to the database using wordpress's username and password.
