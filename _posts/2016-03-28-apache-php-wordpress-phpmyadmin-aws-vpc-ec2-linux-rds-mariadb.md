@@ -672,3 +672,33 @@ Restart Apache.
 
 
 Verify now that you can connect to the database using wordpress's username and password.
+
+## 9 - Install WordPress
+
+Download and extract wordpress.
+
+```
+cd
+wget --ca-certificate /etc/pki/tls/certs/ca-bundle.crt https://wordpress.org/latest.tar.gz
+tar xzf latest.tar.gz
+rm latest.tar.gz
+```
+
+Edit wordpress wp-config.php, setting up db connection details and replacing the keys/salts section with data from https://api.wordpress.org/secret-key/1.1/salt/.
+
+```
+cd wordpress
+cp wp-config-sample.php wp-config.php
+vi wp-config.php
+```
+
+Move extracted wordpress into `/var/www`, set apache:www ownership and appropriate permissions, and point `DocumentRoot` at `/var/www/wordpress`. Also, create and edit `/etc/httpd/conf.d/vhosts.conf`, creating a `VirtualHost` for wordpress.
+
+```
+cd ..
+mv wordpress /var/www/
+sudo chown -R apache:www /var/www
+sudo chmod 2775 /var/www
+find /var/www -type d -exec sudo chmod 2775 {} \;
+find /var/www -type f -exec sudo chmod 0664 {} \;
+```
