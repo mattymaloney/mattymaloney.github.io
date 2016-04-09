@@ -57,6 +57,10 @@ Display remote desktop in full screen (`-g 100%`) and bitmap cache is enabled fo
 
 `-P` cache bitmaps for performance, in exchange for some disk space.
 
+`-a 16` color depth is 16 bits per pixel.
+
+``
+
 
 ###
 
