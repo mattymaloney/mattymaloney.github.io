@@ -6,6 +6,7 @@ title: Remote Desktop via RDP with rdesktop
 
 
 
+
 After dealing with too many reliability (keyboard mostly) issues with the Fedora Xfce default RDP client (Vinagre Remote Desktop Viewer v3.18.2), I'm searching for a better solution. I came across rdesktop as one of the recommended alternatives. 
 
 Project site:
@@ -69,6 +70,8 @@ Display remote desktop in full screen (`-g 100%`) and bitmap cache is enabled fo
 `-K` keep "special" key bindings available for the local OS -- don't send the "special" keys to the remote OS. I don't know what keys/combos are in the list of keystrokes not sent to the remote.
 
 I'm using the command with `wmctrl`, like this: `wmctrl -s 2 & rdesktop -u matt 192.168.2.14 -a 15 -x -z -g 96% -PD -a 16 -x m -r clipboard:CLIPBOARD -r disk:homedir=/home/matty -r sound:off -K`, to switch to a specific desktop/workspace (#2 in this case) and then start the rdesktop session.
+
+In addition to the `man` page, [wmctrl user documentation | spiralofhope](http://blog.spiralofhope.com/1042/wmctrl-user-documentation.html) is a good reference for `wmctrl`.
 
 
 ###
