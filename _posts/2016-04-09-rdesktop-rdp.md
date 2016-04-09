@@ -21,16 +21,18 @@ Some help (jeez this is old stuff):
 
 #### Full screen, remote session gets all keys
 
-`rdesktop -u john -fP 143.210.123.456`
+`rdesktop -u USERNAME -fP SOMEIPORADDRESS`
 
 Display remote desktop in full screen (`-f`) and bitmap cache is enabled for speed (`-P`). Pressing alt+tab doesn't switch local windows, it switches windows on the remote Windows desktop. And ctrl+alt+right (for switching to another workspace) won't work locally either. This is useful when you want alt+tab and othe special keystrokes to work affect only the remote Windows.
 
 
 ####
 
-Display remote desktop in full screen (corresponding option : -f, -g 100% -D) and bitmap cache is enabled for speed (-P). Keyboard shortcuts such as ctrl+alt+right and alt+tab work on the local desktop. This is useful because you can put the remote desktop on the seperate workspace then you can switch between your local ubuntu workspace and your remote Windows desktop just by pressing ctrl+alt+right and ctrl+alt+left.
+`rdesktop -u USERNAME -g 100% -PKD SOMEIPORADDRESS`
+
+Display remote desktop in full screen (`-g 100% -D`) and bitmap cache is enabled for speed (`-P`). Keyboard shortcuts such as ctrl+alt+right and alt+tab work on the local desktop (`-K`). This is useful because you can put the remote desktop on the seperate workspace then you can switch between your local ubuntu workspace and your remote Windows desktop just by pressing ctrl+alt+right and ctrl+alt+left.
 
 ####
 
-`rdesktop SOMEIPORADDRESS -k sv -g 1200x950 -K -a 16 -u Administrator -r disk:mylinuxdisk=/home/username`
+`rdesktop SOMEIPORADDRESS -k sv -g 1200x950 -K -a 16 -u USERNAME -r disk:mylinuxdisk=/home/username`
 
