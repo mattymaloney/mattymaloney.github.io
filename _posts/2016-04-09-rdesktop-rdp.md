@@ -4,6 +4,7 @@ layout: post
 title: Remote Desktop via RDP with rdesktop
 ---
 
+
 After dealing with too many reliability (keyboard mostly) issues with the Fedora Xfce default RDP client (Vinagre Remote Desktop Viewer v3.18.2), I'm searching for a better solution. I came across rdesktop as one of the recommended alternatives. 
 
 Project site:
@@ -36,9 +37,29 @@ Display remote desktop in full screen (`-g 100%`) and bitmap cache is enabled fo
 
 `-D` removes the local OS's window decorations like title bar, edges, etc and let's the remote window fill that space.
 
+`-P` cache bitmaps in exchange for some disk space.
+
+
+
 ####
 
 `rdesktop SOMEIPORADDRESS -g 1200x950 -K -a 16 -u USERNAME -r disk:mylinuxdisk=/home/username`
+
+`rdesktop -g 1152x864 -r disk:home=/home/username -r clipboard:CLIPBOARD -r sound:off -x l -P 192.168.1.200 -u "administrator@domain.local" -p password`
+
+
+#### My command
+
+``
+
+`-g x%` uses x% of the client window area, which generally seems to exclude the local OS taskbar. Unfortunately, I don't see the remote taskbar when using this mode, I think because it's hidden underneath the bottom edge of the screen.
+
+`-g XXXxYYY` puts the remote desktop in a window with the specified dimmensions.
+
+`-D` removes the local OS's window decorations like title bar, edges, etc and let's the remote window fill that space.
+
+`-P` cache bitmaps in exchange for some disk space.
+
 
 ###
 
