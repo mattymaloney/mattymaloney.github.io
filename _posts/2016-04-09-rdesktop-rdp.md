@@ -47,7 +47,7 @@ Display remote desktop in full screen (`-g 100%`) and bitmap cache is enabled fo
 
 #### My command
 
-``
+`rdesktop -u matt 192.168.2.14 -a 15 -x -z -g 92% -PD -a 16 -x m -r clipboard:CLIPBOARD -r disk:homedir=/home/matty -r sound:off`
 
 `-g x%` uses x% of the client window area, which generally seems to exclude the local OS taskbar. Unfortunately, I don't see the remote taskbar when using this mode, I think because it's hidden underneath the bottom edge of the screen.
 
