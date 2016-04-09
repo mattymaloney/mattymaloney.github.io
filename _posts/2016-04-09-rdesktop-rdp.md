@@ -17,7 +17,7 @@ Some help (jeez this is old stuff):
 
 ---
 
-## Example commands (mostly from the Ubuntu Forums post above
+## Example commands (mostly from the Ubuntu Forums post above)
 
 #### Full screen, remote session gets all keys
 
