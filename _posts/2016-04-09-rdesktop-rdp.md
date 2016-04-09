@@ -37,9 +37,6 @@ Display remote desktop in full screen (`-g 100%`) and bitmap cache is enabled fo
 
 `-D` removes the local OS's window decorations like title bar, edges, etc and let's the remote window fill that space.
 
-`-P` cache bitmaps in exchange for some disk space.
-
-
 
 ####
 
@@ -58,7 +55,7 @@ Display remote desktop in full screen (`-g 100%`) and bitmap cache is enabled fo
 
 `-D` removes the local OS's window decorations like title bar, edges, etc and let's the remote window fill that space.
 
-`-P` cache bitmaps in exchange for some disk space.
+`-P` cache bitmaps for performance, in exchange for some disk space.
 
 
 ###
