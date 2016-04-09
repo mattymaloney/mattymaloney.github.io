@@ -79,3 +79,6 @@ In addition to the `man` page, [wmctrl user documentation | spiralofhope](http:/
 ###
 
 In summary, a little buggy, like basically every non-server component in Linux.
+
+Consider using remmina instead.??
+
