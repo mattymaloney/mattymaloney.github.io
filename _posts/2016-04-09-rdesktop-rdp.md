@@ -40,3 +40,6 @@ Display remote desktop in full screen (`-g 100%`) and bitmap cache is enabled fo
 
 `rdesktop SOMEIPORADDRESS -g 1200x950 -K -a 16 -u USERNAME -r disk:mylinuxdisk=/home/username`
 
+###
+
+In summary, a little buggy, like basically every non-server component in Linux.
