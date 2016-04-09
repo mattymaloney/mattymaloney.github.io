@@ -59,7 +59,13 @@ Display remote desktop in full screen (`-g 100%`) and bitmap cache is enabled fo
 
 `-a 16` color depth is 16 bits per pixel.
 
-``
+`-z` compress the data stream.
+
+`-x m` remove all "extra" visual features from the remote display (animations, themes, etc).
+
+`-0` console connection, but only for Server v2003+.
+
+`-K` keep "special" key bindings available for the local OS -- don't send the "special" keys to the remote OS. I don't know what keys/combos are in the list of keystrokes not sent to the remote.
 
 
 ###
