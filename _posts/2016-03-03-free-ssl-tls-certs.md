@@ -41,3 +41,13 @@ A guide, some client scripts (because the official client may not be ideal), and
 * [diafygi/letsencrypt-nosudo: Free HTTPS certificates without having to trust the letsencrypt cli with sudo/root](https://github.com/diafygi/letsencrypt-nosudo)
 * [diafygi/acme-tiny: A tiny script to issue and renew TLS certs from Let's Encrypt](https://github.com/diafygi/acme-tiny/)
 * [List of Client Implementations - Documentation - Let's Encrypt Community Support](https://community.letsencrypt.org/t/list-of-client-implementations/2103)
+
+---
+
+And one more source for free ssl/tls certs I've come across from a Chinese company.
+
+[WoSign Free SSL Certificates](https://www.wosign.com/english/freeSSL.htm)
+
+---
+
+
