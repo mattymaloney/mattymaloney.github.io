@@ -5,7 +5,11 @@ title: "OpenSCAD Resources - Tutorials, Editors, etc"
 ---
 
 
+
 [OpenSCAD CheatSheet](http://www.openscad.org/cheatsheet/index.html)
+
+[OpenSCAD | Fablab Amersfoort](http://fablabamersfoort.nl/en/book/openscad)
+
 
 - [OpenSCAD - Documentation](http://www.openscad.org/documentation.html)
 - [Openscad - Jumpstart - Thingiverse](https://www.thingiverse.com/jumpstart/openscad)
