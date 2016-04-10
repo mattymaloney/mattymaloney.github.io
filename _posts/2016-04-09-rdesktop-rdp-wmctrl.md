@@ -4,9 +4,6 @@ layout: post
 title: Remote Desktop via RDP with rdesktop
 ---
 
-
-
-
 After dealing with too many reliability (keyboard mostly) issues with the Fedora Xfce default RDP client (Vinagre Remote Desktop Viewer v3.18.2), I'm searching for a better solution. I came across rdesktop as one of the recommended alternatives. 
 
 Project site:
@@ -81,4 +78,6 @@ In addition to the `man` page, [wmctrl user documentation | spiralofhope](http:/
 In summary, a little buggy, like basically every non-server component in Linux.
 
 Consider using remmina instead.??
+
+Yes. Remmina is much better actually. rdesktop has scaling issues, where it doesn't seem to know whether 100% means 100% of screen size or 100% of screen minus the taskbar. Also, the `-K` option is unreliable, as it doesn't work the same way on every invocation. Also, when using the `-f` option, the rdesktop window froze on one occasion, and I had no way that I knew of to get back to my desktop. Out of laziness and the hurry I was in, I did a hard reset for my PC. With some research, I may have been able to recover without the hard reset. At that point, I tried Remmina, which I actually like a lot.
 
