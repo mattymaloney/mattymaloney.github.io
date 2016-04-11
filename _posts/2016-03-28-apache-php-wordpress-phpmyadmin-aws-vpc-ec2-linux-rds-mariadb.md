@@ -4,6 +4,7 @@ layout: post
 title: "Setting Up Apache, PHP, WordPress, phpMyAdmin on and AWS VPC with EC2 Linux and RDS MariaDB, Take 2"
 ---
 
+
 Two resources that were very valuable in getting this process started:
 
 * [Tutorial: Installing a LAMP Web Server on Amazon Linux - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
@@ -509,14 +510,25 @@ Header always set Strict-Transport-Security "max-age=31536000"
 as the simplest implementation to our https virtual host. If we get around to submitting a site to google's/chrome's preload list, we can add `includeSubDomains` and `preload` to the header.
 
 
-## More...
+## Cleanup
 
-Plan on deleting these directories, but just renaming for now.
+Delete the `/var/www/` `.disabled` directories.
+
 ```
 mv /var/www/cgi-bin /var/www/cgi-bin.disabled
 mv /var/www/icons /var/www/icons.disabled
 mv /var/www/noindex /var/www/noindex.disabled
 ```
+
+## More...
+
+Plan on deleting the `.disabled` files from `/etc/httpd/conf`.
+
+
+## When launching a new instance from this AMI...
+
+* Remember there is a `pi.php` script in `/var/www/html` which shows `phpinfo()` output. Don't forget to delete it or at least give it a secret 
+
 
 ## Create an AMI for this baseline
 
