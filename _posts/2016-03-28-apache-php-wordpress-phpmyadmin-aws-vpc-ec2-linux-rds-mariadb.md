@@ -487,6 +487,10 @@ This is the only vhost we need right now, and it exists almost entirely for the 
 </VirtualHost>
 ```
 
+## php.ini
+
+Set timezone value in `php.ini`.
+
 
 ## Setup HSTS in Apache, maybe
 
