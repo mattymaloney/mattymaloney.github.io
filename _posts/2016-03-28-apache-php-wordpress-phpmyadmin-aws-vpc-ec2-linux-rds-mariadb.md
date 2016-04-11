@@ -528,6 +528,8 @@ mv /var/www/noindex /var/www/noindex.disabled
 
 Plan on deleting the `.disabled` files from `/etc/httpd/conf`.
 
+Not sure yet what exactly to install for Apache or configure for PHP to have reasonable caching alternatives pre-installed and availablemaz in this AMI.
+
 
 ## When launching a new instance from this AMI...
 
