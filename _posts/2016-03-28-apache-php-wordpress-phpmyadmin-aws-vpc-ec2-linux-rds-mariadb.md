@@ -5,6 +5,7 @@ title: "Setting Up Apache, PHP, WordPress, phpMyAdmin on and AWS VPC with EC2 Li
 ---
 
 
+
 Two resources that were very valuable in getting this process started:
 
 * [Tutorial: Installing a LAMP Web Server on Amazon Linux - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
@@ -710,7 +711,7 @@ cp wp-config-sample.php wp-config.php
 vi wp-config.php
 ```
 
-Move extracted wordpress into `/var/www`, set apache:www ownership and appropriate permissions, and point `DocumentRoot` at `/var/www/wordpress`. Also, create and edit `/etc/httpd/conf.d/vhosts.conf`, creating a `VirtualHost` for wordpress.
+Move extracted wordpress into `/var/www`, set "apache:www" ownership and appropriate permissions, and point `DocumentRoot` at `/var/www/wordpress`. Also, create and edit `/etc/httpd/conf.d/vhosts.conf`, creating a `VirtualHost` for wordpress.
 
 ```
 cd ..
