@@ -53,7 +53,8 @@ More installation and configuration details:
 
 And a wordpress plugin that might make all of this very easy: [Memcached Object Cache — WordPress Plugins](https://wordpress.org/plugins/memcached/)
 
----
+
+## More...
 
 More resources that I just don't have time to finish digesting:
 
@@ -64,3 +65,5 @@ More resources that I just don't have time to finish digesting:
 * [Memcached VS Redis | Cheeky Monkey Media](http://cheekymonkeymedia.ca/blog/web-development/memcached-vs-redis)
 * [How To Configure Redis Caching to Speed Up WordPress on Ubuntu 14.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-configure-redis-caching-to-speed-up-wordpress-on-ubuntu-14-04)
 * [Install Redis on Amazon EC2 AMI · GitHub](https://gist.github.com/dstroot/2776679)
+* [Memcache vs Memcached PHP benchmark - LeaseWeb labs](https://www.leaseweb.com/labs/2013/03/memcache-vs-memcached-php-benchmark/)
+* [Why Redis beats Memcached for caching | InfoWorld](http://www.infoworld.com/article/2825890/application-development/why-redis-beats-memcached-for-caching.html)
