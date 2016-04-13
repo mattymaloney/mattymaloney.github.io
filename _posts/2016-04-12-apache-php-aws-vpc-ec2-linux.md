@@ -549,9 +549,20 @@ mv /var/www/noindex /var/www/noindex.disabled
 
 ## More...
 
+### More... cleanup
+
 Plan on deleting the `.disabled` directories from `/etc/httpd/conf`.
 
+### More... op cache and key/value caching
+
 Not sure yet what exactly to install for Apache or configure for PHP to have reasonable caching alternatives pre-installed and availablemaz in this AMI.
+
+
+### More... HTTP/2
+
+Investigate and understand configuration of spdy/http2 and/or quic, or something else?
+
+[chrome net-internals spdy http2 - Google Search](https://www.google.co.jp/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=chrome+net-internals+spdy+http2)
 
 
 ## When launching a new instance from this AMI...
