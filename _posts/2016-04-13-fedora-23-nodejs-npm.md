@@ -6,10 +6,9 @@ I used this quide to install node and npm on fedora 23 box: [Installing Node.js 
 
 ```
 sudo su -
-
+curl --silent --location https://rpm.nodesource.com/setup_5.x | bash -
 dnf install nodejs
 ```
 
-which installed `5.10.1-1nodesource.fc23`.
-
+On 2016-Apr-13, the result was installation of the `nodejs x86_64 5.10.1-1nodesource.fc23` package from the `nodesource` repository. `npm` version is `3.8.3`. `node` version is `5.10.1`.
 
