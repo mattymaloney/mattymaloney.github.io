@@ -13,6 +13,12 @@ Something from outside the normally closed circle of PHP cache recommendations.
 
 ---
 
+## Opcode Caches
+
+According to the charts at [List of PHP accelerators - Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/List_of_PHP_accelerators#XCache), opcache and xcache are the only 2 viable alternatives -- projects that work with modern php and run in linux.
+
+---
+
 [PHP: APC - Manual](http://php.net/manual/en/book.apc.php)
 
 APC is retired and deprecated.
@@ -28,6 +34,13 @@ See also:
 * [PECL :: Package :: ZendOpcache](http://pecl.php.net/package/ZendOpcache)
 
 ---
+
+[XCache](http://xcache.lighttpd.net/)
+
+This seems to have been created for Lighttpd, although apparently it works with Apache as well. Last update in 2014 with support for php 5.6.
+
+
+## Key/Value Caches
 
 [WordPress + Memcached – Scott Taylor](http://scotty-t.com/2012/01/20/wordpress-memcached/)
 
