@@ -606,14 +606,14 @@ chrome://net-internals/#http2
 [chrome net-internals spdy http2 - Google Search](https://www.google.co.jp/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=chrome+net-internals+spdy+http2)
 
 
+## Create an AMI for this baseline
+
+Use AWS console to create an AMI from this instance. Set the name of the ami and its snapshot to _lap-baseline_.
+
+
 ## When launching a new instance from this AMI...
 
 * Remember there is a `pi.php` script in `/var/www/html` which shows `phpinfo()` output. Don't forget to delete it or at least give it a secret 
 
 * First command after launch: `sudo yum update`.
-
-
-## Create an AMI for this baseline
-
-Use AWS console to create an AMI from this instance. Set the name of the ami and its snapshot to _lap-baseline_.
 
