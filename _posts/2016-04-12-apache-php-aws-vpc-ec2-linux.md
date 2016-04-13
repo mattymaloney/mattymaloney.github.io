@@ -222,6 +222,11 @@ ErrorLog "logs/error_log"
 
 TypesConfig /etc/mime.types
 
+#
+# Compress text-based content.
+# Apache already sends the `Vary:Accept-Encoding` header for any gzipped,
+# responses, so we don't need to add that.
+#
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
 SetInputFilter DEFLATE
 
