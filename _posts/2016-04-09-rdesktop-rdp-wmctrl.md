@@ -85,7 +85,7 @@ Consider using remmina instead.??
 
 Yes. Remmina is much better actually. rdesktop has scaling issues, where it doesn't seem to know whether 100% means 100% of screen size or 100% of screen minus the taskbar. Also, the `-K` option is unreliable, as it doesn't work the same way on every invocation. Also, when using the `-f` option, the rdesktop window froze on one occasion, and I had no way that I knew of to get back to my desktop. Out of laziness and the hurry I was in, I did a hard reset for my PC. With some research, I may have been able to recover without the hard reset. At that point, I tried Remmina, which I actually like a lot.
 
-Remmina is pretty great, but I'm not getting shared clipboard functionality for RDP connections. I've tried the freerdp/xfreerdp (library that Remmina depends upon) client directly, and I don't get shared clipboard in that envirnment either). I've read that I need the freerdp v2.0 library to fix this issue. Unfortunately, I don't understand how to make Remmina use the v2.0 library, and I'm having authentication errors trying to connect to RDP hosts.
+Remmina is pretty great, but I'm not getting shared clipboard functionality for RDP connections. I've tried the freerdp/xfreerdp (library that Remmina depends upon) client directly, and I don't get shared clipboard in that envirnment either). I've read that I need the freerdp v2.0 library to fix this issue. Unfortunately, I don't understand how to make Remmina use the v2.0 library, and I'm having authentication errors trying to connect to RDP hosts to which I can connect without error using the older freerdp v1.2.0 libraries. Hmm.
 
 Some resources:
 
