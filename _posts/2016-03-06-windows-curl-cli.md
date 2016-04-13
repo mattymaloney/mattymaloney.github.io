@@ -4,6 +4,7 @@ layout: post
 title: "Command-line Curl in Windows"
 ---
 
+
 In looking for a simple way to get results from a url in windows, I came across a very convenient powershell method. This is the way to go if making command line http requests is rare, and/or installing software on the box is undesired.
 
 ```
@@ -30,10 +31,11 @@ Apparently, Git for Windows has GNU bash built in, which I guess has `curl` buil
 
 See [Git - Downloads](http://git-scm.com/downloads).
 
+UPDATE: I've tried this and I'm quite happy with it. I also just came across [cmder | Console Emulator](http://cmder.net/), which is based on conemu, which I've also intended to test out some day. I haven't tried this yet.
+
 ---
 
 See also:
 
 * [Run cURL commands from Windows console - Stack Overflow](http://stackoverflow.com/questions/2710748/run-curl-commands-from-windows-console/35818093#35818093)
 * [Run cURL commands from Windows console - Super User](http://superuser.com/questions/134685/run-curl-commands-from-windows-console/1049138#1049138)
-
