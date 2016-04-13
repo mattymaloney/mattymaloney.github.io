@@ -562,6 +562,8 @@ Not sure yet what exactly to install for Apache or configure for PHP to have rea
 
 Investigate and understand configuration of spdy/http2 and/or quic, or something else?
 
+chrome://net-internals/#http2
+
 [chrome net-internals spdy http2 - Google Search](https://www.google.co.jp/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=chrome+net-internals+spdy+http2)
 
 
