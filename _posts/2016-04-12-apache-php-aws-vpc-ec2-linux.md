@@ -493,9 +493,20 @@ This is the only vhost we need right now, and it exists almost entirely for the 
 </VirtualHost>
 ```
 
-## php.ini
+## Timezone
 
-Set timezone value in `php.ini`. In my case, I set it to `America/Denver` because that's generally where we want to "think" our servers are, without regard for where they actually are.
+Set timezone value in `php.ini`. In my case, I set it to `America/Denver` because that's generally where we want to "think" our servers are, without regard for where they actually are. The new `php.ini` line:
+
+```
+date.timezone = America/Denver
+```
+
+Set server time zone as well.
+
+```
+cd /etc/
+rm -rf localtime && ln -s /usr/share/zoneinfo/America/Denver localtime
+```
 
 
 ## Setup HSTS in Apache, maybe
