@@ -23,6 +23,10 @@ APC is retired and deprecated.
 
 opcache has taken the place of APC as PHP's "standard" opcode caching system.
 
+See also:
+
+* [PECL :: Package :: ZendOpcache](http://pecl.php.net/package/ZendOpcache)
+
 ---
 
 [WordPress + Memcached – Scott Taylor](http://scotty-t.com/2012/01/20/wordpress-memcached/)
