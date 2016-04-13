@@ -610,6 +610,8 @@ chrome://net-internals/#http2
 
 * Remember there is a `pi.php` script in `/var/www/html` which shows `phpinfo()` output. Don't forget to delete it or at least give it a secret 
 
+* First command after launch: `sudo yum update`.
+
 
 ## Create an AMI for this baseline
 
