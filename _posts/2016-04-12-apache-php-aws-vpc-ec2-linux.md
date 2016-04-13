@@ -266,6 +266,12 @@ AddDefaultCharset UTF-8
 #EnableMMAP off
 EnableSendfile on
 
+#
+# Make apache and php version details less obvious.
+#
+ServerTokens Prod
+ServerSignature Off
+
 # Supplemental configuration
 #
 # Load config files in the "/etc/httpd/conf.d" directory, if any.
@@ -504,8 +510,8 @@ date.timezone = America/Denver
 Set server time zone as well.
 
 ```
-cd /etc/
-rm -rf localtime && ln -s /usr/share/zoneinfo/America/Denver localtime
+sudo rm -rf /etc/localtime
+sudo ln -s /usr/share/zoneinfo/America/Denver /etc/localtime
 ```
 
 
@@ -543,7 +549,7 @@ mv /var/www/noindex /var/www/noindex.disabled
 
 ## More...
 
-Plan on deleting the `.disabled` files from `/etc/httpd/conf`.
+Plan on deleting the `.disabled` directories from `/etc/httpd/conf`.
 
 Not sure yet what exactly to install for Apache or configure for PHP to have reasonable caching alternatives pre-installed and availablemaz in this AMI.
 
