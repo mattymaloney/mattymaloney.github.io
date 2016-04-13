@@ -54,6 +54,14 @@ More installation and configuration details:
 And a wordpress plugin that might make all of this very easy: [Memcached Object Cache — WordPress Plugins](https://wordpress.org/plugins/memcached/)
 
 
+## Decisions
+
+For now, for the linux/apache/php boilerplate installation, I've decided to go with opcache and memcached. For php-5.6, these require the following package installation on Amazon Linux:
+
+```
+sudo yum install php56-pecl-memcached php-pear php56-opcache memcached
+```
+
 ## More...
 
 More resources that I just don't have time to finish digesting:
