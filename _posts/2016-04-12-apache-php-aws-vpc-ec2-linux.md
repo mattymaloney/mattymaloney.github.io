@@ -277,11 +277,45 @@ ServerSignature Off
 # Load config files in the "/etc/httpd/conf.d" directory, if any.
 IncludeOptional conf.d/*.conf
 
-Include conf.include/forbidden-locations.conf
-Include conf.include/force-http2https.conf
+#
+# Include our own configurations additions.
+# We're using `IncludeOptoinal` instead of `Include` so that
+# the files can easily be renamed or deleted in order to disable that
+# functionality.
+#
+# Since we're not using vhosts anymore, and therefore the functionality in
+# these `conf.include/*` files is no longer being repeated in different vhosts,
+# we should probably retire the include files and rather include those directives
+# directly in this conf file.
+#
+#Include conf.include/forbidden-locations.conf
+#Include conf.include/force-http2https.conf
+IncludeOptional conf.include/forbidden-locations.conf
+IncludeOptional conf.include/force-http2https.conf
+
+
+#--#
+#--# Add common types not included from the call to `TypesConfig /etc/mime.types`.
+#--#
+
+#
+# Support compressed file types.
+#
+# For these, I'm not sure if they should also/instead be specified
+# as `AddEncoding` directives.
+#
+AddType application/x-compress .Z
+AddType application/x-gzip .gz .tgz
+
+#
+# Support webfont files with the proper mime types.
+#
+AddType application/vnd.ms-fontobject .eot
+AddType application/x-font-ttf .ttf
+AddType application/x-font-woff .woff
 ```
 
-The 2 includes at the end of `httpd.conf` are:
+The 2 includes near the end of `httpd.conf` are:
 
 ### `Include conf.include/forbidden-locations.conf`
 
