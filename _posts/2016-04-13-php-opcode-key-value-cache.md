@@ -62,6 +62,9 @@ See also:
 
 * [AWS Developer Forums: ElastiCache v.s. memcached ...](https://forums.aws.amazon.com/thread.jspa?threadID=84311)
 
+Amazon OpsWorks is a configuration management service, based on Chef. This article isn't loading right now, so I'll have to try this again later. However, we probably don't need this right now, but it's good to know it's out there.
+
+* [Memcached - AWS OpsWorks](http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-mem.html)
 
 
 ## Decisions
