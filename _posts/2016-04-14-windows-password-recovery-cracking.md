@@ -16,3 +16,25 @@ This is a nice exploit that does not require a boot usb or CDROM. See comments a
 
 [Offline Windows Password & Registry Editor](http://pogostick.net/~pnh/ntpasswd/)
 
+---
+
+[Long Passwords Comic] (https://qph.is.quoracdn.net/main-qimg-eefe9d8c61eff800ba25e83d23911a9a?convert_to_webp=true)
+
+---
+
+[Cain & Abel](http://www.oxid.it/cain.html) is a password recovery tool for Microsoft Operating Systems.
+
+---
+
+I don't think this one works as the author describes it.
+
+http://www.davidtan.org/hacking-cracking-windows-xp-login-password/
+
+---
+
+This tool reportedly allows retrieval from RAM of the current user's Windows password.
+
+https://github.com/gentilkiwi/mimikatz/blob/master/README.md
+
+---
+
