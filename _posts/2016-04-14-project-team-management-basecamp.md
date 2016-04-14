@@ -17,3 +17,7 @@ I like their idea of the 6 tools that are required for team and project manageme
 * **A centralized schedule.** Basecamp’s schedule keeps track of all major milestones, deadlines, upcoming events, and to-dos with due dates. Dates are clearly posted so everyone can find out what’s due when. You can add Basecamp’s schedule to your Google, iCal, or Outlook calendar.
 
 The pricing ([Basecamp 3 Prices](https://basecamp.com/3/pricing)) indicates that basecamp costs $29/month for unlimited users and 100GB of storage space. However, the first "basecamp" we create is freee. I'm not sure what that means and if we even need more than one basecamp.
+
+---
+
+Is [Slack: Be less busy](https://slack.com/) another option?
