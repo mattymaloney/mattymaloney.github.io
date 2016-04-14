@@ -5,6 +5,7 @@ title: "Info-Bucket for PHP opcode and Key/Value Cache Alternatives"
 ---
 
 
+
 [Simple PHP Cache Class | Fast PHP Caching Class](http://www.phpfastcache.com/)
 
 Something from outside the normally closed circle of PHP cache recommendations.
@@ -52,6 +53,15 @@ More installation and configuration details:
 * [Configuring WordPress to use Memcached | Matt's Technology Blog](http://technology.mattrude.com/2011/11/configuring-wordpress-to-use-memcached/)
 
 And a wordpress plugin that might make all of this very easy: [Memcached Object Cache — WordPress Plugins](https://wordpress.org/plugins/memcached/)
+
+### Amazon ElastiCache
+
+Also worthy of note, since we already intend to use AWS to host these servers, is [AWS | Amazon ElastiCache – in-memory cache service](https://aws.amazon.com/elasticache/).
+
+See also:
+
+* [AWS Developer Forums: ElastiCache v.s. memcached ...](https://forums.aws.amazon.com/thread.jspa?threadID=84311)
+
 
 
 ## Decisions
