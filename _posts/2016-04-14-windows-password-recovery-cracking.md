@@ -38,3 +38,15 @@ https://github.com/gentilkiwi/mimikatz/blob/master/README.md
 
 ---
 
+superuser insights:
+
+http://superuser.com/questions/235300/where-does-windows-os-store-user-passwords
+
+http://superuser.com/questions/118233/how-are-windows-passwords-handled
+
+---
+
+http://m.windowsecurity.com/articles-tutorials/authentication_and_encryption/How-Cracked-Windows-Password-Part2.html
+
+
+
