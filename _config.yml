@@ -1,5 +1,5 @@
 excerpt_separator: ""
-pygments: true
+#pygments: true
 markdown: kramdown
 url: http://mattymaloney.github.io
 title: Matty Maloney
