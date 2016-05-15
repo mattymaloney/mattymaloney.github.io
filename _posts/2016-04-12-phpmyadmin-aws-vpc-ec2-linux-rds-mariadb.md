@@ -20,9 +20,18 @@ Choosing:
 
 Make sure that this EC2 instance's security group is added to the permitted ingress traffic for the RDS instance's security group.
 
+## Update Apache `ServerName`
+
 Edit `/etc/httpd/conf/httpd.conf` to update the `ServerName` directive.
 
 Restart Apache.
+
+
+## Cleanup `conf.modules.d`
+
+Delete any files in `/etc/httpd/conf.modules.d` that were added by `yum` during updates.
+
+e.g. `rm -rf /etc/httpd/conf.modules.d/10-php*`
 
 
 ## Install phpMyAdmin
