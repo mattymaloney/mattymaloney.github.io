@@ -11,7 +11,7 @@ Choosing:
 
 - **OS/AMI**: _lap-baseline_ created previously.
 - **Instance Type**: t2.nano (since this is a necessary, but not-oft-used vm)
-- **VPC**: the VPC that was create with the RDS instance
+- **VPC**: the VPC that was created with the RDS instance
 - **Availability Zone**: same that was chosen when creating the RDS instance
 - **Enable termination protection**: yes
 - Security Group: Select or create one with the following settings:
