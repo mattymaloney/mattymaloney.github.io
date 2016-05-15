@@ -14,11 +14,14 @@ Choosing:
 - **VPC**: the VPC that was created with the RDS instance
 - **Availability Zone**: same that was chosen when creating the RDS instance
 - **Enable termination protection**: yes
-- Security Group: Select or create one with the following settings:
+- **Security Group**: Select or create one with the following settings:
 	- port 22 from office and home IPs.
     - ports 80 and 443 from all.
 
+## Permission to Access RDS Instance
+
 Make sure that this EC2 instance's security group is added to the permitted ingress traffic for the RDS instance's security group.
+
 
 ## Update Apache `ServerName`
 
