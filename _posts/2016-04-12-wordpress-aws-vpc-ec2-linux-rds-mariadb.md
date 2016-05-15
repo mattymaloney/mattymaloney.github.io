@@ -15,18 +15,30 @@ Choosing:
 - **VPC**: the VPC that was create with the RDS instance
 - **Availability Zone**: same that was chosen when creating the RDS instance
 - **Enable termination protection**: yes
-- Security Group: Select or create one with the following settings:
+- **Security Group**: Select or create one with the following settings:
 	- port 22 from office and home IPs.
     - ports 80 and 443 from all.
 
+## Permission to Access RDS Instance
+
 Make sure that this EC2 instance's security group is added to the permitted ingress traffic for the RDS instance's security group.
+
+Verify connection to the database using wordpress's username and password.
+
+
+## Update Apache `ServerName`
 
 Edit `/etc/httpd/conf/httpd.conf` to update the `ServerName` directive.
 
 Restart Apache.
 
 
-Verify now that you can connect to the database using wordpress's username and password.
+## Cleanup `conf.modules.d`
+
+Delete any files in `/etc/httpd/conf.modules.d` that were added by `yum` during updates.
+
+e.g. `sudo rm -rf /etc/httpd/conf.modules.d/10-php*`
+
 
 ## 9 - Install WordPress
 
