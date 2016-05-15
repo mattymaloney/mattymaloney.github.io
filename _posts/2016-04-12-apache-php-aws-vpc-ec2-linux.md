@@ -10,10 +10,20 @@ Two resources that were very valuable in getting this process started:
 * [Tutorial: Installing a LAMP Web Server on Amazon Linux - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
 * [Tutorial: Hosting a WordPress Blog with Amazon Linux - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hosting-wordpress.html)
 
-And this one for hints on timezone settings for php and for the server:
+
+This one for hints on timezone settings for php and for the server:
 
 * [Amazon EC2 – Installing Apache and PHP boilerplate – SpiderSoft](http://www.spidersoft.com.au/2013/apache-php-config-boilerplate/)
 
+
+And some suggestions on which apache modules can be stripped. But in the end, I disabled all modules and reenabled modules as needed.
+
+* [Strip Down Apache to Improve Performance & Memory Efficiency](http://haydenjames.io/strip-apache-improve-performance-memory-efficiency/)
+
+
+SSL Setup advice from Amazon
+
+* [Tutorial: Configure Apache Web Server on Amazon Linux to use SSL/TLS - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)
 
 
 
@@ -560,6 +570,18 @@ sudo rm -rf /etc/localtime
 sudo ln -s /usr/share/zoneinfo/America/Denver /etc/localtime
 ```
 
+## php.ini - Default -> Production
+
+Add/change these values in php.ini
+
+```
+error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+display_errors = Off
+display_startup_errors = Off
+track_errors = Off
+mysqlnd.collect_memory_statistics = Off
+```
+
 
 ## Setup HSTS in Apache, maybe
 
@@ -623,4 +645,3 @@ Use AWS console to create an AMI from this instance. Set the name of the ami and
 * Remember there is a `pi.php` script in `/var/www/html` which shows `phpinfo()` output. Don't forget to delete it or at least give it a secret 
 
 * First command after launch: `sudo yum update`.
-
