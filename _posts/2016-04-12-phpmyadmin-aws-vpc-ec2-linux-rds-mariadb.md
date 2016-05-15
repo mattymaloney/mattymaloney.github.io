@@ -46,7 +46,9 @@ cd /var/www
 wget --no-check-certificate https://files.phpmyadmin.net/phpMyAdmin/4.6.1/phpMyAdmin-4.6.1-english.tar.gz
 tar xzf phpMyAdmin-4.6.1-english.tar.gz
 rm phpMyAdmin-4.6.1-english.tar.gz
-sudo mv phpMyAdmin-4.6.1-english/* html/
+#sudo mv phpMyAdmin-4.6.1-english/* html/
+sudo rm -rf html
+sudo mv phpMyAdmin-4.6.1-english html
 sudo chown -R apache:www /var/www
 sudo chmod 2775 /var/www
 find /var/www -type d -exec sudo chmod 2775 {} \;
@@ -83,7 +85,7 @@ exit;
 ## Setup phpMyAdmin configuration, including configuration db and user.
 
 
-After updating the configuration name ('verbose'), rds endpoint ('host'), time zone ('SessionTimeZone'), the password ('password'), and adding/changing some random characters in the blowfish secret, put this file in `/var/www/phpMyAdmin`.
+After updating the configuration name ('verbose'), rds endpoint ('host'), time zone ('SessionTimeZone'), the password ('password'), and adding/changing some random characters in the blowfish secret, put this file in `/var/www/phpMyAdmin` (or `/var/www/html`, if that's where phpMyAdmin is installed).
 
 ```
 <?php
@@ -142,4 +144,4 @@ $cfg['SaveDir'] = '';
 ?>
 ```
 
-All done with phpMyAdmin.
+Finished with phpMyAdmin.
