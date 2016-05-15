@@ -34,7 +34,7 @@ Restart Apache.
 
 Delete any files in `/etc/httpd/conf.modules.d` that were added by `yum` during updates.
 
-e.g. `rm -rf /etc/httpd/conf.modules.d/10-php*`
+e.g. `sudo rm -rf /etc/httpd/conf.modules.d/10-php*`
 
 
 ## Install phpMyAdmin
@@ -43,10 +43,10 @@ This expects that `php56-mbstring` is already installed.
 
 ```
 cd /var/www
-wget --no-check-certificate https://files.phpmyadmin.net/phpMyAdmin/4.6.0/phpMyAdmin-4.6.0-english.tar.gz
-tar xzf phpMyAdmin-4.6.0-english.tar.gz
-rm phpMyAdmin-4.6.0-english.tar.gz
-mv phpMyAdmin-4.6.0-english/* html/
+wget --no-check-certificate https://files.phpmyadmin.net/phpMyAdmin/4.6.1/phpMyAdmin-4.6.1-english.tar.gz
+tar xzf phpMyAdmin-4.6.1-english.tar.gz
+rm phpMyAdmin-4.6.1-english.tar.gz
+sudo mv phpMyAdmin-4.6.1-english/* html/
 sudo chown -R apache:www /var/www
 sudo chmod 2775 /var/www
 find /var/www -type d -exec sudo chmod 2775 {} \;
