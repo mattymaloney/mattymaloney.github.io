@@ -81,15 +81,29 @@ Create the user, assign a password, set the user's default group to `www` (same 
 sudo adduser wp-test
 sudo passwd wp-test
 sudo usermod -g www wp-test
+sudo chown root:root /home/wp-test/
+sudo chmod 755 /home/wp-test
 sudo mount --bind /var/www/html /home/wp-test/www
 ```
 
-I haven't figured out how to use `ChrootDirectory` effectively. Fow now, these are the lines that need to be added to the end of `/etc/ssh/sshd_config`.
+These are the lines that need to be added to the end of `/etc/ssh/sshd_config`.
 
 ```
 Match User wp-test
   PasswordAuthentication yes
+  ChrootDirectory %h
   X11Forwarding no
   AllowTcpForwarding no
   ForceCommand internal-sftp
 ```
+
+Some helpful insight into `sshd` and especially `ChrootDirectory`:
+
+* [Setting Up an sftp Site on Amazon Web Services EC2, and a Guest Account | Software Projects](https://rmtheis.wordpress.com/2011/07/03/setting-up-an-sftp-site-on-amazon-web-services-ec2-creating-an-account-to-share-with-a-third-party-and-restricting-that-account-to-allow-only-sftp/)
+* [How to add user with SFTP/ FTP access to '/var/www/html/website_abc' folder on Amazon EC2 Centos? - Server Fault](http://serverfault.com/questions/392601/how-to-add-user-with-sftp-ftp-access-to-var-www-html-website-abc-folder-on-a)
+* [ubuntu - Set up sftp to use password but ssh not to use password - Server Fault](http://serverfault.com/questions/154957/set-up-sftp-to-use-password-but-ssh-not-to-use-password)
+* [How to add pointers to filesystems outside the chrooted environment - using chrooted SFTP via OpenSSH - Super User](http://superuser.com/questions/247125/how-to-add-pointers-to-filesystems-outside-the-chrooted-environment-using-chro)
+* [amazon ec2 - Chrooted user logged out immediately after login - Server Fault](http://serverfault.com/questions/643396/chrooted-user-logged-out-immediately-after-login)
+* [ssh - bad ownership or modes for chroot directory component - Server Fault](http://serverfault.com/questions/584986/bad-ownership-or-modes-for-chroot-directory-component)
+* [sshd_config(5)](https://www.freebsd.org/cgi/man.cgi?query=sshd_config&sektion=5)
+
