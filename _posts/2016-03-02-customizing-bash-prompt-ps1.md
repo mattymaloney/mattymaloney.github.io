@@ -41,3 +41,9 @@ I'm not sure what that means yet.
 ---
 
 Someday, also consider the [fish shell](https://fishshell.com/).
+
+---
+
+A colorizing wizard with cleaner output: [Bash $PS1 Generator 2.0](https://www.kirsle.net/wizards/ps1.html)
+
+---
