@@ -33,3 +33,16 @@ Create and mount a large storage/transfer volume for the EC2 instance.
 
 ---
 
+Bash script to create the exports. But first, `mkdir` and `cd` into an empty directory to store the dumps.
+
+```
+dbnames=( costumec_blog costumec_orders costumec_reviews costumec_wap costumec_ccraze costumec_photos costumec_school costumec_wasatch ccraz_manny costumec_dev costumec_phplive costumec_search costumec_weblog )
+for dbname in "${dbnames[@]}"
+do
+  [[ -d $dbname ]] || mkdir $dbname
+  mysqldump --fields-terminated-by ',' --fields-enclosed-by='"' --lines-terminated-by 0x0d0a --single-transaction --order-by-primary --tab=$dbname $dbname
+done
+
+```
+
+For bash arrays, see also: [Bash For Loop Array: Iterate Through Array Values](http://www.cyberciti.biz/faq/bash-for-loop-array/).
