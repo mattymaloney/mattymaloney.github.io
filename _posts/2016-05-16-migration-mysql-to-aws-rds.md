@@ -25,3 +25,11 @@ mysqldump --fields-terminated-by ',' --fields-enclosed-by='"' --lines-terminated
 
 where, for easy identification, `dir-name` and `db-name` are ideally the same string value.
 
+---
+
+Create and mount a large storage/transfer volume for the EC2 instance.
+
+[Making an Amazon EBS Volume Available for Use - Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html)
+
+---
+
