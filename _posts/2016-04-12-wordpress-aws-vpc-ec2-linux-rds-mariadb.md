@@ -32,6 +32,10 @@ Edit `/etc/httpd/conf/httpd.conf` to update the `ServerName` directive.
 
 Restart Apache.
 
+```
+sudo service httpd restart
+```
+
 
 ## Cleanup `conf.modules.d`
 
@@ -81,6 +85,8 @@ Create the user, assign a password, set the user's default group to `www` (same 
 sudo adduser wp-test
 sudo passwd wp-test
 sudo usermod -g www wp-test
+sudo mkdir /home/wp-test/www
+sudo chown wp-test:wp-test /home/wp-test/www
 sudo chown root:root /home/wp-test/
 sudo chmod 755 /home/wp-test
 sudo mount --bind /var/www/html /home/wp-test/www
@@ -96,6 +102,13 @@ Match User wp-test
   AllowTcpForwarding no
   ForceCommand internal-sftp
 ```
+
+Restart sshd:
+
+```
+sudo service sshd restart
+```
+
 
 Some helpful insight into `sshd` and especially `ChrootDirectory`:
 
