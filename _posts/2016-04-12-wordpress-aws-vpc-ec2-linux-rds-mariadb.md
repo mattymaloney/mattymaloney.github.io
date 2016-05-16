@@ -40,7 +40,7 @@ Delete any files in `/etc/httpd/conf.modules.d` that were added by `yum` during 
 e.g. `sudo rm -rf /etc/httpd/conf.modules.d/10-php*`
 
 
-## 9 - Install WordPress
+## Install WordPress
 
 Download and extract wordpress.
 
@@ -62,10 +62,29 @@ vi wp-config.php
 Move extracted wordpress into `/var/www`, set apache:www ownership and appropriate permissions, and point `DocumentRoot` at `/var/www/wordpress`. Also, create and edit `/etc/httpd/conf.d/vhosts.conf`, creating a `VirtualHost` for wordpress.
 
 ```
-cd ..
-mv wordpress /var/www/
+sudo rm -rf /var/www/html
+sudo mv ~/wordpress /var/www/html
 sudo chown -R apache:www /var/www
 sudo chmod 2775 /var/www
 find /var/www -type d -exec sudo chmod 2775 {} \;
 find /var/www -type f -exec sudo chmod 0664 {} \;
+```
+
+
+## Create wordpress sftp user
+
+For allowing only the wordpress content-control user to login via password, see http://serverfault.com/questions/154957/set-up-sftp-to-use-password-but-ssh-not-to-use-password. In our case, we want the `ec2-user` to be able to login via keypair only, while allowing the content-upload wordpress user to login via password.
+
+```
+Match User wp-test
+  PasswordAuthentication yes
+  ChrootDirectory /var/www/html
+  X11Forwarding no
+  AllowTcpForwarding no
+  ForceCommand internal-sftp
+```
+
+```
+sudo adduser wp-test
+sudo passwd wp-test
 ```
