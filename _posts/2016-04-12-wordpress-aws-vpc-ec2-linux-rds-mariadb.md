@@ -75,18 +75,21 @@ find /var/www -type f -exec sudo chmod 0664 {} \;
 
 For allowing only the wordpress content-control user to login via password, see http://serverfault.com/questions/154957/set-up-sftp-to-use-password-but-ssh-not-to-use-password. In our case, we want the `ec2-user` to be able to login via keypair only, while allowing the content-upload wordpress user to login via password.
 
-```
-Match User wp-test
-  PasswordAuthentication yes
-  ChrootDirectory /var/www/html
-  X11Forwarding no
-  AllowTcpForwarding no
-  ForceCommand internal-sftp
-```
+Create the user, assign a password, set the user's default group to `www` (same as the apache user), and mount the wordpress html directory into the user's home directory (so that it can be accessed without traversing out to the /var/www directory).
 
 ```
 sudo adduser wp-test
 sudo passwd wp-test
 sudo usermod -g www wp-test
+sudo mount --bind /var/www/html /home/wp-test/www
+```
 
+I haven't figured out how to use `ChrootDirectory` effectively. Fow now, these are the lines that need to be added to the end of `/etc/ssh/sshd_config`.
+
+```
+Match User wp-test
+  PasswordAuthentication yes
+  X11Forwarding no
+  AllowTcpForwarding no
+  ForceCommand internal-sftp
 ```
