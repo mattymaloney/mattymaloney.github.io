@@ -87,4 +87,6 @@ Match User wp-test
 ```
 sudo adduser wp-test
 sudo passwd wp-test
+sudo usermod -g www wp-test
+
 ```
