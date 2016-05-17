@@ -63,3 +63,9 @@ Use `sftp` to transfer the tar.gz backup files:
 
 ---
 
+User netcat `nc` to transfer files or streams:
+
+[Easy way to do a mysqldump and restore using netcat (this is NOT encrypted) · GitHub](https://gist.github.com/vanjos/6053606)
+
+---
+
