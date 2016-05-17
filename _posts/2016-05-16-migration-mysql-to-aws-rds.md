@@ -33,7 +33,7 @@ Create and mount a large storage/transfer volume for the EC2 instance.
 
 ---
 
-Bash script to create the exports. But first, `mkdir` and `cd` into an empty directory to store the dumps.
+Bash script to create and tar|gzip the exports. But first, `mkdir` and `cd` into an empty directory to store the dumps.
 
 ```
 dbnames=( costumec_blog costumec_orders costumec_reviews costumec_wap costumec_ccraze costumec_photos costumec_school costumec_wasatch ccraz_manny costumec_dev costumec_phplive costumec_search costumec_weblog )
