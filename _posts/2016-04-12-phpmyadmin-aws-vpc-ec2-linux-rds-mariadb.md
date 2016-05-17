@@ -64,6 +64,7 @@ mysql -h db.instance.endpoint.rds.amazonaws.com -u root -p
 To setup the phpMyAdmin configuration user (to hold data for sql history, user configuration choices, etc), run this sql outside of any DB context. Use a different password of course.
 
 ```
+create database phpmyadmin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON `phpmyadmin`.* TO 'pma_config'@'%'  IDENTIFIED BY 'pmapass';
 ```
 
