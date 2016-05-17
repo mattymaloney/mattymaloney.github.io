@@ -48,3 +48,18 @@ done
 ```
 
 For bash arrays, see also: [Bash For Loop Array: Iterate Through Array Values](http://www.cyberciti.biz/faq/bash-for-loop-array/).
+
+---
+
+Install mysql client on test box:
+
+`sudo yum install mysql56`
+
+---
+
+Use `sftp` to transfer the tar.gz backup files:
+
+`sftp -o IdentityFile=~/.ssh/ncali-03.pem ec2-user@52.9.125.176`
+
+---
+
