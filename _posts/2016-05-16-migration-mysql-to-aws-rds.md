@@ -69,3 +69,12 @@ User netcat `nc` to transfer files or streams:
 
 ---
 
+Import mysqldump sql data.
+
+`mysql -h <hostname> -u root -p --execute "source <dbname>.create; use <dbname>; source <dbname>.sql;"`
+
+
+Import mysqldump delimited data.
+See [Importing Data to an Amazon RDS MySQL or MariaDB DB Instance with Reduced Downtime - Amazon Relational Database Service](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.NonRDSRepl.html).
+
+---
