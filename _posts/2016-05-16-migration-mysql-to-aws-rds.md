@@ -40,9 +40,9 @@ dbnames=( costumec_blog costumec_orders costumec_reviews costumec_wap costumec_c
 for dbname in "${dbnames[@]}"
 do
   [[ -d $dbname ]] || mkdir $dbname
+  chown mysql:mysql $dbname
   mysqldump --fields-terminated-by ',' --fields-enclosed-by='"' --lines-terminated-by 0x0d0a --single-transaction --order-by-primary --tab=$dbname $dbname
 done
-
 ```
 
 For bash arrays, see also: [Bash For Loop Array: Iterate Through Array Values](http://www.cyberciti.biz/faq/bash-for-loop-array/).
