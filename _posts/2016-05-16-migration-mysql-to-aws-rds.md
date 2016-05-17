@@ -42,6 +42,8 @@ do
   [[ -d $dbname ]] || mkdir $dbname
   chown mysql:mysql $dbname
   mysqldump --fields-terminated-by ',' --fields-enclosed-by='"' --lines-terminated-by 0x0d0a --single-transaction --order-by-primary --tab=$dbname $dbname
+  tar czf $dbname.tar.gz $dbname
+  rm -rf $dbname
 done
 ```
 
