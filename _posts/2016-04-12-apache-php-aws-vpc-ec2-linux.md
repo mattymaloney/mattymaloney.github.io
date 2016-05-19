@@ -125,11 +125,13 @@ Reconnect and check permissions.
  
 Set better ownership and permissions on the /var/www directory, sub-directories, and files.
 
-    sudo chown -R apache:www /var/www
-    sudo chmod 2775 /var/www
-    find /var/www -type d -exec sudo chmod 2775 {} \;
-    find /var/www -type f -exec sudo chmod 0664 {} \;
-    sudo service httpd restart
+```
+sudo chown -R apache:www /var/www
+sudo chmod 2775 /var/www
+find /var/www -type d -exec sudo chmod 2775 {} \;
+find /var/www -type f -exec sudo chmod 0664 {} \;
+sudo service httpd restart
+```
 
 
 ## Test Apache/PHP
@@ -625,7 +627,7 @@ Plan on deleting the `.disabled` directories from `/etc/httpd/conf`.
 
 ### More... op cache and key/value caching
 
-Not sure yet what exactly to install for Apache or configure for PHP to have reasonable caching alternatives pre-installed and availablemaz in this AMI.
+Not sure yet what exactly to install for Apache or configure for PHP to have reasonable caching alternatives pre-installed and available in this AMI.
 
 
 ### More... HTTP/2
