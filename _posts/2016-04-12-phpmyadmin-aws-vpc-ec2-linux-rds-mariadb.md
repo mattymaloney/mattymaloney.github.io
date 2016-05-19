@@ -61,10 +61,15 @@ Use mysql cli to connect to rds with root id. Create new user for this wordpress
 mysql -h db.instance.endpoint.rds.amazonaws.com -u root -p
 ```
 
-To setup the phpMyAdmin configuration user (to hold data for sql history, user configuration choices, etc), run this sql outside of any DB context. Use a different password of course.
+To setup the phpMyAdmin configuration database (to hold data for sql history, user configuration choices, etc), run the sql found in [phpmyadmin-installation-dir]/sql/create_tables.sql file.
 
 ```
-create database phpmyadmin;
+source /var/www/html/sql/create_tables.sql;
+```
+
+And create the phpmyadmin management user, run this sql outside of any DB context. Use a different password of course.
+
+```
 GRANT SELECT, INSERT, UPDATE, DELETE ON `phpmyadmin`.* TO 'pma_config'@'%'  IDENTIFIED BY 'pmapass';
 ```
 
