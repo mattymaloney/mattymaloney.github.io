@@ -97,7 +97,9 @@ sudo chkconfig httpd on
 ```
 
 Apache components: httpd24 mod24_ssl
+
 PHP Components: php56 php56-mysqlnd php56-mbstring php56-redis php56-memcached-pecl php-pear
+
 MYSQL Client: mysql56
 
 At this point, we should be able to see the server’s default apache “noindex” page over http using the public dns hostname shown in the ECs Management Console.
