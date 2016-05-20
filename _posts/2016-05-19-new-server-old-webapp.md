@@ -13,6 +13,19 @@ sudo chkconfig httpd on
 
 sudo service mysqld start
 sudo chkconfig mysqld on
+```
 
+Modify httpd.conf to point to a DocumentRoot on our temp storage device.
+
+Transfer the backup/archive of the app from the old server to this new test server, restore the archive, move the public_html into the new apache document root, set permissions for apache.
+
+```
+# move the archived/restored public_html folder into /extra/www and set permissions.
+mv /extra/[archive-folder]/public_html /extra/www
+cd /extra/www
+sudo chown -R apache:www .
+sudo chmod 2775 .
+find . -type d -exec sudo chmod 2775 {} \;
+find . -type f -exec sudo chmod 0664 {} \;
 ```
 
