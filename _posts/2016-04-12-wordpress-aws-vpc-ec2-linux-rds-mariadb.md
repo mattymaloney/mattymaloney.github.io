@@ -77,6 +77,8 @@ find /var/www -type f -exec sudo chmod 0664 {} \;
 
 ## Create wordpress sftp user
 
+UPDATE: see also _\_posts/2016-05-23-linux-sftp-only-user.md_ for an updated and more generic version of this process.
+
 For allowing only the wordpress content-control user to login via password, see http://serverfault.com/questions/154957/set-up-sftp-to-use-password-but-ssh-not-to-use-password. In our case, we want the `ec2-user` to be able to login via keypair only, while allowing the content-upload wordpress user to login via password.
 
 Create the user, assign a password, set the user's default group to `www` (same as the apache user), and mount the wordpress html directory into the user's home directory (so that it can be accessed without traversing out to the /var/www directory).
@@ -119,4 +121,3 @@ Some helpful insight into `sshd` and especially `ChrootDirectory`:
 * [amazon ec2 - Chrooted user logged out immediately after login - Server Fault](http://serverfault.com/questions/643396/chrooted-user-logged-out-immediately-after-login)
 * [ssh - bad ownership or modes for chroot directory component - Server Fault](http://serverfault.com/questions/584986/bad-ownership-or-modes-for-chroot-directory-component)
 * [sshd_config(5)](https://www.freebsd.org/cgi/man.cgi?query=sshd_config&sektion=5)
-
