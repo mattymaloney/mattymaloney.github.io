@@ -5,7 +5,7 @@ title: "Setup an sftp-only User in Linux"
 ---
 How to setup a user to access the server via sftp only. 
 
----
+## User and Home Directory
 
 For allowing a user to login via password, see http://serverfault.com/questions/154957/set-up-sftp-to-use-password-but-ssh-not-to-use-password. In some cases, we want the `ec2-user` to be able to login via keypair only, while allowing, e.g. the content-upload wordpress user, to login via password.
 
@@ -23,6 +23,8 @@ sudo chown root:root /home/username/
 sudo chmod 755 /home/username
 sudo mount --bind /var/www/html /home/username/www
 ```
+
+## sshd_config
 
 These are the lines that need to be added to the end of `/etc/ssh/sshd_config`. I don't properly understand the `X11Forwarding` and `AllowTcpForwarding` lines, but every example I see has them, so I'm going with it.
 
