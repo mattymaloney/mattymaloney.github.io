@@ -43,3 +43,8 @@ Cancel the search and restore original line. Ctrl + g
 
 ---
 
+## [Bash Features - Command Line Editing](http://web.mit.edu/gnu/doc/html/features_7.html)
+
+This is a more complete discussion of available movement options.
+
+---
