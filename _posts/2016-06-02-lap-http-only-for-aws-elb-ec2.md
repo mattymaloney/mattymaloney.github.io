@@ -311,7 +311,8 @@ AddType application/x-font-woff .woff
 ## Slim-down Apache's per-process footprint
 
 ```
-sudo mv conf.moduled.d conf.modules.d.disabled
+sudo mv conf.modules.d conf.modules.d.disabled
+sudo mkdir conf.modules.d
 ```
 
 Then create a single module-loading conf file: `conf.modules.d/00-required.conf`.
@@ -353,11 +354,6 @@ LoadModule dir_module modules/mod_dir.so
 LoadModule php5_module modules/libphp-5.6.so
 
 #
-# SSL
-#
-LoadModule ssl_module modules/mod_ssl.so
-
-#
 # socache_memcache_module to support memcached
 # socache_shmcb_module to support shmcb for tls
 #
@@ -382,6 +378,7 @@ LoadModule alias_module modules/mod_alias.so
 As far as I can tell, these are the only modules we need... so far. We'll see what else specifically is needed by phpMyAdmin and WordPress.
 
 The `log_config_module` can probably be removed as well since we're not using any custom log lines.
+
 
 ## Clean out other unnecessary configuration data
 
