@@ -384,6 +384,7 @@ The `log_config_module` can probably be removed as well since we're not using an
 
 ```
 sudo mv conf.d conf.d.disabled
+sudo mkdir conf.d
 ```
 
 Then, add the following files to `conf.d`:
@@ -412,39 +413,6 @@ php_value session.save_path    "/var/lib/php/5.6/session"
 php_value soap.wsdl_cache_dir  "/var/lib/php/5.6/wsdlcache"
 ```
 
-### `conf.d/20-ssl.conf`:
-
-Note that the SSLv2 protocol is not included in Apache v2.4, so we don't need to exclude it in the `SSLProtocol` directive.
-
-I use the dates in the certificate files to denote the certificate expiration date.
-
-```
-Listen 443 https
-
-SSLPassPhraseDialog exec:/usr/libexec/httpd-ssl-pass-dialog
-
-SSLSessionCache         shmcb:/run/httpd/sslcache(512000)
-SSLSessionCacheTimeout  300
-
-SSLRandomSeed startup file:/dev/urandom  256
-SSLRandomSeed connect builtin
-
-SSLCryptoDevice builtin
-
-#
-# For insight into cipher choices, see
-# https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/
-#
-SSLProtocol ALL -SSLv3
-SSLHonorCipherOrder On
-SSLCipherSuite ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS:!AES256
-SSLCompression Off
-
-SSLCertificateFile      /etc/httpd/tls/2016-06-06._.example.com.crt
-SSLCertificateKeyFile   /etc/httpd/tls/2016-06-06._.example.com.key
-SSLCertificateChainFile /etc/httpd/tls/2016-06-06._.example.com.gdbundle.crt
-```
-
 ### `conf.d/50-server-status.conf.disabled`:
 
 Remove ".disabled" from this filename and restart apache at moments when you do want to see apache server-status and server-info.
@@ -468,23 +436,6 @@ LoadModule status_module modules/mod_status.so
 </Location>
 ```
 
-### `conf.d/90-vhosts.conf`:
-
-This is the only vhost we need right now, and it exists almost entirely for the `SSLEngine` directive which can't be placed in the main server configuration.
-
-```
-<VirtualHost _default_:443>
-  SSLEngine on
-
-  # LogLevel is not inherited from httpd.conf.
-  LogLevel warn
-  ErrorLog logs/ssl_error_log
-
-  #TransferLog logs/ssl_access_log
-  #CustomLog logs/ssl_request_log \
-  #        "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
-</VirtualHost>
-```
 
 ## Timezone
 
@@ -538,13 +489,15 @@ as the simplest implementation to our https virtual host. If we get around to su
 
 ## Cleanup
 
-Delete the `/var/www/` `.disabled` directories.
 
 ```
 mv /var/www/cgi-bin /var/www/cgi-bin.disabled
 mv /var/www/icons /var/www/icons.disabled
 mv /var/www/noindex /var/www/noindex.disabled
 ```
+
+Sometime later, delete the `/var/www/` `.disabled` directories.
+
 
 ## More...
 
@@ -576,3 +529,5 @@ Use AWS console to create an AMI from this instance. Set the name of the ami and
 * Remember there is a `pi.php` script in `/var/www/html` which shows `phpinfo()` output. Don't forget to delete it or at least give it a secret 
 
 * First command after launch: `sudo yum update`.
+* Then change the friendly hostname in .bash_profile PS1.
+
