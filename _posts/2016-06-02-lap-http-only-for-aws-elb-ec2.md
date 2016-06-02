@@ -61,7 +61,8 @@ Run updates and install apache/php as well as the php mysql native driver, the p
 sudo yum update
 sudo yum install \
   httpd24 \
-  php56 php56-mysqlnd php56-mbstring php56-pecl-memcached php56-pecl-redis php-pear php56-opcache \
+  php56 php56-mysqlnd php56-mbstring php56-pecl-memcached \
+  php56-pecl-redis php-pear php56-opcache \
   mysql56
 sudo service httpd start
 sudo chkconfig httpd on
@@ -84,16 +85,20 @@ Outside of wordpress installations, do we need the apache service to have modify
 
 Create the www group and add the ec2-user and apache users to it.
 
-    sudo groupadd www
-    sudo usermod -a -G www ec2-user
-    sudo usermod -a -G www apache
-    exit
+```
+sudo groupadd www
+sudo usermod -a -G www ec2-user
+sudo usermod -a -G www apache
+exit
+```
 
 Reconnect and check permissions.
 
-	groups
-    # should show "ec2-user wheel www"
- 
+```
+groups
+# should show "ec2-user wheel www"
+```
+
 Set better ownership and permissions on the /var/www directory, sub-directories, and files.
 
 ```
@@ -109,8 +114,10 @@ sudo service httpd restart
 
 Test and inspect the Apache/PHP installation.
 
-	echo "<?php phpinfo(); ?>" > /var/www/html/pi.php
-    
+```
+echo "<?php phpinfo(); ?>" > /var/www/html/pi.php
+```
+
 Then, in web browser, go to http://public.dns.hostname/pi.php to verify that Apache and PHP are working and have the proper packages and modules installed and enabled.
 
 
@@ -125,34 +132,11 @@ Listen 80
 #
 Include conf.modules.d/*.conf
 
-#
-# If you wish httpd to run as a different user or group, you must run
-# httpd as root initially and it will switch.
-#
-# User/Group: The name (or #number) of the user/group to run httpd as.
-# It is usually good practice to create a dedicated user and group for
-# running httpd, as with most system services.
-#
 User apache
 Group apache
 
 #
-# 'Main' server configuration
-#
-# The directives in this section set up the values used by the 'main'
-# server, which responds to any requests that aren't handled by a
-# <VirtualHost> definition.  These values also provide defaults for
-# any <VirtualHost> containers you may define later in the file.
-#
-# All of these directives may appear inside <VirtualHost> containers,
-# in which case these default settings will be overridden for the
-# virtual host being defined.
-#
-
-#
-# Deny access to the entirety of your server's filesystem. You must
-# explicitly permit access to web content directories in other
-# <Directory> blocks below.
+# Deny access to the entire filesystem.
 #
 <Directory />
   AllowOverride none
@@ -168,16 +152,15 @@ Group apache
 </Directory>
 
 #
-# DirectoryIndex: sets the file that Apache will serve if a directory
-# is requested.
+# DirectoryIndex: sets the file that Apache will serve if
+# a directory is requested.
 #
 <IfModule dir_module>
   DirectoryIndex index.html
 </IfModule>
 
 #
-# The following lines prevent .htaccess and .htpasswd files from being
-# viewed by Web clients.
+# Deny access to .ht* files
 #
 <Files ".ht*">
   Require all denied
@@ -186,6 +169,7 @@ Group apache
 
 ServerName test.example.com
 DocumentRoot "/var/www/html"
+
 
 #
 # Further relax access to the default document root:
@@ -216,26 +200,27 @@ TypesConfig /etc/mime.types
 
 #
 # Compress text-based content.
-# Apache already sends the `Vary:Accept-Encoding` header for any gzipped,
-# responses, so we don't need to add that.
+# Apache already sends the `Vary:Accept-Encoding` header
+# for any gzipped, responses, so we don't need to add that.
 #
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
 SetInputFilter DEFLATE
 
 #
-# Specify a default charset for all content served; this enables
-# interpretation of all content as UTF-8 by default.  To use the
-# default browser choice (ISO-8859-1), or to allow the META tags
-# in HTML content to override this choice, comment out this
-# directive:
+# Specify a default charset for all content served; 
+# this enables interpretation of all content as UTF-8
+# by default.  To use the default browser choice (ISO-8859-1),
+# or to allow the META tags in HTML content to override this
+# choice, comment out this directive:
 #
 AddDefaultCharset UTF-8
 
 <IfModule mime_magic_module>
   #
-  # The mod_mime_magic module allows the server to use various hints from the
-  # contents of the file itself to determine its type.  The MIMEMagicFile
-  # directive tells the module where the hint definitions are located.
+  # The mod_mime_magic module allows the server to use
+  # various hints from the contents of the file itself to
+  # determine its type.  The MIMEMagicFile directive tells
+  # the module where the hint definitions are located.
   #
   MIMEMagicFile conf/magic
 </IfModule>
@@ -271,18 +256,20 @@ ServerSignature Off
 
 # Supplemental configuration
 #
-# Load config files in the "/etc/httpd/conf.d" directory, if any.
+# Load config files in the "/etc/httpd/conf.d" directory,
+# if any.
 IncludeOptional conf.d/*.conf
 
 #
 # Include our own configurations additions.
 # We're using `IncludeOptoinal` instead of `Include` so that
-# the files can easily be renamed or deleted in order to disable that
-# functionality.
+# the files can easily be renamed or deleted in order to
+# disable that functionality.
 #
-# Since we're not using vhosts anymore, and therefore the functionality in
-# these `conf.include/*` files is no longer being repeated in different vhosts,
-# we should probably retire the include files and rather include those directives
+# Since we're not using vhosts anymore, and therefore the
+# functionality in these `conf.include/*` files is no longer
+# being repeated in different vhosts, we should probably retire
+# the include files and rather include those directives
 # directly in this conf file.
 #
 #Include conf.include/forbidden-locations.conf
@@ -292,14 +279,15 @@ IncludeOptional conf.include/force-http2https.conf
 
 
 #--#
-#--# Add common types not included from the call to `TypesConfig /etc/mime.types`.
+#--# Add common types not included from the call to
+#--# `TypesConfig /etc/mime.types`.
 #--#
 
 #
 # Support compressed file types.
 #
-# For these, I'm not sure if they should also/instead be specified
-# as `AddEncoding` directives.
+# For these, I'm not sure if they should also/instead be
+# specified as `AddEncoding` directives.
 #
 AddType application/x-compress .Z
 AddType application/x-gzip .gz .tgz
@@ -310,44 +298,15 @@ AddType application/x-gzip .gz .tgz
 AddType application/vnd.ms-fontobject .eot
 AddType application/x-font-ttf .ttf
 AddType application/x-font-woff .woff
-```
 
-The 2 includes near the end of `httpd.conf` are:
-
-### `Include conf.include/forbidden-locations.conf`
-
-```
+#
+# Deny access to these locations
+# 
 <LocationMatch "/(\.git|ddl|log|cache)/">
   Require all denied
 </LocationMatch>
 ```
 
-### `Include conf.include/force-http2https.conf`
-
-```
-###
-#
-# Force traffic to HTTPS
-#
-###
-
-# Because we're using the server_name variable below, be doubly sure that
-# apache will use the VirtualHost's ServerName value.
-UseCanonicalName On
-
-# This will enable the Rewrite capabilities
-RewriteEngine On
-
-# This checks to make sure the connection is not already HTTPS
-RewriteCond %{HTTPS} off
-
-# This rule will redirect users from their original location, to the same location but using HTTPS.
-# i.e.  http://www.example.com/foo/ to https://www.example.com/foo/
-# The leading slash is made optional so that this will work either in httpd.conf
-# or .htaccess context
-RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,QSA,L]
-#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
-```
 
 ## Slim-down Apache's per-process footprint
 
