@@ -12,7 +12,7 @@ First, to see what it was going to do:
 for f in _.*; do echo mv "$f" "${f/_/2019-06-05._}"; done
 ```
 
-Then:
+Then, removing the `echo` condom:
 
 ```
 for f in _.*; do mv "$f" "${f/_/2019-06-05._}"; done
