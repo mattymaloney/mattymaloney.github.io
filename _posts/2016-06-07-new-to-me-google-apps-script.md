@@ -1,0 +1,10 @@
+---
+layout: post
+title: Google Apps Script
+published: true
+---
+
+This is something I would have liked to know about: [Apps Script – Google Apps Script](https://www.google.com/script/start/)
+
+I think this is what I'll need to enforce our google apps users to change their passwords every X days.
+
