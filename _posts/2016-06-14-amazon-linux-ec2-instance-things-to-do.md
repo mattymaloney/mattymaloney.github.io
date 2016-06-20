@@ -62,7 +62,7 @@ echo 'alias vi="vim"' | sudo tee -a /root/.bashrc
 
 ## Security Modifications
 
-In decreasing levels of complexity and detail, here are 3 related aproaches to securing a new Ubuntu installation.
+In decreasing levels of complexity and detail, here are 3 related aproaches to securing a new Ubuntu installation. Most of this just needs mild modification to be useful for Amazon Linux instances. Although, I'm ignoring most of the firewall recommendations, as for not I'm relying almost exclusively on Amazon Security Groups.
 
 * [2016 Guide to User Data Security | Inversoft](https://www.inversoft.com/guides/2016-guide-to-user-data-security)
 * [My First 10 Minutes On a Server - Primer for Securing Ubuntu](http://www.codelitt.com/blog/my-first-10-minutes-on-a-server-primer-for-securing-ubuntu/)
