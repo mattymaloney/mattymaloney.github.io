@@ -60,3 +60,16 @@ echo 'alias ll="ls -lah"' | sudo tee -a /root/.bashrc
 echo 'alias vi="vim"' | sudo tee -a /root/.bashrc
 ```
 
+## Security Modifications
+
+In decreasing levels of complexity and detail, here are 3 related aproaches to securing a new Ubuntu installation.
+
+* [2016 Guide to User Data Security | Inversoft](https://www.inversoft.com/guides/2016-guide-to-user-data-security)
+* [My First 10 Minutes On a Server - Primer for Securing Ubuntu](http://www.codelitt.com/blog/my-first-10-minutes-on-a-server-primer-for-securing-ubuntu/)
+* [My First 5 Minutes On A Server; Or, Essential Security for Linux Servers](https://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
+
+
+This is codelitt's repo where they've opensourced their thought processes and best practices. Codelitt itself is of questionable value, but this is a good collection of commonly asserted best practices for security and restful nights.
+
+[codelittinc/incubator-resources: Processes, policies, and tools for startups and product teams. All open sourced and open for contribution.](https://github.com/codelittinc/incubator-resources)
+
