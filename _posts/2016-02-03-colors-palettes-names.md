@@ -43,3 +43,10 @@ Interesting color palette selection tool. Theoretically has some vision disabili
 ### Named Colors
 
 [HTML color codes and names](http://www.computerhope.com/htmcolor.htm)
+
+---
+
+### Help from O'Reilly
+
+[Practical color theory for people who code - O'Reilly Media Free, Live Events](http://www.oreilly.com/pub/e/3759)
+
