@@ -1,10 +1,8 @@
 ---
 published: true
 layout: post
-title: Web Colors
+title: Colors for the Web and HTML - Palettes, Names, Accessibility
 ---
-
-
 
 ### [Colors - A nicer color palette for the web.](http://clrs.cc/)
 
@@ -28,3 +26,20 @@ At the bottom of the page, it mentions several other design/css projects I'd lik
 - [fitter happier text](http://jxnblk.com/fitter-happier-text/)
 - [geomicons](http://geomicons.com/)
 
+---
+
+### Color Palette Selection and Accessibility Simulations
+
+Interesting color palette selection tool. Theoretically has some vision disability simulations as well, but I'm not equipped to have an opinion on how well those actually function.
+
+[Paletton - The Color Scheme Designer](http://paletton.com/)
+
+---
+
+[LOL Colors - Curated color palette inspiration](http://www.lolcolors.com/)
+
+---
+
+### Named Colors
+
+[HTML color codes and names](http://www.computerhope.com/htmcolor.htm)
