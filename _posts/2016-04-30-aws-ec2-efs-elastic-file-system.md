@@ -9,3 +9,4 @@ I applied for access to the beta period from our aws-test account.
 
 Eventually, see also: [Walkthrough 2: Set Up an Apache Web Server and Serve Amazon EFS Files - Amazon EFS (Preview)](http://docs.aws.amazon.com/efs/latest/ug/wt2-apache-web-server.html)
 
+UPDATE: As of 2016-06-30, EFS is now generally available.
