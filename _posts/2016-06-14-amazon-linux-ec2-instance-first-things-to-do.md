@@ -47,6 +47,7 @@ echo '# Custom bash prompt via kirsle.net/wizards/ps1.html' >> ~/.bashrc
 echo 'export PS1="\[$(tput sgr0)\]\n\[$(tput setaf 3)\]\u\[$(tput setaf 0)\]\[$(tput bold)\]@\[$(tput sgr0)\]\[$(tput setaf 3)\]\h \[$(tput setaf 7)\][\[$(tput setaf 5)\]aws-host\[$(tput setaf 7)\]]\n\[$(tput setaf 2)\]\w\n\[$(tput setaf 0)\]\[$(tput bold)\]\\$ \[$(tput sgr0)\]"' >> ~/.bashrc
 echo '' >> ~/.bashrc
 echo 'alias ll="ls -lah"' >> ~/.bashrc
+echo 'alias rm="rm -i"' >> ~/.bashrc
 ```
 
 And for `root` (this is only effective for interactive bash):
@@ -57,6 +58,7 @@ echo '# Custom bash prompt via kirsle.net/wizards/ps1.html' | sudo tee -a /root/
 echo 'export PS1="\[$(tput sgr0)\]\n\[$(tput setaf 3)\]\u\[$(tput setaf 0)\]\[$(tput bold)\]@\[$(tput sgr0)\]\[$(tput setaf 3)\]\h \[$(tput setaf 7)\][\[$(tput setaf 5)\]aws-host\[$(tput setaf 7)\]]\n\[$(tput setaf 2)\]\w\n\[$(tput setaf 0)\]\[$(tput bold)\]\\$ \[$(tput sgr0)\]"' | sudo tee -a /root/.bashrc
 echo '' | sudo tee -a /root/.bashrc
 echo 'alias ll="ls -lah"' | sudo tee -a /root/.bashrc
+echo 'alias rm="rm -i"' | sudo tee -a /root/.bashrc
 echo 'alias vi="vim"' | sudo tee -a /root/.bashrc
 ```
 
