@@ -48,6 +48,8 @@ echo 'export PS1="\[$(tput sgr0)\]\n\[$(tput setaf 3)\]\u\[$(tput setaf 0)\]\[$(
 echo '' >> ~/.bashrc
 echo 'alias ll="ls -lah"' >> ~/.bashrc
 echo 'alias rm="rm -i"' >> ~/.bashrc
+echo 'alias cp="cp -i"' >> ~/.bashrc
+echo 'alias mv="mv -i"' >> ~/.bashrc
 ```
 
 And for `root` (this is only effective for interactive bash):
@@ -59,6 +61,8 @@ echo 'export PS1="\[$(tput sgr0)\]\n\[$(tput setaf 3)\]\u\[$(tput setaf 0)\]\[$(
 echo '' | sudo tee -a /root/.bashrc
 echo 'alias ll="ls -lah"' | sudo tee -a /root/.bashrc
 echo 'alias rm="rm -i"' | sudo tee -a /root/.bashrc
+echo 'alias cp="cp -i"' | sudo tee -a /root/.bashrc
+echo 'alias mv="mv -i"' | sudo tee -a /root/.bashrc
 echo 'alias vi="vim"' | sudo tee -a /root/.bashrc
 ```
 
