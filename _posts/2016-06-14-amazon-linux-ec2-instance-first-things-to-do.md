@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Things to Do for Every New Amazon Linux EC2 Instance
+title: First Things to Do for Every New Amazon Linux EC2 Instance
 published: true
 ---
 
