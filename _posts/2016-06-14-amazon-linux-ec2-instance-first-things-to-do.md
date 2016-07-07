@@ -50,6 +50,7 @@ echo 'alias ll="LC_ALL=C ls -lahF"' >> ~/.bashrc
 echo 'alias rm="rm -i"' >> ~/.bashrc
 echo 'alias cp="cp -i"' >> ~/.bashrc
 echo 'alias mv="mv -i"' >> ~/.bashrc
+echo 'alias view="vim -R"' >> ~/.bashrc
 ```
 
 And for `root` (this is only effective for interactive bash):
@@ -64,6 +65,7 @@ echo 'alias rm="rm -i"' | sudo tee -a /root/.bashrc
 echo 'alias cp="cp -i"' | sudo tee -a /root/.bashrc
 echo 'alias mv="mv -i"' | sudo tee -a /root/.bashrc
 echo 'alias vi="vim"' | sudo tee -a /root/.bashrc
+echo 'alias view="vim -R"' | sudo tee -a /root/.bashrc
 ```
 
 ## Security Modifications
