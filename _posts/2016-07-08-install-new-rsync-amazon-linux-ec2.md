@@ -13,6 +13,8 @@ cd rsync-3.1.2
 ./configure --prefix=/usr
 make
 sudo make install
+rm -f rsync-3.1.2.tar.gz
+rm -rf rsync-3.1.2
 ```
 
 Yay!
