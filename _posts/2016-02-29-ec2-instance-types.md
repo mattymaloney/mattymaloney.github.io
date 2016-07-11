@@ -10,6 +10,18 @@ Turns out, Amazon has a rather nice summary document laying out the intended rol
 
 [Choosing the Right EC2 Instance Type for Your Application | AWS Official Blog](https://aws.amazon.com/blogs/aws/choosing-the-right-ec2-instance-type-for-your-application/)
 
+### Updates/Additions
+
+A webinar video from June 2016: [Choosing the Right EC2 Instance and Applicable Use Cases - AWS June 2016 Webinar Series - YouTube](https://www.youtube.com/watch?v=y-xicDOIiSQ)
+
+A video from November 2014: [AWS re:Invent 2014 | (SDD406) Amazon EC2 Instances Deep Dive - YouTube](https://www.youtube.com/watch?v=ujGx0tiI1L4)
+
+Three web pages enumerating EC2 instance types: 
+
+* [EC2 Instance Pricing – Amazon Web Services (AWS)](https://aws.amazon.com/ec2/pricing/)
+* [Amazon EC2 Instance Comparison](http://www.ec2instances.info/?cost=monthly)
+* [EC2 Instance Types – Amazon Web Services (AWS)](https://aws.amazon.com/ec2/instance-types/)
+
 ---
 
 For insight into changing an instance's type, see:
