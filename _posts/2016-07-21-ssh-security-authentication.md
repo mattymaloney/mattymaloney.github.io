@@ -1,0 +1,2 @@
+* [How Netflix gives all its engineers SSH access - O'Reilly Media](https://www.oreilly.com/learning/how-netflix-gives-all-its-engineers-ssh-access?imm_mid=0e5e5d&cmp=em-na-na-na-newsltr_security_20160719)
+* [Using an SSH Bastion Host · Scott's Weblog · The weblog of an IT pro specializing in virtualization, networking, open source, and cloud computing](http://blog.scottlowe.org/2015/11/21/using-ssh-bastion-host/)
