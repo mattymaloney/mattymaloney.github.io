@@ -15,7 +15,7 @@ The data we want to preserve from each retiring gapps account:
 * Contacts
 * Keep
 
-Additionally, Gmail, Drive and Calendar should be usable/searchable.
+These should all be usable/searchable from within an archive-user account.
 
 ...
 
