@@ -13,6 +13,7 @@ The data we want to preserve from each retiring gapps account:
 * Drive
 * Calendar
 * Contacts
+* Keep
 
 Additionally, Gmail, Drive and Calendar should be usable/searchable.
 
