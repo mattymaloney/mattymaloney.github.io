@@ -13,6 +13,7 @@ For future reference, when I look into this again, here are my scattered bookmar
 * [Namecheap.com Knowledgebase • Installing a SSL certificate on Apache](https://www.namecheap.com/support/knowledgebase/article.aspx/9423/0/installing-a-ssl-certificate-on-apache)
 * [Namecheap.com Knowledgebase • Where do I find SSL CA Bundle? (SSL Installation, Installation, )](https://www.namecheap.com/support/knowledgebase/article.aspx/9393/69/where-do-i-find-ssl-ca-bundle)
 * [Source address for whitelisting | Qualys Community](https://community.qualys.com/thread/10559)
+* [Known Issues (IPs for Whitelisting)| Qualys Community](https://community.qualys.com/docs/DOC-4865)
 * [Assessment failed: Unable to connect to the server · Issue #308 · ssllabs/ssllabs-scan](https://github.com/ssllabs/ssllabs-scan/issues/308)
 * [/bin/bash based SSL/TLS tester: testssl.sh](https://testssl.sh/)
 * [testssl-standard.jpg (935×1899)](https://testssl.sh/testssl-standard.jpg)
