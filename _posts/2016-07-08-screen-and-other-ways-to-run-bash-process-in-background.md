@@ -17,3 +17,5 @@ Some details on controling processes once they're started.
 This thread was really valuable for me better understanding a few of the `screen` command line options as well various methods of logging output from commands run from within `screen`. This also introduced me to `nohup`.
 
 [java - Output redirection with "screen" command - Stack Overflow](http://stackoverflow.com/questions/9460270/output-redirection-with-screen-command)
+
+And just a bit more insight: [logging - Save "Screen" (program) output to a file - Stack Overflow](http://stackoverflow.com/questions/14208001/save-screen-program-output-to-a-file)
