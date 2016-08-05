@@ -25,3 +25,7 @@ Use vim to view files, then reload manually or reload automically on changes.
 
 * [Reload file in vim - Super User](http://superuser.com/questions/247083/reload-file-in-vim)
 * [gvim - Tips for using vim as a log viewer - Super User](http://superuser.com/questions/147194/tips-for-using-vim-as-a-log-viewer)
+
+---
+
+[Multi-line regex support in Vim - Stack Overflow](http://stackoverflow.com/questions/784176/multi-line-regex-support-in-vim)
