@@ -29,3 +29,5 @@ Use vim to view files, then reload manually or reload automically on changes.
 ---
 
 [Multi-line regex support in Vim - Stack Overflow](http://stackoverflow.com/questions/784176/multi-line-regex-support-in-vim)
+
+[How to replace a character by a newline in Vim? - Stack Overflow](http://stackoverflow.com/questions/71323/how-to-replace-a-character-by-a-newline-in-vim/71334#71334)
