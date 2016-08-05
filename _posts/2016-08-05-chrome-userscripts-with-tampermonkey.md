@@ -6,26 +6,24 @@ Here's some essential links for TamperMonkey:
 * [Tampermonkey • FAQ](https://tampermonkey.net/faq.php?ext=dhdg)
 * [Tampermonkey Tutorial - hibbard.eu](http://hibbard.eu/tampermonkey-tutorial/)
 
-Here's what I have so far.
+Here's what I have so far. Seems to reliably do what it's supposed to do.
 
 ```
 // ==UserScript==
-// @name         github editor softwrap
+// @name         github-editor-softwrap
 // @namespace    http://matty.net/
 // @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @description  Set the github.com editor's wrap mode default to soft-wrap.
+// @author       Matty Maloney
 // @match        https://github.com/*
 // @grant        none
+// @require      none
 // ==/UserScript==
 
 (function() {
   'use strict';
-
-  // Your code here...
-  var wrapmode = document.querySelector('select.form-select.select-sm.js-code-wrap-mode');
+  var wrapmode = window.wrapmode = document.querySelector('select.form-select.select-sm.js-code-wrap-mode');
   wrapmode.value = 'on';
+  wrapmode.dispatchEvent(new Event('change', { bubbles: true, cancelable: true }));
 })();
 ```
-
-Unfortunately, changing the valueof the select box doesn't actually alter the behavior of the text area.
