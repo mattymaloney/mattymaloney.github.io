@@ -20,3 +20,8 @@ To set a new command to perform a long-winded operation (e.g. to let the `:C` co
 Ref: [highlight - Vim clear last search highlighting - Stack Overflow](http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting)
 
 ---
+
+Use vim to view files, then reload manually or reload automically on changes.
+
+* [Reload file in vim - Super User](http://superuser.com/questions/247083/reload-file-in-vim)
+* [gvim - Tips for using vim as a log viewer - Super User](http://superuser.com/questions/147194/tips-for-using-vim-as-a-log-viewer)
