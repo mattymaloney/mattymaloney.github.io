@@ -4,6 +4,8 @@ Here's some technical detail about the cables and pin-outs for Dell switches and
 
 * [What type of console cables are used for Dell PowerConnect, N Series, and Force10 switches | Dell US](http://www.dell.com/Support/Article/us/en/19/QNA43618)
 
+
+
 I think this is the cable I'd be using if our switches had RJ-45 console ports.
 
 * [Ftdi USB to Serial / Rs232 Console Rollover Cable for Cisco Routers - Rj45](https://www.amazon.com/gp/product/B00M2SAKMG/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
