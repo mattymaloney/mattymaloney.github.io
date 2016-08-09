@@ -50,8 +50,30 @@ copy running-config startup-config
 reload
 ```
 
+## NIST Time Servers
+
+[NIST Internet Time Service](http://tf.nist.gov/tf-cgi/servers.cgi)
+
+
+## New Firmware
+
+[Dell PowerConnect 5424, PowerConnect 5448, v.V2.0.0.46, A10 Driver Details | Dell US](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=777T5)
+
+
 ## TFTP Server
 
 http://www.extraputty.com/features/tftp.html
 
+I tried to use ExtraPuTTY first. I see how to configure the TFTP server; that's intuitive enough. I don't see how to start the server, and I didn't find any quick answers online. Must be intuitive for everyone else.
+
+
 http://downloads.solarwinds.com/solarwinds/Release/FreeTool/SolarWinds-TFTP-Server.zip
+
+After getting the windows firewall issues worked out, the SolarWinds TFTP Server seems to work very well.
+
+
+## Other Command-Line Guidance
+
+* [Basic Command Line Interface on Dell Networking PowerConnect 2800 model switches | Dell US](http://www.dell.com/support/Article/us/en/19/HOW10655/EN)
+* [PowerConnect Common Example Commands - PowerConnect Forum - Network Switches - Dell Community](http://en.community.dell.com/support-forums/network-switches/f/866/t/19445143)
+
