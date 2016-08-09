@@ -60,6 +60,17 @@ reload
 [Dell PowerConnect 5424, PowerConnect 5448, v.V2.0.0.46, A10 Driver Details | Dell US](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=777T5)
 
 
+```
+enable
+copy tftp://192.168.2.47/powerconnect_54xx-20046.ros image
+copy tftp://192.168.2.47/powerconnect_54xx_boot-2000.rfb boot
+boot system image-2
+show bootvar
+reload
+```
+
+Use `show bootvar` to show indication that image-2 is the uploaded firmware version, that it's not active (of course), and that it has an '*' next to it, indicating that it will be active on the next boot.
+
 ## TFTP Server
 
 http://www.extraputty.com/features/tftp.html
