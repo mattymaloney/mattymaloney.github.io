@@ -16,3 +16,42 @@ These 2 cables together is what I'm using to connect from a USB port to a male s
 This is the cable I'd be using if I had a PC with an actual serial port (or a USB->serial port) and a switch or router with an RJ-45 console port. I think this is essentially the same skyblue cable that comes with switches:
 
 * [Cisco Console Cable RJ45-to-DB9](https://www.amazon.com/dp/B000GL3MOY/)
+
+---
+
+## Switch config commands
+
+See also: [PowerConnect Common Example Commands - PowerConnect Forum - Network Switches - Dell Community](http://en.community.dell.com/support-forums/network-switches/f/866/t/19445143).
+
+```
+enable
+delete startup-config
+reload
+
+enable
+configure
+clock source sntp
+clock timezone -7 zone MST
+clock summer-time recurring usa zone MDT
+sntp unicast client enable
+sntp server 198.60.73.8
+exit
+exit
+
+enable
+configure
+interface vlan 1
+ip address 192.168.1.201 /21
+exit
+ip default-gateway 192.168.0.250
+exit
+
+copy running-config startup-config
+reload
+```
+
+## TFTP Server
+
+http://www.extraputty.com/features/tftp.html
+
+http://downloads.solarwinds.com/solarwinds/Release/FreeTool/SolarWinds-TFTP-Server.zip
