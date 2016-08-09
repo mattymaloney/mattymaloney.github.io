@@ -76,4 +76,30 @@ After getting the windows firewall issues worked out, the SolarWinds TFTP Server
 
 * [Basic Command Line Interface on Dell Networking PowerConnect 2800 model switches | Dell US](http://www.dell.com/support/Article/us/en/19/HOW10655/EN)
 * [PowerConnect Common Example Commands - PowerConnect Forum - Network Switches - Dell Community](http://en.community.dell.com/support-forums/network-switches/f/866/t/19445143)
+* [Dell PowerConnect 5324 - Console cable tips, basic setup and configuration via Putty - YouTube](https://www.youtube.com/watch?v=LCF347c1uPc)
+* [Using the Cisco console in Linux](http://useopensource.blogspot.jp/2007/01/using-cisco-console-in-linux.html)
+* [Cisco IOS Command Line Interface: Introduction - Part 1 - YouTube](https://www.youtube.com/watch?v=DZf0niNLgXY)
+* [Configuring a PowerConnect 5424 or 5448 Switch for use with an iSCSI storage system - Storage - Wiki - Storage - Dell Community](http://en.community.dell.com/techcenter/storage/w/wiki/2721.configuring-a-powerconnect-5424-or-5448-switch-for-use-with-an-iscsi-storage-system)
+* [[SOLVED] Dell Powerconnect 5424 basic configuration help! - Networking - Spiceworks](https://community.spiceworks.com/topic/306234-dell-powerconnect-5424-basic-configuration-help)
+* [Cisco IOS CLI for beginners - Part 1 - YouTube](https://www.youtube.com/watch?v=-zvihHxrfzM)
+
+Cisco Packet Tracer (network setup/configuration simulation)
+
+* [Packet Tracer](http://www.cisco.com/web/learning/netacad/course_catalog/PacketTracer.html)
+* [Download Packet Tracer | Cisco NetAcad](https://www.netacad.com/about-networking-academy/packet-tracer/)
+
+## To Do
+
+* Update firmware
+* Erase again and start configuration with setup wizard
+* Setup admin user -- `username admin password iLikeNetworks level 15`
+* `no shutdown` command for interface vlan 1, after setting ip address.
+* Configure for iSCSI
+* `copy run backup` to have an extra copy of the config.
+
+## To Do for existing management 1.x switch
+
+* examine config
+* copy config to tftp server ([Configuration and Image Files: Dell PowerConnect 3324/3348 Switch CLI Guide](http://stuartconnections.com/products/Computers/Systems/Server/Switches/Dell_PowerConnect_3348/Command_Line_Interface_Guide/configim.htm#1035067))
+* 
 
