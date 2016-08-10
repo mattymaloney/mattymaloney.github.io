@@ -175,15 +175,11 @@ Cisco Packet Tracer (network setup/configuration simulation)
 * [Packet Tracer](http://www.cisco.com/web/learning/netacad/course_catalog/PacketTracer.html)
 * [Download Packet Tracer | Cisco NetAcad](https://www.netacad.com/about-networking-academy/packet-tracer/)
 
-## To Do
-
-* `no shutdown` command for interface vlan 1, after setting ip address.
-* Configure for iSCSI
-* `copy run backup` to have an extra copy of the config.
 
 ## To Do for existing management 1.x switch
 
 * examine config
 * copy config to tftp server ([Configuration and Image Files: Dell PowerConnect 3324/3348 Switch CLI Guide](http://stuartconnections.com/products/Computers/Systems/Server/Switches/Dell_PowerConnect_3348/Command_Line_Interface_Guide/configim.htm#1035067))
-* 
+* upgrade firmware
+* set ip and enable web admin
 
