@@ -30,14 +30,27 @@ sudo make install
 ```
 
 Add this line to `/etc/fstab`
+
 ```
-s3fs#cc-www-static-origin-879350719246 /mnt/cc-static fuse _netdev,allow_other,umask=0077,uid=ec2-user,gid=ec2-user 0 0
+s3fs#bucket-name /mnt/folder-name fuse _netdev,allow_other,umask=077,uid=sftp-user,gid=www 0 0
 ```
 
-This makes ec2-user appear to be the owner and group for all files and folders. All files and folders end up appearing with permissions mode 700.
+This makes ec2-user appear to be the owner and group for all files and folders. All files and folders end up appearing with permissions mode 700. If user and group should both have access, then umask would be `007`. See `man fuse` for an explanation of why umask is the opposite of the permissions mode you'd use on the command line.
 
 Because we're doing this to create a gateway service allowing sftp clients to access an s3 bucket, we need to create an sftp-only user as well. See [Setup an sftp-only User in Linux](https://github.com/mattymaloney/mattymaloney.github.io/blob/master/_posts/2016-05-23-linux-sftp-only-user.md).
 
 ## To Do
 
-Expand this document to desctibe the complete setup of the pub.site.com box.
+Expand this document to describe the complete setup of the pub.site.com box.
+
+## Do the Mounting
+
+ACCESS_KEY_ID and SECRET_KEY are those belonging to an IAM user with read/write access to the S3 bucket.
+
+```
+mkdir /mnt/folder-name
+echo ACCESS_KEY_ID:SECRET_KEY | sudo tee /etc/passwd-s3fs
+sudo chmod 600 /etc/passwd-s3fs
+sudo mount -a
+```
+
