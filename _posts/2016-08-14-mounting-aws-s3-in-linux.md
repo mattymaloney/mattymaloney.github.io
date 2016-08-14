@@ -5,3 +5,37 @@
 I tried goofys, and didn't get it to work as easily as 3sfs. goofys apparently has better performance, so maybe it's worth more time, but I'm going with s3fs for now.
 
 I haven't tried riofs.
+
+This is the page that introduced me to s3fs. [FTP/SFTP access to an Amazon S3 Bucket - Stack Overflow](http://stackoverflow.com/questions/23939179/ftp-sftp-access-to-an-amazon-s3-bucket)
+
+---
+
+## Here's My Setup
+
+Mostly just following the instructions at [s3fs-fuse/s3fs-fuse: FUSE-based file system backed by Amazon S3](https://github.com/s3fs-fuse/s3fs-fuse).
+
+New Amazon Linux instance.
+
+```
+sudo yum update
+sudo yum install automake fuse fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel
+git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+cd s3fs-fuse
+./autogen.sh
+./configure
+make
+sudo make install
+```
+
+Add this line to `/etc/fstab`
+```
+s3fs#cc-www-static-origin-879350719246 /mnt/cc-static fuse _netdev,allow_other,umask=0077,uid=ec2-user,gid=ec2-user 0 0
+```
+
+This makes ec2-user appear to be the owner and group for all files and folders. All files and folders end up appearing with permissions mode 700.
+
+Because we're doing this to create a gateway service allowing sftp clients to access an s3 bucket, we need to create an sftp-only user as well. See [Setup an sftp-only User in Linux](https://github.com/mattymaloney/mattymaloney.github.io/blob/master/_posts/2016-05-23-linux-sftp-only-user.md).
+
+## To Do
+
+Expand this document to desctibe the complete setup of the pub.site.com box.
