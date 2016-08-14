@@ -1,3 +1,5 @@
+These are the 3 options I'm aware of for mounting an S3 bucket in the Linux filesystem.
+
 * [s3fs-fuse/s3fs-fuse: FUSE-based file system backed by Amazon S3](https://github.com/s3fs-fuse/s3fs-fuse)
 * [kahing/goofys: a Filey System for Amazon S3 written in Go](https://github.com/kahing/goofys)
 * [skoobe/riofs: Userspace S3 filesystem](https://github.com/skoobe/riofs)
