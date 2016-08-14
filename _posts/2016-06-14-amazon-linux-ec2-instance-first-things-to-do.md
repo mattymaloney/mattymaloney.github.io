@@ -68,6 +68,35 @@ echo 'alias vi="vim"' | sudo tee -a /root/.bashrc
 echo 'alias view="vim -R"' | sudo tee -a /root/.bashrc
 ```
 
+## Better Way to Affect bash Prompt
+
+Create the file `/etc/profile.d/zzz-cc-www-box.sh` with these contents:
+
+```
+export boxenv='aws-test'
+export boxtag='application-service-version'
+export boxnum=''
+
+# Custom bash prompt via kirsle.net/wizards/ps1.html
+export PS1="\[$(tput sgr0)\]\n\[$(tput setaf 3)\]\u\[$(tput setaf 0)\]\[$(tput bold)\]@\[$(tput sgr0)\]\[$(tput setaf 3)\]\h \[$(tput setaf 7)\][\[$(tput setaf 5)\]$boxenv/$boxtag #$boxnum\[$(tput setaf 7)\]]\n\[$(tput setaf 2)\]\w\n\[$(tput setaf 4)\]\$ \[$(tput sgr0)\]"
+
+alias ll="LC_ALL=C ls -lahF --color=auto"
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias vi="vim"
+alias view="vim -R"
+```
+
+## Create own ssh keys
+
+```
+ssh-keygen
+```
+
+Accept all defaults.
+
+
 ## Security Modifications
 
 In decreasing levels of complexity and detail, here are 3 related aproaches to securing a new Ubuntu installation. Most of this just needs mild modification to be useful for Amazon Linux instances. Although, I'm ignoring most of the firewall recommendations, as I'm relying almost exclusively on Amazon Security Groups.
