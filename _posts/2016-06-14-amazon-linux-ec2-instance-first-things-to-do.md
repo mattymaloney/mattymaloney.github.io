@@ -21,7 +21,6 @@ sudo yum udpate
 ```
 sudo sed -i 's/"UTC"/"America\/Denver"/' /etc/sysconfig/clock
 sudo ln -sf /usr/share/zoneinfo/America/Denver /etc/localtime
-sudo reboot
 ```
 
 
@@ -95,6 +94,13 @@ ssh-keygen
 ```
 
 Accept all defaults.
+
+
+## Reboot
+
+```
+sudo reboot
+```
 
 
 ## Security Modifications
