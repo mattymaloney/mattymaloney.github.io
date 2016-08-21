@@ -1,0 +1,6 @@
+* [alestic-git/alestic-git-build-ami at master · alestic/alestic-git](https://github.com/alestic/alestic-git/blob/master/bin/alestic-git-build-ami)
+* [Build a Custom Amazon EC2 Machine Image - (CentOS 6.2)](http://www.idevelopment.info/data/AWS/AWS_Tips/AWS_Management/AWS_10.shtml)
+* [My first unikernel - Thomas Leonard's blog](http://roscidus.com/blog/blog/2014/07/28/my-first-unikernel/)
+* [Attack Surface: Why I Unikernel, Part 1 - Some Random Idiot](http://www.somerandomidiot.com/blog/2014/08/11/attack-surface-area/)
+* [Unikernels: Rise of the Virtual Library Operating System - ACM Queue](http://queue.acm.org/detail.cfm?id=2566628)
+* [MirageOS](https://mirage.io/)
