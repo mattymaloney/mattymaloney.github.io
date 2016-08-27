@@ -74,14 +74,26 @@ exit
 ip default-gateway 192.168.0.250
 exit
 exit
+```
 
+Set up the hostname and admin password for console/enable, telnet, and web-admin.
+
+```
 enable
 configure
 hostname good-hostname
 username admin password GoodPassword level 15
+enable password level 15 GoodPassword
+line telnet
+password GoodPassword
 exit
 exit
+exit
+```
 
+Copy this running config into the startup config and reboot to test and verify.
+
+```
 enable
 copy running-config startup-config
 reload
@@ -116,15 +128,6 @@ spanning-tree mode rstp
 interface range ethernet g1-24
 flowcontrol on
 spanning-tree portfast
-exit
---no-- interface vlan 1
---no-- sntp client enable
---no-- ip address xxx.xxx.xxx.xxx 255.255.255.0
---no-- exit
---no-- ip default-gateway xxx.xxx.xxx.xxx
-enable password level 15 GoodPassword
-line telnet
-password GoodPassword
 exit
 ```
 
