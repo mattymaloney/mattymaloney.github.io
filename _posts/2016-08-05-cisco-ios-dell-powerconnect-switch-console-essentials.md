@@ -73,10 +73,16 @@ ip address 192.168.1.201 /21
 exit
 ip default-gateway 192.168.0.250
 exit
+exit
 
-host good-hostname
+enable
+configure
+hostname good-hostname
 username admin password GoodPassword level 15
+exit
+exit
 
+enable
 copy running-config startup-config
 reload
 ```
