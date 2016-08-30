@@ -7,7 +7,9 @@ title: vi/vim Treasures
 
 [All the right moves - Vim Tips Wiki - Wikia](http://vim.wikia.com/wiki/All_the_right_moves)
 
-[editor - How do I move to end of line in vim - Stack Overflow](http://stackoverflow.com/questions/105721/how-do-i-move-to-end-of-line-in-vim)
+[editor - How do I move to end of line in vim - Stack Overflow](http://stackoverflow.com/questions/105721/how-do-i-move-to-end-of-line-in-vim) (and more about movement, especially as it related to moving to the end of "things" like buffers, soft line, hard line, etc.)
+
+[How to repeat last n change in Vim? - Stack Overflow](http://stackoverflow.com/questions/6644141/how-to-repeat-last-n-change-in-vim) (and tips for recording and playback)
 
 [vi/vim delete commands and examples | vi vim delete lines to end | alvinalexander.com](http://alvinalexander.com/linux/vi-vim-delete-line-commands-to-end)
 
