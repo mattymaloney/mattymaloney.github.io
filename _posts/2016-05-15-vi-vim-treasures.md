@@ -11,6 +11,8 @@ title: vi/vim Treasures
 
 [How to repeat last n change in Vim? - Stack Overflow](http://stackoverflow.com/questions/6644141/how-to-repeat-last-n-change-in-vim) (and tips for recording and playback)
 
+[vim - Traversing text in Insert mode - Stack Overflow](http://stackoverflow.com/questions/1737163/traversing-text-in-insert-mode)
+
 [vi/vim delete commands and examples | vi vim delete lines to end | alvinalexander.com](http://alvinalexander.com/linux/vi-vim-delete-line-commands-to-end)
 
 ---
