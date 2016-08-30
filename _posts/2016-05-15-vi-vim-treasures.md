@@ -7,6 +7,8 @@ title: vi/vim Treasures
 
 [All the right moves - Vim Tips Wiki - Wikia](http://vim.wikia.com/wiki/All_the_right_moves)
 
+[editor - How do I move to end of line in vim - Stack Overflow](http://stackoverflow.com/questions/105721/how-do-i-move-to-end-of-line-in-vim)
+
 [vi/vim delete commands and examples | vi vim delete lines to end | alvinalexander.com](http://alvinalexander.com/linux/vi-vim-delete-line-commands-to-end)
 
 ---
@@ -31,3 +33,7 @@ Use vim to view files, then reload manually or reload automically on changes.
 [Multi-line regex support in Vim - Stack Overflow](http://stackoverflow.com/questions/784176/multi-line-regex-support-in-vim)
 
 [How to replace a character by a newline in Vim? - Stack Overflow](http://stackoverflow.com/questions/71323/how-to-replace-a-character-by-a-newline-in-vim/71334#71334)
+
+---
+
+mov
