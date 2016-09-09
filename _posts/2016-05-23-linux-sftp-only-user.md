@@ -21,8 +21,15 @@ sudo mkdir /home/username/www
 sudo chown username:username /home/username/www
 sudo chown root:root /home/username/
 sudo chmod 755 /home/username
-sudo mount --bind /var/www/html /home/username/www
+sudo mount --bind /var/www /home/username/www
 ```
+
+To make the mount survive a reboot, add this line to `/etc/fstab`:
+
+```
+/var/www /home/username/www none defaults,bind 0 0
+```
+
 
 ## sshd_config
 
