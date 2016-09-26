@@ -8,3 +8,8 @@
 
 丸 and 円 have the nearly the same meaning, which is round or circular in the 2-dimensional sense. I've never known or understood when to use one over the other. On signs, and in basic reading opportunities that I find, I see 丸 being used to mean round or circular, and I only see 円 being used to refer to yen. I'm not sure which, but I believe one of these kanji can also be used to mean sphere, as well as 2-dimensional round things.
 
+
+## Remembering 止 and 引
+
+She (し・止) stops (止) while he (ひ・引) pulls (引) the door.
+
