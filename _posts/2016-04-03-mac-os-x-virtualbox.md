@@ -16,3 +16,9 @@ VBoxManage setextradata "El_Capitan" "VBoxInternal/Devices/efi/0/Config/DmiBoard
 VBoxManage setextradata "El_Capitan" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
 VBoxManage setextradata "El_Capitan" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
 ```
+
+
+To do this for macOS Sierra, see: 
+
+* http://www.macworld.com/article/3092900/macs/how-to-create-a-bootable-macos-sierra-installer-drive.html
+* http://www.wikigain.com/install-macos-sierra-10-12-virtualbox/
