@@ -23,5 +23,5 @@ To do this for macOS Sierra, see:
 * http://www.macworld.com/article/3092900/macs/how-to-create-a-bootable-macos-sierra-installer-drive.html
 * http://www.wikigain.com/install-macos-sierra-10-12-virtualbox/
 
-The insanelymac post referenced above also has an update (here)[http://www.insanelymac.com/forum/topic/309654-run-vanilla-os-x-el-capitan-yosemite-or-mavericks-in-virtualbox-5010-on-a-windows-host/page-3#entry2247366] for macOS Sierra.
+The insanelymac post referenced above also has an update at http://www.insanelymac.com/forum/topic/309654-run-vanilla-os-x-el-capitan-yosemite-or-mavericks-in-virtualbox-5010-on-a-windows-host/page-3#entry2247366 for macOS Sierra.
 
