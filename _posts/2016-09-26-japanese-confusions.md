@@ -46,8 +46,8 @@ I'm only in lesson 3 of wanikani, and already I'm seeing more words for woman/gi
 (damn, no japanese input setup for this fedora yet).
 
 * おんな、女 - female
-* おんなのひと、女の人 - 
-* おんなのこ、女の子 - 
-* じょし、女子 - 
-* しょうじょ、少女 - 
+* おんなのひと、女の人 - woman
+* おんなのこ、女の子 - young woman
+* じょし、女子 - girl
+* しょうじょ、少女 - young lady
 * 
