@@ -1,4 +1,4 @@
-Here are some overlapping wanikani words that are giving me trouble, especially when I try to review using kaniwani. I'm listing the words along with my preferred translation/keyword, in an effort to have a unique value for each.
+Here are some overlapping wanikani words that are giving me trouble, especially when I try to review using kaniwani. I'm listing the words along with my preferred translation/keyword, in an effort to have a unique value for each. FOr some, I'm also listing the wanikani translation (in parenthesis) for reference.
 
 ## So many ways to say "girl", "woman", "female"
 
@@ -9,10 +9,14 @@ I'm only in lesson 3 of wanikani, and already I'm seeing more words for woman/gi
 * おんなのこ、女の子 - young woman
 * じょし、女子 - girl
 * しょうじょ、少女 - young lady
-* 
+
 
 ## Two "very" words
 
-* なかなか、中々 - very, considerably, quite
-* おおいに、大いに - 
+* なかなか、中々 - considerably (very, considerably, quite)
+* おおいに、大いに - a lot of (very, much, greatly, a lot of, very much)
 
+Based on these translations, it looks like 大いに is a little more than 中々.
+
+
+## 
