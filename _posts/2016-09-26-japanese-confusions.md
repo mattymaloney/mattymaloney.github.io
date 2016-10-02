@@ -38,3 +38,16 @@ This next example uses both だけ and しか together to create meaning is "onl
 
 She (し・止) stops (止) while he (ひ・引) pulls (引) the door.
 
+
+## So many ways to say "girl", "woman", "female"
+
+I'm only in lesson 3 of wanikani, and already I'm seeing more words for woman/girl/female then I ever realized existed. So far (with my preferred translation/keyword, in an effort to have a unique value for each):
+
+(damn, no japanese input setup for this fedora yet).
+
+* おんな、女 - female
+* おんなのひと、女の人 - 
+* おんなのこ、女の子 - 
+* じょし、女子 - 
+* しょうじょ、少女 - 
+* 
