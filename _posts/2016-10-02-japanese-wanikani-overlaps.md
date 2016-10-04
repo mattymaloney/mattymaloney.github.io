@@ -16,7 +16,7 @@ I'm only in lesson 3 of wanikani, and already I'm seeing more words for woman/gi
 * なかなか、中々 - considerably (very, considerably, quite)
 * おおいに、大いに - a lot of (very, much, greatly, a lot of, very much)
 
-Based on these translations, it looks like 大いに is a little more than 中々.
+Based on these translations, it looks like 大いに is a little more "very” than 中々.
 
 
 ## Round/Circular
@@ -24,4 +24,11 @@ Based on these translations, it looks like 大いに is a little more than 中�
 * まる、丸 - round, circle
 * まるい、丸い - spherical  
 * まるい、円い - circular (round, circular)
+
+
+## Two "Important" Words
+
+* たいせつ、大切 - 
+* たいした、大した - considerable, great, important, big deal
+
 
