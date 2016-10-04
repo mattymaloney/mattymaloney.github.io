@@ -9,6 +9,7 @@ I'm only in lesson 3 of wanikani, and already I'm seeing more words for woman/gi
 * おんなのこ、女の子 - young woman (young lady, young woman, young girl, girl)
 * じょし、女子 - girl
 * しょうじょ、少女 - young lady
+* おとめ、少女 - young lady, little girl, maiden, daughter, girl
 
 
 ## Two "very" words
@@ -26,9 +27,13 @@ Based on these translations, it looks like 大いに is a little more "very” t
 * まるい、円い - circular (round, circular)
 
 
-## Two "Important" Words
+## Two "important" Words
 
-* たいせつ、大切 - 
+* たいせつ、大切 - important, precious, valuable
 * たいした、大した - considerable, great, important, big deal
 
 
+## Two "few" Words
+
+すこし、少し - 
+すくない、少ない
