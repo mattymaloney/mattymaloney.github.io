@@ -36,4 +36,6 @@ Based on these translations, it looks like 大いに is a little more "very” t
 ## Two "few" Words
 
 すこし、少し - 
-すくない、少ない
+すくない、少ない - a few, few, scarce, not much, not many
+
+
